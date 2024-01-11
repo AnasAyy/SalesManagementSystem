@@ -177,6 +177,11 @@
     <Compile Include="Forms\SupplierManagmentForm.Designer.cs">
       <DependentUpon>SupplierManagmentForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202401111718517_first.cs" />
+    <Compile Include="Migrations\202401111718517_first.designer.cs">
+      <DependentUpon>202401111718517_first.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\Bill.cs" />
     <Compile Include="Models\BillItem.cs" />
@@ -236,6 +241,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SupplierManagmentForm.resx">
       <DependentUpon>SupplierManagmentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202401111718517_first.resx">
+      <DependentUpon>202401111718517_first.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

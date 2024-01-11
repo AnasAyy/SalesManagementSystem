@@ -20,13 +20,10 @@ namespace SalesManagementSystem.Models
         public DateTime CreatedAt { get; set; } = DateTime.Now;
         public DateTime UpdatedAt { get; set; }
 
-        [ForeignKey(nameof(Client.Id))]
         public int? ClientId { get; set; }
 
-        [ForeignKey(nameof(Supplier.Id))]
         public int? SupplierId { get; set; }
 
-        [ForeignKey(nameof(Account.Id))]
         public int AccountId { get; set; }
 
     }

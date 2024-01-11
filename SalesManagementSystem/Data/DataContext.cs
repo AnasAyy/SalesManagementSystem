@@ -2,9 +2,7 @@
 using System.Data.Entity;
 public class DataBaseContext : DbContext
 {
-    public DataBaseContext() : base("Data Source=Anas;Initial Catalog=salesmanagment;TrustServerCertificate=True")
-    {
-    }
+    public DataBaseContext() : base("name=SalesManagementSystem") { }
   
     public DbSet<Bill> Bills { get; set; }
     public DbSet<BillItem> BillItems { get; set; }

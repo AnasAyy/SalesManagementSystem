@@ -23,11 +23,8 @@ namespace SalesManagementSystem.Models
         public DateTime UpdatedAt { get; set; }
         public bool IsActive { get; set; }
 
-        [ForeignKey(nameof(Category.Id))]
         public int? CategoryId { get; set; }
 
-        public ICollection<ItemHistory> ItemHistories { get; set; }
-        public ICollection<BillItem> BillItems { get; set; }
 
     }
 }

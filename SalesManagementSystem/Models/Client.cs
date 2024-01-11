@@ -19,7 +19,5 @@ namespace SalesManagementSystem.Models
         public DateTime CreatedAt { get; set; } = DateTime.Now;
         public DateTime UpdatedAt { get; set; }
 
-        public ICollection<Bill> Bills { get; set; }
-        public ICollection<FinancialBond> FinancialBonds { get; set; } = null;
     }
 }
