@@ -10,7 +10,7 @@ namespace SalesManagementSystem.Forms
         public int id;
         public CategoryForm()
         {
-            categoryForm = this;//
+            if (categoryForm == null) { categoryForm = this; }//
             InitializeComponent();
         }
 
@@ -24,7 +24,8 @@ namespace SalesManagementSystem.Forms
 
             get
             {
-                categoryForm = new CategoryForm();
+                if (categoryForm == null)
+                    categoryForm = new CategoryForm();
                 categoryForm.FormClosed += categoryForm_FormClosed;
                 return categoryForm;
 
@@ -82,6 +83,11 @@ namespace SalesManagementSystem.Forms
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void CategoryForm_Load_1(object sender, EventArgs e)
         {
 
         }

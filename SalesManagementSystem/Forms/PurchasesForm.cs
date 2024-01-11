@@ -17,7 +17,7 @@ namespace SalesManagementSystem.Forms
         static PurchasesForm purchasesForm;//
         public PurchasesForm()
         {
-            purchasesForm = this;//
+            if (purchasesForm == null) purchasesForm = this;//
             InitializeComponent();
         }
 
@@ -31,7 +31,8 @@ namespace SalesManagementSystem.Forms
 
             get
             {
-                purchasesForm = new PurchasesForm();
+                if (purchasesForm == null)
+                    purchasesForm = new PurchasesForm();
                 purchasesForm.FormClosed += PurchasesForm_FormClosed;
                 return purchasesForm;
 

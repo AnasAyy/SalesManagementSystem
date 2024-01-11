@@ -10,7 +10,7 @@ namespace SalesManagementSystem.Forms
         static ExchangeForm exchangeForm;//
         public ExchangeForm()
         {
-            exchangeForm = this;//
+            if (exchangeForm == null) { exchangeForm = this; }//
             InitializeComponent();
         }
 
@@ -25,7 +25,8 @@ namespace SalesManagementSystem.Forms
 
             get
             {
-                exchangeForm = new ExchangeForm();
+                if (exchangeForm == null)
+                    exchangeForm = new ExchangeForm();
                 exchangeForm.FormClosed += ItemForm_FormClosed;
                 return exchangeForm;
 
@@ -60,6 +61,11 @@ namespace SalesManagementSystem.Forms
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ExchangeForm_Load_1(object sender, EventArgs e)
         {
 
         }

@@ -31,63 +31,65 @@ namespace SalesManagementSystem.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            panel1 = new Panel();
-            label1 = new Label();
-            dataGridView1 = new DataGridView();
-            panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            SuspendLayout();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.SuspendLayout();
             // 
             // panel1
             // 
-            panel1.BackColor = Color.SteelBlue;
-            panel1.Controls.Add(label1);
-            panel1.Location = new Point(-1, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1186, 39);
-            panel1.TabIndex = 0;
+            this.panel1.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Location = new System.Drawing.Point(-1, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1017, 34);
+            this.panel1.TabIndex = 0;
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Cairo", 11.249999F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(510, 6);
-            label1.Name = "label1";
-            label1.Size = new Size(183, 29);
-            label1.TabIndex = 0;
-            label1.Text = "المنتجات القريبة من النفاذ";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Cairo", 11.25F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(437, 5);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(183, 29);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "المنتجات القريبة من النفاذ";
             // 
             // dataGridView1
             // 
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(-1, 38);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(1186, 712);
-            dataGridView1.TabIndex = 1;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(-1, 33);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowTemplate.Height = 25;
+            this.dataGridView1.Size = new System.Drawing.Size(1017, 617);
+            this.dataGridView1.TabIndex = 1;
             // 
             // NotificationForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1184, 561);
-            Controls.Add(dataGridView1);
-            Controls.Add(panel1);
-            MaximizeBox = false;
-            MinimizeBox = false;
-            Name = "NotificationForm";
-            RightToLeft = RightToLeft.Yes;
-            RightToLeftLayout = true;
-            ShowIcon = false;
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "المنتجات القريبة من النفاذ";
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1015, 486);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.panel1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "NotificationForm";
+            this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.RightToLeftLayout = true;
+            this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "المنتجات القريبة من النفاذ";
+            this.Load += new System.EventHandler(this.NotificationForm_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.ResumeLayout(false);
+
         }
 
         #endregion

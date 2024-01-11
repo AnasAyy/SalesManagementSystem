@@ -11,7 +11,7 @@ namespace SalesManagementSystem.Forms
 
         public LoginForm()
         {
-            loginForm = this;
+            if (loginForm == null) { loginForm = this; }//
             InitializeComponent();
         }
 
@@ -25,7 +25,8 @@ namespace SalesManagementSystem.Forms
 
             get
             {
-                loginForm = new LoginForm();
+                if (loginForm == null)
+                    loginForm = new LoginForm();
                 loginForm.FormClosed += LoginForm_FormClosed;
                 return loginForm;
 

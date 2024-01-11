@@ -16,7 +16,7 @@ namespace SalesManagementSystem.Forms
         static PurchasesManagementForm purchasesManagementForm;//
         public PurchasesManagementForm()
         {
-            purchasesManagementForm = this;//
+            if (purchasesManagementForm == null)  purchasesManagementForm = this;//
             InitializeComponent();
         }
 
@@ -30,7 +30,8 @@ namespace SalesManagementSystem.Forms
 
             get
             {
-                purchasesManagementForm = new PurchasesManagementForm();
+                if (purchasesManagementForm == null)
+                    purchasesManagementForm = new PurchasesManagementForm();
                 purchasesManagementForm.FormClosed += PurchasesManagementForm_FormClosed;
                 return purchasesManagementForm;
 
@@ -63,6 +64,11 @@ namespace SalesManagementSystem.Forms
         private void button1_Click(object sender, EventArgs e)
         {
             AllPurchasesManagement.SearchByCategory(this);
+        }
+
+        private void PurchasesManagementForm_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

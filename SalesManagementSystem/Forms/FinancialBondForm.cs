@@ -11,7 +11,7 @@ namespace SalesManagementSystem.Forms
         static FinancialBondForm financialBondForm;//
         public FinancialBondForm()
         {
-            financialBondForm = this;//
+            if (financialBondForm == null) { financialBondForm = this; }//
             InitializeComponent();
         }
 
@@ -25,6 +25,7 @@ namespace SalesManagementSystem.Forms
 
             get
             {
+                if (financialBondForm == null)
                 financialBondForm = new FinancialBondForm();
                 financialBondForm.FormClosed += financialBondForm_FormClosed;
                 return financialBondForm;
@@ -237,6 +238,11 @@ namespace SalesManagementSystem.Forms
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FinancialBondForm_Load(object sender, EventArgs e)
         {
 
         }

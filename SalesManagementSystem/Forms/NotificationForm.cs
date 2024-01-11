@@ -16,5 +16,10 @@ namespace SalesManagementSystem.Forms
         {
             InitializeComponent();
         }
+
+        private void NotificationForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

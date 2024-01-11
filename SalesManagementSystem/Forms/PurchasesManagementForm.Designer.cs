@@ -31,178 +31,175 @@ namespace SalesManagementSystem.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            groupBox1 = new GroupBox();
-            textBox7 = new TextBox();
-            groupBox3 = new GroupBox();
-            radioButton3 = new RadioButton();
-            button1 = new Button();
-            radioButton2 = new RadioButton();
-            radioButton1 = new RadioButton();
-            button5 = new Button();
-            label1 = new Label();
-            groupBox2 = new GroupBox();
-            dataGridView1 = new DataGridView();
-            groupBox1.SuspendLayout();
-            groupBox3.SuspendLayout();
-            groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            SuspendLayout();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.button1 = new System.Windows.Forms.Button();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.button5 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.groupBox1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.SuspendLayout();
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(textBox7);
-            groupBox1.Controls.Add(groupBox3);
-            groupBox1.Controls.Add(button5);
-            groupBox1.Controls.Add(label1);
-            groupBox1.Dock = DockStyle.Top;
-            groupBox1.Location = new Point(0, 0);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(1182, 101);
-            groupBox1.TabIndex = 2;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "بحث";
+            this.groupBox1.Controls.Add(this.textBox7);
+            this.groupBox1.Controls.Add(this.groupBox3);
+            this.groupBox1.Controls.Add(this.button5);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1013, 88);
+            this.groupBox1.TabIndex = 2;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "بحث";
             // 
             // textBox7
             // 
-            textBox7.Font = new Font("Cairo", 8.999999F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox7.Location = new Point(807, 35);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(270, 30);
-            textBox7.TabIndex = 37;
-            textBox7.TextChanged += textBox7_TextChanged;
-            textBox7.KeyPress += textBox7_KeyPress;
+            this.textBox7.Font = new System.Drawing.Font("Cairo", 8.999999F);
+            this.textBox7.Location = new System.Drawing.Point(692, 30);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(232, 30);
+            this.textBox7.TabIndex = 37;
             // 
             // groupBox3
             // 
-            groupBox3.Controls.Add(radioButton3);
-            groupBox3.Controls.Add(button1);
-            groupBox3.Controls.Add(radioButton2);
-            groupBox3.Controls.Add(radioButton1);
-            groupBox3.Dock = DockStyle.Left;
-            groupBox3.Location = new Point(3, 19);
-            groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(401, 79);
-            groupBox3.TabIndex = 8;
-            groupBox3.TabStop = false;
-            groupBox3.Text = "نوع المشتريات";
+            this.groupBox3.Controls.Add(this.radioButton3);
+            this.groupBox3.Controls.Add(this.button1);
+            this.groupBox3.Controls.Add(this.radioButton2);
+            this.groupBox3.Controls.Add(this.radioButton1);
+            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.groupBox3.Location = new System.Drawing.Point(3, 16);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(344, 69);
+            this.groupBox3.TabIndex = 8;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "نوع المشتريات";
             // 
             // radioButton3
             // 
-            radioButton3.AutoSize = true;
-            radioButton3.CheckAlign = ContentAlignment.MiddleRight;
-            radioButton3.Location = new Point(153, 25);
-            radioButton3.Name = "radioButton3";
-            radioButton3.Size = new Size(46, 19);
-            radioButton3.TabIndex = 9;
-            radioButton3.Text = "الكل";
-            radioButton3.UseVisualStyleBackColor = true;
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.radioButton3.Location = new System.Drawing.Point(131, 22);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(45, 17);
+            this.radioButton3.TabIndex = 9;
+            this.radioButton3.Text = "الكل";
+            this.radioButton3.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
-            button1.BackColor = Color.RoyalBlue;
-            button1.Font = new Font("Cairo", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(41, 16);
-            button1.Name = "button1";
-            button1.Size = new Size(98, 35);
-            button1.TabIndex = 8;
-            button1.Text = "بحث";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            this.button1.BackColor = System.Drawing.Color.RoyalBlue;
+            this.button1.Font = new System.Drawing.Font("Cairo", 9F, System.Drawing.FontStyle.Bold);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(35, 14);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(84, 30);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "بحث";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // radioButton2
             // 
-            radioButton2.AutoSize = true;
-            radioButton2.CheckAlign = ContentAlignment.MiddleRight;
-            radioButton2.Location = new Point(213, 25);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(54, 19);
-            radioButton2.TabIndex = 1;
-            radioButton2.Text = "مرتجع";
-            radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.radioButton2.Location = new System.Drawing.Point(183, 22);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(53, 17);
+            this.radioButton2.TabIndex = 1;
+            this.radioButton2.Text = "مرتجع";
+            this.radioButton2.UseVisualStyleBackColor = true;
             // 
             // radioButton1
             // 
-            radioButton1.AutoSize = true;
-            radioButton1.CheckAlign = ContentAlignment.MiddleRight;
-            radioButton1.Checked = true;
-            radioButton1.Location = new Point(273, 25);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(70, 19);
-            radioButton1.TabIndex = 0;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "مشتريات";
-            radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.radioButton1.Checked = true;
+            this.radioButton1.Location = new System.Drawing.Point(234, 22);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(64, 17);
+            this.radioButton1.TabIndex = 0;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "مشتريات";
+            this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // button5
             // 
-            button5.BackColor = Color.RoyalBlue;
-            button5.Font = new Font("Cairo", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button5.ForeColor = Color.White;
-            button5.Location = new Point(726, 33);
-            button5.Name = "button5";
-            button5.Size = new Size(75, 35);
-            button5.TabIndex = 7;
-            button5.Text = "بحث";
-            button5.UseVisualStyleBackColor = false;
-            button5.Click += button5_Click;
+            this.button5.BackColor = System.Drawing.Color.RoyalBlue;
+            this.button5.Font = new System.Drawing.Font("Cairo", 9F, System.Drawing.FontStyle.Bold);
+            this.button5.ForeColor = System.Drawing.Color.White;
+            this.button5.Location = new System.Drawing.Point(622, 29);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(64, 30);
+            this.button5.TabIndex = 7;
+            this.button5.Text = "بحث";
+            this.button5.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(1083, 46);
-            label1.Name = "label1";
-            label1.Size = new Size(63, 15);
-            label1.TabIndex = 0;
-            label1.Text = "رقم الفاتورة";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(928, 40);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(62, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "رقم الفاتورة";
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(dataGridView1);
-            groupBox2.Dock = DockStyle.Bottom;
-            groupBox2.Location = new Point(0, 19);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(1182, 642);
-            groupBox2.TabIndex = 3;
-            groupBox2.TabStop = false;
-            groupBox2.Text = "فواتير المشتريات";
+            this.groupBox2.Controls.Add(this.dataGridView1);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupBox2.Location = new System.Drawing.Point(0, 17);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(1013, 556);
+            this.groupBox2.TabIndex = 3;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "فواتير المشتريات";
             // 
             // dataGridView1
             // 
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(0, 85);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(1182, 551);
-            dataGridView1.TabIndex = 0;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 74);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowTemplate.Height = 25;
+            this.dataGridView1.Size = new System.Drawing.Size(1013, 478);
+            this.dataGridView1.TabIndex = 0;
             // 
             // PurchasesManagementForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1182, 661);
-            Controls.Add(groupBox1);
-            Controls.Add(groupBox2);
-            MaximizeBox = false;
-            MaximumSize = new Size(1198, 700);
-            MinimizeBox = false;
-            MinimumSize = new Size(1198, 700);
-            Name = "PurchasesManagementForm";
-            RightToLeft = RightToLeft.Yes;
-            RightToLeftLayout = true;
-            ShowIcon = false;
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "ادارة المشتريات";
-            Load += PurchasesManagementForm_Load;
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
-            groupBox3.ResumeLayout(false);
-            groupBox3.PerformLayout();
-            groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1013, 573);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBox2);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(1029, 612);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(1029, 612);
+            this.Name = "PurchasesManagementForm";
+            this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.RightToLeftLayout = true;
+            this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "ادارة المشتريات";
+            this.Load += new System.EventHandler(this.PurchasesManagementForm_Load_1);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.ResumeLayout(false);
+
         }
 
         #endregion

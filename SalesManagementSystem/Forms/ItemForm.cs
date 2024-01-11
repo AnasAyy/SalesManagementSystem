@@ -10,7 +10,7 @@ namespace SalesManagementSystem.Forms
         public int id;
         public ItemForm()
         {
-            itemForm = this;//
+            if (itemForm == null) itemForm = this;//
             InitializeComponent();
         }
 
@@ -24,7 +24,8 @@ namespace SalesManagementSystem.Forms
 
             get
             {
-                itemForm = new ItemForm();
+                if (itemForm == null)
+                    itemForm = new ItemForm();
                 itemForm.FormClosed += ItemForm_FormClosed;
                 return itemForm;
 
@@ -112,6 +113,11 @@ namespace SalesManagementSystem.Forms
         }
 
         private void button1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ItemForm_Load_1(object sender, EventArgs e)
         {
 
         }

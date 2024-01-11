@@ -31,258 +31,253 @@ namespace SalesManagementSystem.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            groupBox1 = new GroupBox();
-            radioButton2 = new RadioButton();
-            radioButton1 = new RadioButton();
-            label2 = new Label();
-            textBox1 = new TextBox();
-            label1 = new Label();
-            menuStrip1 = new MenuStrip();
-            جديدToolStripMenuItem = new ToolStripMenuItem();
-            حفظToolStripMenuItem = new ToolStripMenuItem();
-            تعديلToolStripMenuItem = new ToolStripMenuItem();
-            إلغاءToolStripMenuItem = new ToolStripMenuItem();
-            groupBox2 = new GroupBox();
-            button1 = new Button();
-            textBox3 = new TextBox();
-            label3 = new Label();
-            dataGridView1 = new DataGridView();
-            contextMenuStrip1 = new ContextMenuStrip(components);
-            تعديلToolStripMenuItem1 = new ToolStripMenuItem();
-            groupBox1.SuspendLayout();
-            menuStrip1.SuspendLayout();
-            groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            contextMenuStrip1.SuspendLayout();
-            SuspendLayout();
+            this.components = new System.ComponentModel.Container();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.جديدToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.حفظToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.تعديلToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.إلغاءToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.تعديلToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.groupBox1.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
+            this.SuspendLayout();
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(radioButton2);
-            groupBox1.Controls.Add(radioButton1);
-            groupBox1.Controls.Add(label2);
-            groupBox1.Controls.Add(textBox1);
-            groupBox1.Controls.Add(label1);
-            groupBox1.Controls.Add(menuStrip1);
-            groupBox1.Dock = DockStyle.Top;
-            groupBox1.Location = new Point(0, 0);
-            groupBox1.Margin = new Padding(3, 4, 3, 4);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(3, 4, 3, 4);
-            groupBox1.Size = new Size(1182, 166);
-            groupBox1.TabIndex = 9;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "أدارة الفئات";
-            groupBox1.Enter += groupBox1_Enter;
+            this.groupBox1.Controls.Add(this.radioButton2);
+            this.groupBox1.Controls.Add(this.radioButton1);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.menuStrip1);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1013, 144);
+            this.groupBox1.TabIndex = 9;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "أدارة الفئات";
             // 
             // radioButton2
             // 
-            radioButton2.AutoSize = true;
-            radioButton2.Enabled = false;
-            radioButton2.Font = new Font("Cairo", 11.249999F, FontStyle.Regular, GraphicsUnit.Point);
-            radioButton2.Location = new Point(277, 97);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(85, 33);
-            radioButton2.TabIndex = 13;
-            radioButton2.TabStop = true;
-            radioButton2.Text = "غير فعال";
-            radioButton2.UseVisualStyleBackColor = true;
-            radioButton2.Visible = false;
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Enabled = false;
+            this.radioButton2.Font = new System.Drawing.Font("Cairo", 11.25F);
+            this.radioButton2.Location = new System.Drawing.Point(237, 84);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(85, 33);
+            this.radioButton2.TabIndex = 13;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "غير فعال";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.Visible = false;
             // 
             // radioButton1
             // 
-            radioButton1.AutoSize = true;
-            radioButton1.Enabled = false;
-            radioButton1.Font = new Font("Cairo", 11.249999F, FontStyle.Regular, GraphicsUnit.Point);
-            radioButton1.Location = new Point(409, 97);
-            radioButton1.Name = "radioButton1";
-            radioButton1.RightToLeft = RightToLeft.Yes;
-            radioButton1.Size = new Size(64, 33);
-            radioButton1.TabIndex = 12;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "فعال";
-            radioButton1.UseVisualStyleBackColor = true;
-            radioButton1.Visible = false;
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Enabled = false;
+            this.radioButton1.Font = new System.Drawing.Font("Cairo", 11.25F);
+            this.radioButton1.Location = new System.Drawing.Point(351, 84);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.radioButton1.Size = new System.Drawing.Size(64, 33);
+            this.radioButton1.TabIndex = 12;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "فعال";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.Visible = false;
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Cairo", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(521, 99);
-            label2.Name = "label2";
-            label2.Size = new Size(47, 29);
-            label2.TabIndex = 11;
-            label2.Text = "الحالة";
-            label2.Visible = false;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Cairo", 11F);
+            this.label2.Location = new System.Drawing.Point(447, 86);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(47, 29);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "الحالة";
+            this.label2.Visible = false;
             // 
             // textBox1
             // 
-            textBox1.Enabled = false;
-            textBox1.Font = new Font("Cairo", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.Location = new Point(675, 94);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(384, 35);
-            textBox1.TabIndex = 3;
+            this.textBox1.Enabled = false;
+            this.textBox1.Font = new System.Drawing.Font("Cairo", 11F);
+            this.textBox1.Location = new System.Drawing.Point(579, 81);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(330, 35);
+            this.textBox1.TabIndex = 3;
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Enabled = false;
-            label1.Font = new Font("Cairo", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(1081, 97);
-            label1.Name = "label1";
-            label1.Size = new Size(73, 29);
-            label1.TabIndex = 2;
-            label1.Text = "اسم الفئة";
-            label1.Click += label1_Click;
+            this.label1.AutoSize = true;
+            this.label1.Enabled = false;
+            this.label1.Font = new System.Drawing.Font("Cairo", 11F);
+            this.label1.Location = new System.Drawing.Point(927, 84);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(73, 29);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "اسم الفئة";
             // 
             // menuStrip1
             // 
-            menuStrip1.Font = new Font("Cairo", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { جديدToolStripMenuItem, حفظToolStripMenuItem, تعديلToolStripMenuItem, إلغاءToolStripMenuItem });
-            menuStrip1.Location = new Point(3, 20);
-            menuStrip1.Name = "menuStrip1";
-            menuStrip1.Padding = new Padding(7, 4, 0, 4);
-            menuStrip1.Size = new Size(1176, 35);
-            menuStrip1.TabIndex = 1;
-            menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.Font = new System.Drawing.Font("Cairo", 9F);
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.جديدToolStripMenuItem,
+            this.حفظToolStripMenuItem,
+            this.تعديلToolStripMenuItem,
+            this.إلغاءToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(3, 16);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(6, 3, 0, 3);
+            this.menuStrip1.Size = new System.Drawing.Size(1007, 33);
+            this.menuStrip1.TabIndex = 1;
+            this.menuStrip1.Text = "menuStrip1";
             // 
             // جديدToolStripMenuItem
             // 
-            جديدToolStripMenuItem.Name = "جديدToolStripMenuItem";
-            جديدToolStripMenuItem.Size = new Size(44, 27);
-            جديدToolStripMenuItem.Text = "جديد";
-            جديدToolStripMenuItem.Click += جديدToolStripMenuItem_Click;
+            this.جديدToolStripMenuItem.Name = "جديدToolStripMenuItem";
+            this.جديدToolStripMenuItem.Size = new System.Drawing.Size(44, 27);
+            this.جديدToolStripMenuItem.Text = "جديد";
             // 
             // حفظToolStripMenuItem
             // 
-            حفظToolStripMenuItem.Enabled = false;
-            حفظToolStripMenuItem.Name = "حفظToolStripMenuItem";
-            حفظToolStripMenuItem.Size = new Size(47, 27);
-            حفظToolStripMenuItem.Text = "حفظ";
-            حفظToolStripMenuItem.Click += حفظToolStripMenuItem_Click;
+            this.حفظToolStripMenuItem.Enabled = false;
+            this.حفظToolStripMenuItem.Name = "حفظToolStripMenuItem";
+            this.حفظToolStripMenuItem.Size = new System.Drawing.Size(47, 27);
+            this.حفظToolStripMenuItem.Text = "حفظ";
             // 
             // تعديلToolStripMenuItem
             // 
-            تعديلToolStripMenuItem.Enabled = false;
-            تعديلToolStripMenuItem.Name = "تعديلToolStripMenuItem";
-            تعديلToolStripMenuItem.Size = new Size(50, 27);
-            تعديلToolStripMenuItem.Text = "تعديل";
-            تعديلToolStripMenuItem.Click += تعديلToolStripMenuItem_Click;
+            this.تعديلToolStripMenuItem.Enabled = false;
+            this.تعديلToolStripMenuItem.Name = "تعديلToolStripMenuItem";
+            this.تعديلToolStripMenuItem.Size = new System.Drawing.Size(50, 27);
+            this.تعديلToolStripMenuItem.Text = "تعديل";
             // 
             // إلغاءToolStripMenuItem
             // 
-            إلغاءToolStripMenuItem.Enabled = false;
-            إلغاءToolStripMenuItem.Name = "إلغاءToolStripMenuItem";
-            إلغاءToolStripMenuItem.Size = new Size(47, 27);
-            إلغاءToolStripMenuItem.Text = "إلغاء";
-            إلغاءToolStripMenuItem.Click += إلغاءToolStripMenuItem_Click;
+            this.إلغاءToolStripMenuItem.Enabled = false;
+            this.إلغاءToolStripMenuItem.Name = "إلغاءToolStripMenuItem";
+            this.إلغاءToolStripMenuItem.Size = new System.Drawing.Size(47, 27);
+            this.إلغاءToolStripMenuItem.Text = "إلغاء";
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(button1);
-            groupBox2.Controls.Add(textBox3);
-            groupBox2.Controls.Add(label3);
-            groupBox2.Dock = DockStyle.Top;
-            groupBox2.Location = new Point(0, 166);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(1182, 120);
-            groupBox2.TabIndex = 11;
-            groupBox2.TabStop = false;
-            groupBox2.Text = "البحث في الفئات";
+            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Controls.Add(this.textBox3);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox2.Location = new System.Drawing.Point(0, 144);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(1013, 104);
+            this.groupBox2.TabIndex = 11;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "البحث في الفئات";
             // 
             // button1
             // 
-            button1.BackColor = Color.FromArgb(11, 60, 119);
-            button1.Font = new Font("Cairo", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(675, 44);
-            button1.Name = "button1";
-            button1.Size = new Size(85, 42);
-            button1.TabIndex = 6;
-            button1.Text = "بحث";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(60)))), ((int)(((byte)(119)))));
+            this.button1.Font = new System.Drawing.Font("Cairo", 9F, System.Drawing.FontStyle.Bold);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(579, 38);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(73, 36);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "بحث";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // textBox3
             // 
-            textBox3.Font = new Font("Cairo", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox3.Location = new Point(772, 44);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(287, 35);
-            textBox3.TabIndex = 5;
+            this.textBox3.Font = new System.Drawing.Font("Cairo", 11F);
+            this.textBox3.Location = new System.Drawing.Point(662, 38);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(247, 35);
+            this.textBox3.TabIndex = 5;
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Cairo", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(1065, 47);
-            label3.Name = "label3";
-            label3.Size = new Size(89, 29);
-            label3.TabIndex = 4;
-            label3.Text = "البحث بالاسم";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Cairo", 11F);
+            this.label3.Location = new System.Drawing.Point(913, 41);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(89, 29);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "البحث بالاسم";
             // 
             // dataGridView1
             // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.AllowUserToOrderColumns = true;
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.ContextMenuStrip = contextMenuStrip1;
-            dataGridView1.Dock = DockStyle.Bottom;
-            dataGridView1.Location = new Point(0, 286);
-            dataGridView1.Margin = new Padding(3, 6, 3, 6);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(1182, 463);
-            dataGridView1.TabIndex = 12;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.ContextMenuStrip = this.contextMenuStrip1;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 248);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 25;
+            this.dataGridView1.Size = new System.Drawing.Size(1013, 401);
+            this.dataGridView1.TabIndex = 12;
             // 
             // contextMenuStrip1
             // 
-            contextMenuStrip1.Items.AddRange(new ToolStripItem[] { تعديلToolStripMenuItem1 });
-            contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.RightToLeft = RightToLeft.Yes;
-            contextMenuStrip1.Size = new Size(104, 26);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.تعديلToolStripMenuItem1});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.contextMenuStrip1.Size = new System.Drawing.Size(104, 26);
             // 
             // تعديلToolStripMenuItem1
             // 
-            تعديلToolStripMenuItem1.Name = "تعديلToolStripMenuItem1";
-            تعديلToolStripMenuItem1.Size = new Size(103, 22);
-            تعديلToolStripMenuItem1.Text = "تعديل";
-            تعديلToolStripMenuItem1.Click += تعديلToolStripMenuItem1_Click;
+            this.تعديلToolStripMenuItem1.Name = "تعديلToolStripMenuItem1";
+            this.تعديلToolStripMenuItem1.Size = new System.Drawing.Size(103, 22);
+            this.تعديلToolStripMenuItem1.Text = "تعديل";
             // 
             // CategoryForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1182, 749);
-            Controls.Add(dataGridView1);
-            Controls.Add(groupBox2);
-            Controls.Add(groupBox1);
-            MaximizeBox = false;
-            MinimizeBox = false;
-            Name = "CategoryForm";
-            RightToLeft = RightToLeft.Yes;
-            RightToLeftLayout = true;
-            ShowIcon = false;
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "أدارة الفئات";
-            Load += CategoryForm_Load;
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
-            menuStrip1.ResumeLayout(false);
-            menuStrip1.PerformLayout();
-            groupBox2.ResumeLayout(false);
-            groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            contextMenuStrip1.ResumeLayout(false);
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1013, 649);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "CategoryForm";
+            this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.RightToLeftLayout = true;
+            this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "أدارة الفئات";
+            this.Load += new System.EventHandler(this.CategoryForm_Load_1);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
+            this.ResumeLayout(false);
+
         }
 
         #endregion

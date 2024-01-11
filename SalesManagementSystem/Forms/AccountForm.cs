@@ -10,7 +10,7 @@ namespace SalesManagementSystem.Forms
         static AccountForm accountForm;//
         public AccountForm()
         {
-            accountForm = this;//
+            if (accountForm == null) { accountForm = this; }//
             InitializeComponent();
         }
 
@@ -24,7 +24,8 @@ namespace SalesManagementSystem.Forms
 
             get
             {
-                accountForm = new AccountForm();
+                if (accountForm == null)
+                    accountForm = new AccountForm();
                 accountForm.FormClosed += accountForm_FormClosed;
                 return accountForm;
 
@@ -75,6 +76,11 @@ namespace SalesManagementSystem.Forms
         private void التحويلبينالحساباتToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             ExchangeForm.GetExchangeForm.Show();
+        }
+
+        private void AccountForm_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

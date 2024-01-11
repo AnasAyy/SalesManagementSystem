@@ -31,110 +31,108 @@ namespace SalesManagementSystem.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
-            label2 = new Label();
-            button1 = new Button();
-            comboBox1 = new ComboBox();
-            comboBox2 = new ComboBox();
-            label3 = new Label();
-            textBox1 = new TextBox();
-            SuspendLayout();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.SuspendLayout();
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Cairo", 8.999999F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(46, 55);
-            label1.Name = "label1";
-            label1.Size = new Size(27, 23);
-            label1.TabIndex = 0;
-            label1.Text = "من";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Cairo", 8.999999F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(39, 48);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(27, 23);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "من";
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Cairo", 8.999999F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(46, 103);
-            label2.Name = "label2";
-            label2.Size = new Size(27, 23);
-            label2.TabIndex = 2;
-            label2.Text = "الى";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Cairo", 8.999999F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(39, 89);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(27, 23);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "الى";
             // 
             // button1
             // 
-            button1.BackColor = Color.FromArgb(11, 60, 119);
-            button1.Font = new Font("Cairo", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(87, 191);
-            button1.Name = "button1";
-            button1.Size = new Size(292, 42);
-            button1.TabIndex = 18;
-            button1.Text = "تحويل";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(60)))), ((int)(((byte)(119)))));
+            this.button1.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Bold);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(75, 166);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(250, 36);
+            this.button1.TabIndex = 18;
+            this.button1.Text = "تحويل";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // comboBox1
             // 
-            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(87, 56);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(292, 23);
-            comboBox1.TabIndex = 19;
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(75, 49);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(251, 21);
+            this.comboBox1.TabIndex = 19;
             // 
             // comboBox2
             // 
-            comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(87, 104);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(292, 23);
-            comboBox2.TabIndex = 20;
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(75, 90);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(251, 21);
+            this.comboBox2.TabIndex = 20;
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Cairo", 8.999999F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(31, 149);
-            label3.Name = "label3";
-            label3.Size = new Size(42, 23);
-            label3.TabIndex = 21;
-            label3.Text = "المبلغ";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Cairo", 8.999999F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(27, 129);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(42, 23);
+            this.label3.TabIndex = 21;
+            this.label3.Text = "المبلغ";
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(87, 149);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(292, 23);
-            textBox1.TabIndex = 22;
-            textBox1.TextChanged += textBox1_TextChanged;
-            textBox1.KeyPress += textBox1_KeyPress;
+            this.textBox1.Location = new System.Drawing.Point(75, 129);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(251, 20);
+            this.textBox1.TabIndex = 22;
             // 
             // ExchangeForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(442, 261);
-            Controls.Add(textBox1);
-            Controls.Add(label3);
-            Controls.Add(comboBox2);
-            Controls.Add(comboBox1);
-            Controls.Add(button1);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            MaximizeBox = false;
-            MaximumSize = new Size(458, 300);
-            MinimizeBox = false;
-            MinimumSize = new Size(458, 300);
-            Name = "ExchangeForm";
-            RightToLeft = RightToLeft.Yes;
-            RightToLeftLayout = true;
-            ShowIcon = false;
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "التحويل بين الحسابات";
-            Load += ExchangeForm_Load;
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(379, 226);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(395, 265);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(395, 265);
+            this.Name = "ExchangeForm";
+            this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.RightToLeftLayout = true;
+            this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "التحويل بين الحسابات";
+            this.Load += new System.EventHandler(this.ExchangeForm_Load_1);
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
