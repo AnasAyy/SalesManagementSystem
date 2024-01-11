@@ -23,6 +23,7 @@ namespace SalesManagementSystem.Controllers
                 HomePage.GethomePage.ادارةالمبيعاتToolStripMenuItem.Visible = true;
                 HomePage.GethomePage.التقارييرToolStripMenuItem.Visible = true;
                 LoginForm.GetloginForm.Close();
+                HomePage.GethomePage.Show();
                 Notification.GetDataForNotificationAsync();
 
             }

@@ -22,14 +22,14 @@ namespace SalesManagementSystem.Controllers
 
                 if (conn.State == ConnectionState.Closed)
                 {
-                    conn.OpenAsync();
+                    conn.Open();
                 }
 
                 SqlCommand comm = new SqlCommand()
                 {
                     Connection = conn,
                     CommandType = CommandType.StoredProcedure,
-                    CommandText = "GetDataForNotification" 
+                    CommandText = "GetDataForNotification"
                 };
 
                 var reader = comm.ExecuteReader();
@@ -40,12 +40,10 @@ namespace SalesManagementSystem.Controllers
                     notification.Show();
                     notification.dataGridView1.DataSource = dt;
                 }
-                
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                
             }
         }
     }

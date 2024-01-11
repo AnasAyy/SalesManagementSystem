@@ -89,7 +89,7 @@ namespace SalesManagementSystem
             // تسجيلالدخولToolStripMenuItem1
             // 
             this.تسجيلالدخولToolStripMenuItem1.Name = "تسجيلالدخولToolStripMenuItem1";
-            this.تسجيلالدخولToolStripMenuItem1.Size = new System.Drawing.Size(180, 28);
+            this.تسجيلالدخولToolStripMenuItem1.Size = new System.Drawing.Size(149, 28);
             this.تسجيلالدخولToolStripMenuItem1.Text = "تسجيل الدخول";
             this.تسجيلالدخولToolStripMenuItem1.Click += new System.EventHandler(this.تسجيلالدخولToolStripMenuItem1_Click_1);
             // 
@@ -244,6 +244,7 @@ namespace SalesManagementSystem
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "نظام ادارة المبيعات";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.HomePage_Load_1);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

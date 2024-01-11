@@ -135,5 +135,10 @@ namespace SalesManagementSystem
         {
             LoginForm.GetloginForm.Show();
         }
+
+        private void HomePage_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
