@@ -1,40 +1,35 @@
 ﻿using SalesManagementSystem.Controllers;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SalesManagementSystem.Forms
 {
     public partial class PublicListManagmentForm : Form
     {
-        static PublicListManagmentForm changesManagmentForm;
+        static PublicListManagmentForm publicListManagmentForm;
         public PublicListManagmentForm()
         {
-            if (changesManagmentForm == null) { changesManagmentForm = this; }
+            if (publicListManagmentForm == null) { publicListManagmentForm = this; }
             InitializeComponent();
             PublicListManagment.GetAllPublicList(this);
             PublicListManagment.GetPublicListGategory(this);
 
         }
 
-        static void ChangesManagmentForm_Closed(object sender, FormClosedEventArgs e)
+        static void PublicListManagmentForm_Closed(object sender, FormClosedEventArgs e)
         {
-            changesManagmentForm = null;
+            publicListManagmentForm = null;
         }
 
         public static PublicListManagmentForm getChangesManagmentForm
         {
             get
             {
-                changesManagmentForm = new PublicListManagmentForm();
-                changesManagmentForm.FormClosed += ChangesManagmentForm_Closed;
-                return changesManagmentForm;
+                if (publicListManagmentForm == null)
+
+                    publicListManagmentForm = new PublicListManagmentForm();
+                publicListManagmentForm.FormClosed += new FormClosedEventHandler(PublicListManagmentForm_Closed);
+                return publicListManagmentForm;
             }
         }
 
