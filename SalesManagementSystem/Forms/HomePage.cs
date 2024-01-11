@@ -12,7 +12,7 @@ namespace SalesManagementSystem
 
         public HomePage()
         {
-            homePage = this;
+            if (homePage == null) { homePage = this; }//
             InitializeComponent();
         }
 
@@ -21,13 +21,15 @@ namespace SalesManagementSystem
             homePage = null;
         }
 
-        public static HomePage GethomePage //
+        public static HomePage GethomePage
         {
 
             get
             {
-                homePage = new HomePage();
-                homePage.FormClosed += HomePage_FormClosed;
+                if (homePage == null)
+
+                    homePage = new HomePage();
+                homePage.FormClosed += new FormClosedEventHandler(HomePage_FormClosed);
                 return homePage;
 
             }
