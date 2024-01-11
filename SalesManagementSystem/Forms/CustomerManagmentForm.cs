@@ -23,8 +23,10 @@ namespace SalesManagementSystem.Forms
         {
             get
             {
-                customerManagmentForm = new CustomerManagmentForm();
-                customerManagmentForm.FormClosed += CustomerManagmentForm_Closed;
+                if(customerManagmentForm == null)
+
+                    customerManagmentForm = new CustomerManagmentForm();
+                customerManagmentForm.FormClosed += new FormClosedEventHandler(CustomerManagmentForm_Closed);
                 return customerManagmentForm;
             }
         }
