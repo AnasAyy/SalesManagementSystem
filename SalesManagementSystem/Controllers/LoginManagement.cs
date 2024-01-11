@@ -32,7 +32,7 @@ namespace SalesManagementSystem.Controllers
             }
         }
 
-        public void LogOut()
+        public  void LogOut()
         {
             HomePage.GethomePage.تسجيلالدخولToolStripMenuItem1.Visible = true;
             HomePage.GethomePage.تسجيلالخروجToolStripMenuItem.Visible = false;

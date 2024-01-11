@@ -57,7 +57,7 @@ namespace SalesManagementSystem
 
         private void تسجيلالخروجToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            loginClass.LogOut();
+           
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -141,6 +141,16 @@ namespace SalesManagementSystem
         private void HomePage_Load_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void تسجيلالخروجToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            loginClass.LogOut();
+        }
+
+        private void التقاريرToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            AccountForm.GetaccountForm.Show();
         }
     }
 }

@@ -96,9 +96,10 @@ namespace SalesManagementSystem
             // تسجيلالخروجToolStripMenuItem
             // 
             this.تسجيلالخروجToolStripMenuItem.Name = "تسجيلالخروجToolStripMenuItem";
-            this.تسجيلالخروجToolStripMenuItem.Size = new System.Drawing.Size(149, 28);
+            this.تسجيلالخروجToolStripMenuItem.Size = new System.Drawing.Size(180, 28);
             this.تسجيلالخروجToolStripMenuItem.Text = "تسجيل الخروج";
             this.تسجيلالخروجToolStripMenuItem.Visible = false;
+            this.تسجيلالخروجToolStripMenuItem.Click += new System.EventHandler(this.تسجيلالخروجToolStripMenuItem_Click_1);
             // 
             // ادارةالنظامToolStripMenuItem
             // 
@@ -135,6 +136,7 @@ namespace SalesManagementSystem
             this.التقاريرToolStripMenuItem.Size = new System.Drawing.Size(90, 27);
             this.التقاريرToolStripMenuItem.Text = "ادارة الحسابات";
             this.التقاريرToolStripMenuItem.Visible = false;
+            this.التقاريرToolStripMenuItem.Click += new System.EventHandler(this.التقاريرToolStripMenuItem_Click_1);
             // 
             // ادارةالمبيعاتToolStripMenuItem
             // 
