@@ -38,12 +38,12 @@ namespace SalesManagementSystem.Forms
             }
         }
 
-        private void PurchasesManagementForm_Load(object sender, EventArgs e)
+        private void PurchasesManagementForm_Load_1(object sender, EventArgs e)
         {
             AllPurchasesManagement.FilldataGridView(this);
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void button5_Click_1(object sender, EventArgs e)
         {
             AllPurchasesManagement.SearchById(this);
         }
@@ -61,14 +61,11 @@ namespace SalesManagementSystem.Forms
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e)
         {
             AllPurchasesManagement.SearchByCategory(this);
         }
 
-        private void PurchasesManagementForm_Load_1(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

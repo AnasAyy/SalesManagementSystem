@@ -106,6 +106,7 @@ namespace SalesManagementSystem.Forms
             this.button1.TabIndex = 8;
             this.button1.Text = "بحث";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // radioButton2
             // 
@@ -123,7 +124,7 @@ namespace SalesManagementSystem.Forms
             this.radioButton1.AutoSize = true;
             this.radioButton1.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.radioButton1.Checked = true;
-            this.radioButton1.Location = new System.Drawing.Point(234, 22);
+            this.radioButton1.Location = new System.Drawing.Point(238, 22);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(64, 17);
             this.radioButton1.TabIndex = 0;
@@ -142,6 +143,7 @@ namespace SalesManagementSystem.Forms
             this.button5.TabIndex = 7;
             this.button5.Text = "بحث";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click_1);
             // 
             // label1
             // 
