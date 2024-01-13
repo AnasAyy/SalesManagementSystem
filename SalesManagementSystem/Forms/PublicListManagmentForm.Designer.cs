@@ -80,6 +80,7 @@ namespace SalesManagementSystem.Forms
             this.جديدToolStripMenuItem.Name = "جديدToolStripMenuItem";
             this.جديدToolStripMenuItem.Size = new System.Drawing.Size(55, 33);
             this.جديدToolStripMenuItem.Text = "جديد";
+            this.جديدToolStripMenuItem.Click += new System.EventHandler(this.جديدToolStripMenuItem_Click);
             // 
             // حفظToolStripMenuItem
             // 
@@ -87,6 +88,7 @@ namespace SalesManagementSystem.Forms
             this.حفظToolStripMenuItem.Name = "حفظToolStripMenuItem";
             this.حفظToolStripMenuItem.Size = new System.Drawing.Size(57, 33);
             this.حفظToolStripMenuItem.Text = "حفظ";
+            this.حفظToolStripMenuItem.Click += new System.EventHandler(this.حفظToolStripMenuItem_Click);
             // 
             // تعديلToolStripMenuItem
             // 
@@ -94,6 +96,7 @@ namespace SalesManagementSystem.Forms
             this.تعديلToolStripMenuItem.Name = "تعديلToolStripMenuItem";
             this.تعديلToolStripMenuItem.Size = new System.Drawing.Size(63, 33);
             this.تعديلToolStripMenuItem.Text = "تعديل";
+            this.تعديلToolStripMenuItem.Click += new System.EventHandler(this.تعديلToolStripMenuItem_Click);
             // 
             // إلغاءToolStripMenuItem
             // 
@@ -101,6 +104,7 @@ namespace SalesManagementSystem.Forms
             this.إلغاءToolStripMenuItem.Name = "إلغاءToolStripMenuItem";
             this.إلغاءToolStripMenuItem.Size = new System.Drawing.Size(57, 33);
             this.إلغاءToolStripMenuItem.Text = "إلغاء";
+            this.إلغاءToolStripMenuItem.Click += new System.EventHandler(this.إلغاءToolStripMenuItem_Click);
             // 
             // label1
             // 
@@ -121,6 +125,7 @@ namespace SalesManagementSystem.Forms
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(384, 42);
             this.textBox1.TabIndex = 3;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label4
             // 
@@ -169,12 +174,14 @@ namespace SalesManagementSystem.Forms
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(255, 37);
             this.comboBox1.TabIndex = 11;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // تعديلToolStripMenuItem1
             // 
             this.تعديلToolStripMenuItem1.Name = "تعديلToolStripMenuItem1";
-            this.تعديلToolStripMenuItem1.Size = new System.Drawing.Size(115, 24);
+            this.تعديلToolStripMenuItem1.Size = new System.Drawing.Size(210, 24);
             this.تعديلToolStripMenuItem1.Text = "تعديل";
+            this.تعديلToolStripMenuItem1.Click += new System.EventHandler(this.تعديلToolStripMenuItem1_Click);
             // 
             // contextMenuStrip1
             // 
@@ -183,7 +190,7 @@ namespace SalesManagementSystem.Forms
             this.تعديلToolStripMenuItem1});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.contextMenuStrip1.Size = new System.Drawing.Size(116, 28);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(211, 56);
             // 
             // dataGridView1
             // 
@@ -226,6 +233,7 @@ namespace SalesManagementSystem.Forms
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(255, 37);
             this.comboBox2.TabIndex = 13;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -257,6 +265,7 @@ namespace SalesManagementSystem.Forms
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(287, 42);
             this.textBox3.TabIndex = 5;
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // label3
             // 

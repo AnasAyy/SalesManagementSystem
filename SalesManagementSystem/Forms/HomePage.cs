@@ -152,7 +152,5 @@ namespace SalesManagementSystem
         {
             AccountForm.GetaccountForm.Show();
         }
-
-        
     }
 }

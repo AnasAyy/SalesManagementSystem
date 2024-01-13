@@ -170,6 +170,5 @@ namespace SalesManagementSystem.Forms
                 label13.Visible = false;
             }
         }
-
     }
 }
