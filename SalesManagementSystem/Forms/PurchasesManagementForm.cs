@@ -53,7 +53,7 @@ namespace SalesManagementSystem.Forms
 
         }
 
-        private void textBox7_KeyPress(object sender, KeyPressEventArgs e)
+        private void textBox7_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {

@@ -13,35 +13,38 @@ namespace SalesManagementSystem.Controllers
             var db = new DataBaseContext();
             try
             {
-                
                 var conn = new SqlConnection(db.Database.Connection.ConnectionString);
                 DataTable dt = new DataTable();
                 dt.Clear();
-                SqlDataAdapter da = new SqlDataAdapter();
+
                 if (conn.State == ConnectionState.Closed)
                 {
                     conn.Open();
                 }
-                SqlCommand comm = new SqlCommand();
-                da = new SqlDataAdapter("SELECT Id AS 'الرقم', " +
-                     "CASE WHEN BillType = 3 THEN N'مشتريات' ELSE N'مرتجع' END AS 'نوع المشتريات'," +
-                     "TotalPrice AS 'مبلغ المشتريات', " +
-                     "TotalLocalPrice AS 'اجمالي الملغ بالعملة المحلية', " +
-                     "Note AS 'تفاصيل' " +
-                     "FROM Bills " +
-                     "WHERE BillType IN(3,4)", conn.ConnectionString);
 
-                da.Fill(dt);
-                if (dt.Rows.Count > 0)
+                SqlCommand comm = new SqlCommand();
+                comm.Connection = conn;
+                comm.CommandText = "SELECT Id AS 'الرقم', " +
+                    "CASE WHEN BillType = 3 THEN N'مشتريات' ELSE N'مرتجع' END AS 'نوع المشتريات'," +
+                    "TotalPrice AS 'مبلغ المشتريات', " +
+                    "TotalLocalPrice AS 'اجمالي الملغ بالعملة المحلية', " +
+                    "Note AS 'تفاصيل' " +
+                    "FROM Bills " +
+                    "WHERE BillType IN(3,4)";
+
+                SqlDataReader reader = comm.ExecuteReader();
+                if (reader.HasRows)
                 {
+                    dt.Load(reader);
                     form.dataGridView1.DataSource = dt;
-                    da.Dispose();
-                    dt.Dispose();
                 }
                 else
                 {
                     MessageBox.Show("لا توجد بيانات");
                 }
+
+                reader.Close();
+                conn.Close();
             }
             catch (Exception ex)
             {
@@ -56,37 +59,45 @@ namespace SalesManagementSystem.Controllers
             {
                 if (form.textBox7.Text.Trim() != "")
                 {
-
-
                     var conn = new SqlConnection(db.Database.Connection.ConnectionString);
                     DataTable dt = new DataTable();
                     dt.Clear();
-                    SqlDataAdapter da = new SqlDataAdapter();
+
                     if (conn.State == ConnectionState.Closed)
                     {
                         conn.Open();
                     }
-                    SqlCommand comm = new SqlCommand();
-                    da = new SqlDataAdapter("SELECT Id AS 'الرقم', " +
-                         "CASE WHEN BillType = 3 THEN N'مشتريات' ELSE N'مرتجع' END AS 'نوع المشتريات'," +
-                         "TotalPrice AS 'مبلغ المشتريات', " +
-                         "TotalLocalPrice AS 'اجمالي الملغ بالعملة المحلية', " +
-                         "Note AS 'تفاصيل' " +
-                         "FROM Bills " +
-                         "WHERE BillType IN(3,4) AND Id = '" + Convert.ToInt32(form.textBox7.Text) + "' ", conn.ConnectionString);
 
-                    da.Fill(dt);
-                    if (dt.Rows.Count > 0)
+                    SqlCommand comm = new SqlCommand();
+                    comm.Connection = conn;
+                    comm.CommandText = "SELECT Id AS 'الرقم', " +
+                        "CASE WHEN BillType = 3 THEN N'مشتريات' ELSE N'مرتجع' END AS 'نوع المشتريات'," +
+                        "TotalPrice AS 'مبلغ المشتريات', " +
+                        "TotalLocalPrice AS 'اجمالي الملغ بالعملة المحلية', " +
+                        "Note AS 'تفاصيل' " +
+                        "FROM Bills " +
+                        "WHERE BillType IN(3,4) AND Id = @Id";
+
+                    comm.Parameters.AddWithValue("@Id", Convert.ToInt32(form.textBox7.Text));
+
+                    SqlDataReader reader = comm.ExecuteReader();
+                    if (reader.HasRows)
                     {
+                        dt.Load(reader);
                         form.dataGridView1.DataSource = dt;
-                        da.Dispose();
-                        dt.Dispose();
                     }
                     else
                     {
                         MessageBox.Show("لا توجد بيانات");
                     }
-                }else FilldataGridView(form);
+
+                    reader.Close();
+                    conn.Close();
+                }
+                else
+                {
+                    FilldataGridView(form);
+                }
             }
             catch (Exception ex)
             {
@@ -98,64 +109,62 @@ namespace SalesManagementSystem.Controllers
             var db = new DataBaseContext();
             try
             {
-                
+                var conn = new SqlConnection(db.Database.Connection.ConnectionString);
+                DataTable dt = new DataTable();
+                dt.Clear();
 
-                
+                if (conn.State == ConnectionState.Closed)
+                {
+                    conn.Open();
+                }
 
-                
-                    var conn = new SqlConnection(db.Database.Connection.ConnectionString);
-                    DataTable dt = new DataTable();
-                    dt.Clear();
-                    SqlDataAdapter da = new SqlDataAdapter();
-                    if (conn.State == ConnectionState.Closed)
-                    {
-                        conn.Open();
-                    }
+                SqlCommand comm = new SqlCommand();
+                comm.Connection = conn;
+
                 if (form.radioButton1.Checked == true)
                 {
-                    SqlCommand comm = new SqlCommand();
-                    da = new SqlDataAdapter("SELECT Id AS 'الرقم', " +
-                         "CASE WHEN BillType = 3 THEN N'مشتريات' ELSE N'مرتجع' END AS 'نوع المشتريات'," +
-                         "TotalPrice AS 'مبلغ المشتريات', " +
-                         "TotalLocalPrice AS 'اجمالي الملغ بالعملة المحلية', " +
-                         "Note AS 'تفاصيل' " +
-                         "FROM Bills " +
-                         "WHERE BillType IN(3,4) AND  BillType = 3 ", conn.ConnectionString);
+                    comm.CommandText = "SELECT Id AS 'الرقم', " +
+                        "CASE WHEN BillType = 3 THEN N'مشتريات' ELSE N'مرتجع' END AS 'نوع المشتريات'," +
+                        "TotalPrice AS 'مبلغ المشتريات', " +
+                        "TotalLocalPrice AS 'اجمالي الملغ بالعملة المحلية', " +
+                        "Note AS 'تفاصيل' " +
+                        "FROM Bills " +
+                        "WHERE BillType IN(3,4) AND  BillType = 3 ";
                 }
                 if (form.radioButton2.Checked == true)
                 {
-                    SqlCommand comm = new SqlCommand();
-                    da = new SqlDataAdapter("SELECT Id AS 'الرقم', " +
-                         "CASE WHEN BillType = 3 THEN N'مشتريات' ELSE N'مرتجع' END AS 'نوع المشتريات'," +
-                         "TotalPrice AS 'مبلغ المشتريات', " +
-                         "TotalLocalPrice AS 'اجمالي الملغ بالعملة المحلية', " +
-                         "Note AS 'تفاصيل' " +
-                         "FROM Bills " +
-                         "WHERE BillType IN(3,4) AND  BillType = 4 ", conn.ConnectionString);
+                    comm.CommandText = "SELECT Id AS 'الرقم', " +
+                        "CASE WHEN BillType = 3 THEN N'مشتريات' ELSE N'مرتجع' END AS 'نوع المشتريات'," +
+                        "TotalPrice AS 'مبلغ المشتريات', " +
+                        "TotalLocalPrice AS 'اجمالي الملغ بالعملة المحلية', " +
+                        "Note AS 'تفاصيل' " +
+                        "FROM Bills " +
+                        "WHERE BillType IN(3,4) AND  BillType = 4 ";
                 }
                 if (form.radioButton3.Checked == true)
                 {
-                    SqlCommand comm = new SqlCommand();
-                    da = new SqlDataAdapter("SELECT Id AS 'الرقم', " +
-                         "CASE WHEN BillType = 3 THEN N'مشتريات' ELSE N'مرتجع' END AS 'نوع المشتريات'," +
-                         "TotalPrice AS 'مبلغ المشتريات', " +
-                         "TotalLocalPrice AS 'اجمالي الملغ بالعملة المحلية', " +
-                         "Note AS 'تفاصيل' " +
-                         "FROM Bills " +
-                         "WHERE BillType IN(3,4)", conn.ConnectionString);
+                    comm.CommandText = "SELECT Id AS 'الرقم', " +
+                        "CASE WHEN BillType = 3 THEN N'مشتريات' ELSE N'مرتجع' END AS 'نوع المشتريات'," +
+                        "TotalPrice AS 'مبلغ المشتريات', " +
+                        "TotalLocalPrice AS 'اجمالي الملغ بالعملة المحلية', " +
+                        "Note AS 'تفاصيل' " +
+                        "FROM Bills " +
+                        "WHERE BillType IN(3,4)";
                 }
-                da.Fill(dt);
-                    if (dt.Rows.Count > 0)
-                    {
-                        form.dataGridView1.DataSource = dt;
-                        da.Dispose();
-                        dt.Dispose();
-                    }
-                    else
-                    {
-                        MessageBox.Show("لا توجد بيانات");
-                    }
-                
+
+                SqlDataReader reader = comm.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    dt.Load(reader);
+                    form.dataGridView1.DataSource = dt;
+                }
+                else
+                {
+                    MessageBox.Show("لا توجد بيانات");
+                }
+
+                reader.Close();
+                conn.Close();
             }
             catch (Exception ex)
             {
