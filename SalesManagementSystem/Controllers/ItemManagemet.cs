@@ -62,42 +62,45 @@ namespace SalesManagementSystem.Controllers
             var db = new DataBaseContext();
             try
             {
-                var conn = new SqlConnection(db.Database.Connection.ConnectionString);
-                DataTable dt = new DataTable();
-                dt.Clear();
-                SqlDataAdapter da = new SqlDataAdapter();
-                if (conn.State == ConnectionState.Closed)
+                using (var conn = new SqlConnection(db.Database.Connection.ConnectionString))
                 {
-                    conn.Open();
-                }
-                SqlCommand comm = new SqlCommand();
-                da = new SqlDataAdapter("SELECT i.Id AS 'الرقم', " +
-                    "i.Name AS 'الاسم'," +
-                    "c.Name AS 'الفئة', " +
-                    "i.Barcode AS 'باركود', " +
-                    "i.Quantity AS 'الكمية في المخزن', " +
-                    "i.BuyPrice AS 'سعر الشراء', " +
-                    "i.LessQuantity AS 'اقل كمية', " +
-                    "CASE WHEN i.IsActive = 1 THEN N'مفعل' ELSE N'غير مفعل' END AS 'الحالة', " +
-                    "i.Quantity * i.BuyPrice AS 'اجمالي سعر الشراء' " +
-                    "FROM Items i join Categories c on i.CategoryId = c.Id", conn.ConnectionString);
+                    if (conn.State == ConnectionState.Closed)
+                    {
+                        conn.Open();
+                    }
+                    SqlCommand comm = new SqlCommand("SELECT i.Id AS 'الرقم', " +
+                                                      "i.Name AS 'الاسم'," +
+                                                      "c.Name AS 'الفئة', " +
+                                                      "i.Barcode AS 'باركود', " +
+                                                      "i.Quantity AS 'الكمية في المخزن', " +
+                                                      "i.BuyPrice AS 'سعر الشراء', " +
+                                                      "i.LessQuantity AS 'اقل كمية', " +
+                                                      "CASE WHEN i.IsActive = 1 THEN N'مفعل' ELSE N'غير مفعل' END AS 'الحالة', " +
+                                                      "i.Quantity * i.BuyPrice AS 'اجمالي سعر الشراء' " +
+                                                      "FROM Items i join Categories c on i.CategoryId = c.Id", conn);
 
-                da.Fill(dt);
-                if (dt.Rows.Count > 0)
-                {
-                    form.dataGridView1.DataSource = dt;
-                    da.Dispose();
-                    dt.Dispose();
-                }
-                else
-                {
-                    MessageBox.Show("لا توجد بيانات");
+                    SqlDataReader reader = comm.ExecuteReader();
+                    DataTable dt = new DataTable();
+                    dt.Load(reader);
+
+                    if (dt.Rows.Count > 0)
+                    {
+                        form.dataGridView1.DataSource = dt;
+                    }
+                    else
+                    {
+                        MessageBox.Show("لا توجد بيانات");
+                    }
+
+                    reader.Close();
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+
+
         }
 
         public static void Add(ItemForm form)
@@ -204,7 +207,8 @@ namespace SalesManagementSystem.Controllers
             var db = new DataBaseContext();
             try
             {
-                var client = db.Items.FirstOrDefault(x => x.Id == Convert.ToInt32(cellValue));
+                int o = Convert.ToInt32(cellValue);
+                var client = db.Items.FirstOrDefault(x => x.Id == o);
                 if (client == null)
                 {
                     MessageBox.Show("خطأ في جلب البيانات");
@@ -214,12 +218,12 @@ namespace SalesManagementSystem.Controllers
                     form.id = Convert.ToInt32(selectedRow.Cells[0].Value.ToString());
                     form.textBox1.Text = selectedRow.Cells[1].Value.ToString();
                     form.textBox4.Text = selectedRow.Cells[3].Value.ToString();
-                    form.textBox2.Text = selectedRow.Cells[4].Value.ToString();
-                    if (selectedRow.Cells[5].Value.ToString() == "مفعل")
+                    form.textBox2.Text = selectedRow.Cells[6].Value.ToString();
+                    if (selectedRow.Cells[7].Value.ToString() == "مفعل")
                     {
                         form.radioButton1.Checked = true;
                     }
-                    if (selectedRow.Cells[5].Value.ToString() == "غير مفعل")
+                    if (selectedRow.Cells[7].Value.ToString() == "غير مفعل")
                     {
                         form.radioButton2.Checked = true;
 
@@ -255,36 +259,37 @@ namespace SalesManagementSystem.Controllers
             var db = new DataBaseContext();
             try
             {
-                var conn = new SqlConnection(db.Database.Connection.ConnectionString);
-                DataTable dt = new DataTable();
-                dt.Clear();
-                SqlDataAdapter da = new SqlDataAdapter();
-                if (conn.State == ConnectionState.Closed)
+                using (var conn = new SqlConnection(db.Database.Connection.ConnectionString))
                 {
-                    conn.Open();
-                }
-                SqlCommand comm = new SqlCommand();
-                da = new SqlDataAdapter("SELECT i.Id AS 'الرقم', " +
-                    "i.Name AS 'الاسم'," +
-                    "c.Name AS 'الفئة', " +
-                    "i.Barcode AS 'باركود', " +
-                    " i.LessQuantity AS 'اقل كمية', " +
-                    " CASE WHEN i.IsActive = 1 THEN N'مفعل' ELSE N'غير مفعل' END AS 'الحالة' " +
-                    "FROM Items i join Categories c on i.CategoryId = c.Id " +
-                    "WHERE  " +
-                    "i.Name LIKE N'%" + form.textBox3.Text + "%' ", conn.ConnectionString);
+                    if (conn.State == ConnectionState.Closed)
+                    {
+                        conn.Open();
+                    }
+                    SqlCommand comm = new SqlCommand("SELECT i.Id AS 'الرقم', " +
+                                                      "i.Name AS 'الاسم', " +
+                                                      "c.Name AS 'الفئة', " +
+                                                      "i.Barcode AS 'باركود', " +
+                                                      "i.LessQuantity AS 'اقل كمية', " +
+                                                      "CASE WHEN i.IsActive = 1 THEN N'مفعل' ELSE N'غير مفعل' END AS 'الحالة' " +
+                                                      "FROM Items i join Categories c on i.CategoryId = c.Id " +
+                                                      "WHERE i.Name LIKE '%' + @searchText + '%'", conn);
+                    comm.Parameters.AddWithValue("@searchText", form.textBox3.Text);
 
-                da.Fill(dt);
-                if (dt.Rows.Count > 0)
-                {
-                    form.dataGridView1.DataSource = dt;
-                    da.Dispose();
-                    dt.Dispose();
-                }
-                else
-                {
-                    form.dataGridView1.DataSource = null;
-                    MessageBox.Show("لاتوجد بيانات");
+                    SqlDataReader reader = comm.ExecuteReader();
+                    DataTable dt = new DataTable();
+                    dt.Load(reader);
+
+                    if (dt.Rows.Count > 0)
+                    {
+                        form.dataGridView1.DataSource = dt;
+                    }
+                    else
+                    {
+                        form.dataGridView1.DataSource = null;
+                        MessageBox.Show("لاتوجد بيانات");
+                    }
+
+                    reader.Close();
                 }
             }
             catch (Exception ex)
@@ -305,7 +310,7 @@ namespace SalesManagementSystem.Controllers
                 {
                     if (form.textBox1.Text != selectedRow.Cells[1].Value.ToString())
                     {
-                        var count = db.Items.Count(x => x.Name == form.textBox1.Text );
+                        var count = db.Items.Count(x => x.Name == form.textBox1.Text);
                         if (count > 0)
                         {
                             MessageBox.Show("العنصر موجود مسبقا");
@@ -315,7 +320,7 @@ namespace SalesManagementSystem.Controllers
                     }
                     if (form.textBox4.Text != selectedRow.Cells[3].Value.ToString())
                     {
-                        var count = db.Items.Count(x => x.Barcode == form.textBox4.Text );
+                        var count = db.Items.Count(x => x.Barcode == form.textBox4.Text);
                         if (count > 0)
                         {
                             MessageBox.Show("العنصر موجود مسبقا");

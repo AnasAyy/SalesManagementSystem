@@ -94,7 +94,7 @@ namespace SalesManagementSystem.Forms
             this.textBox4.Enabled = false;
             this.textBox4.Font = new System.Drawing.Font("Cairo", 11F);
             this.textBox4.Location = new System.Drawing.Point(246, 137);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(2);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(194, 35);
             this.textBox4.TabIndex = 19;
@@ -116,10 +116,11 @@ namespace SalesManagementSystem.Forms
             this.textBox2.Enabled = false;
             this.textBox2.Font = new System.Drawing.Font("Cairo", 11F);
             this.textBox2.Location = new System.Drawing.Point(578, 132);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(330, 35);
             this.textBox2.TabIndex = 17;
+            this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
             // 
             // label5
             // 
@@ -140,7 +141,7 @@ namespace SalesManagementSystem.Forms
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.ItemHeight = 13;
             this.comboBox2.Location = new System.Drawing.Point(246, 85);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(194, 21);
             this.comboBox2.TabIndex = 15;
@@ -163,7 +164,7 @@ namespace SalesManagementSystem.Forms
             this.radioButton2.Enabled = false;
             this.radioButton2.Font = new System.Drawing.Font("Cairo", 11.25F);
             this.radioButton2.Location = new System.Drawing.Point(11, 80);
-            this.radioButton2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioButton2.Margin = new System.Windows.Forms.Padding(2);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(85, 33);
             this.radioButton2.TabIndex = 13;
@@ -178,7 +179,7 @@ namespace SalesManagementSystem.Forms
             this.radioButton1.Enabled = false;
             this.radioButton1.Font = new System.Drawing.Font("Cairo", 11.25F);
             this.radioButton1.Location = new System.Drawing.Point(110, 80);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioButton1.Margin = new System.Windows.Forms.Padding(2);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.radioButton1.Size = new System.Drawing.Size(64, 33);
@@ -205,7 +206,7 @@ namespace SalesManagementSystem.Forms
             this.textBox1.Enabled = false;
             this.textBox1.Font = new System.Drawing.Font("Cairo", 11F);
             this.textBox1.Location = new System.Drawing.Point(578, 81);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(330, 35);
             this.textBox1.TabIndex = 3;
@@ -243,6 +244,7 @@ namespace SalesManagementSystem.Forms
             this.جديدToolStripMenuItem.Name = "جديدToolStripMenuItem";
             this.جديدToolStripMenuItem.Size = new System.Drawing.Size(44, 27);
             this.جديدToolStripMenuItem.Text = "جديد";
+            this.جديدToolStripMenuItem.Click += new System.EventHandler(this.جديدToolStripMenuItem_Click);
             // 
             // حفظToolStripMenuItem
             // 
@@ -250,6 +252,7 @@ namespace SalesManagementSystem.Forms
             this.حفظToolStripMenuItem.Name = "حفظToolStripMenuItem";
             this.حفظToolStripMenuItem.Size = new System.Drawing.Size(47, 27);
             this.حفظToolStripMenuItem.Text = "حفظ";
+            this.حفظToolStripMenuItem.Click += new System.EventHandler(this.حفظToolStripMenuItem_Click);
             // 
             // تعديلToolStripMenuItem
             // 
@@ -257,6 +260,7 @@ namespace SalesManagementSystem.Forms
             this.تعديلToolStripMenuItem.Name = "تعديلToolStripMenuItem";
             this.تعديلToolStripMenuItem.Size = new System.Drawing.Size(50, 27);
             this.تعديلToolStripMenuItem.Text = "تعديل";
+            this.تعديلToolStripMenuItem.Click += new System.EventHandler(this.تعديلToolStripMenuItem_Click);
             // 
             // إلغاءToolStripMenuItem
             // 
@@ -264,6 +268,7 @@ namespace SalesManagementSystem.Forms
             this.إلغاءToolStripMenuItem.Name = "إلغاءToolStripMenuItem";
             this.إلغاءToolStripMenuItem.Size = new System.Drawing.Size(47, 27);
             this.إلغاءToolStripMenuItem.Text = "إلغاء";
+            this.إلغاءToolStripMenuItem.Click += new System.EventHandler(this.إلغاءToolStripMenuItem_Click);
             // 
             // groupBox2
             // 
@@ -272,9 +277,9 @@ namespace SalesManagementSystem.Forms
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox2.Location = new System.Drawing.Point(0, 181);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(1012, 62);
             this.groupBox2.TabIndex = 12;
             this.groupBox2.TabStop = false;
@@ -286,19 +291,19 @@ namespace SalesManagementSystem.Forms
             this.button1.Font = new System.Drawing.Font("Cairo", 9F, System.Drawing.FontStyle.Bold);
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(578, 13);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(73, 37);
             this.button1.TabIndex = 6;
             this.button1.Text = "بحث";
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox3
             // 
             this.textBox3.Font = new System.Drawing.Font("Cairo", 11F);
             this.textBox3.Location = new System.Drawing.Point(660, 16);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(246, 35);
             this.textBox3.TabIndex = 5;
@@ -326,15 +331,17 @@ namespace SalesManagementSystem.Forms
             // تعديلToolStripMenuItem1
             // 
             this.تعديلToolStripMenuItem1.Name = "تعديلToolStripMenuItem1";
-            this.تعديلToolStripMenuItem1.Size = new System.Drawing.Size(103, 22);
+            this.تعديلToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.تعديلToolStripMenuItem1.Text = "تعديل";
+            this.تعديلToolStripMenuItem1.Click += new System.EventHandler(this.تعديلToolStripMenuItem1_Click);
             // 
             // dataGridView1
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.ContextMenuStrip = this.contextMenuStrip1;
             this.dataGridView1.Location = new System.Drawing.Point(0, 241);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
@@ -346,8 +353,8 @@ namespace SalesManagementSystem.Forms
             // 
             this.textBox5.Enabled = false;
             this.textBox5.Font = new System.Drawing.Font("Cairo", 11F);
-            this.textBox5.Location = new System.Drawing.Point(905, 554);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox5.Location = new System.Drawing.Point(904, 551);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(2);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(106, 35);
             this.textBox5.TabIndex = 8;
@@ -356,7 +363,7 @@ namespace SalesManagementSystem.Forms
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Cairo", 11F);
-            this.label7.Location = new System.Drawing.Point(845, 559);
+            this.label7.Location = new System.Drawing.Point(836, 554);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(64, 29);
@@ -373,7 +380,7 @@ namespace SalesManagementSystem.Forms
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(1029, 687);
             this.MinimizeBox = false;

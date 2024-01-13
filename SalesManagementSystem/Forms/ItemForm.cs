@@ -47,7 +47,7 @@ namespace SalesManagementSystem.Forms
             ItemManagemet.ResetPage(this);
         }
 
-        private void ItemForm_Load(object sender, EventArgs e)
+        private void ItemForm_Load_1(object sender, EventArgs e)
         {
             ItemManagemet.FillComboBox(this);
             ItemManagemet.FilldataGridView(this);
@@ -84,10 +84,7 @@ namespace SalesManagementSystem.Forms
 
         }
 
-        private void تعديلToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            ItemManagemet.Edit(this);
-        }
+        
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -99,10 +96,7 @@ namespace SalesManagementSystem.Forms
                 ItemManagemet.SearchBox(this);
         }
 
-        private void تعديلToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ItemManagemet.Update(this);
-        }
+       
 
         private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -112,14 +106,14 @@ namespace SalesManagementSystem.Forms
             }
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void تعديلToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-
+            ItemManagemet.Edit(this);
         }
 
-        private void ItemForm_Load_1(object sender, EventArgs e)
+        private void تعديلToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            ItemManagemet.Update(this);
         }
     }
 }

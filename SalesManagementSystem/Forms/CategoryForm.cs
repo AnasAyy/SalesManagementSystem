@@ -41,7 +41,7 @@ namespace SalesManagementSystem.Forms
 
         }
 
-        private void CategoryForm_Load(object sender, EventArgs e)
+        private void CategoryForm_Load_1(object sender, EventArgs e)
         {
             CategoryManagment.FilldataGridView(this);
         }
@@ -62,7 +62,7 @@ namespace SalesManagementSystem.Forms
 
         }
 
-        private void تعديلToolStripMenuItem_Click(object sender, EventArgs e)
+        private void تعديلToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             CategoryManagment.Update(this);
         }
@@ -77,7 +77,7 @@ namespace SalesManagementSystem.Forms
                 CategoryManagment.SearchBox(this);
         }
 
-        private void تعديلToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void تعديلToolStripMenuItem1_Click_1(object sender, EventArgs e)
         {
             CategoryManagment.Edit(this);
         }
@@ -87,9 +87,6 @@ namespace SalesManagementSystem.Forms
 
         }
 
-        private void CategoryForm_Load_1(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

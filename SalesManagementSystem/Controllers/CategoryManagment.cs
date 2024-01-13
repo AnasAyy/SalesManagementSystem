@@ -152,33 +152,34 @@ namespace SalesManagementSystem.Controllers
             var db = new DataBaseContext();
             try
             {
-                var conn = new SqlConnection(db.Database.Connection.ConnectionString);
-                DataTable dt = new DataTable();
-                dt.Clear();
-                SqlDataAdapter da = new SqlDataAdapter();
-                if (conn.State == ConnectionState.Closed)
+                using (var conn = new SqlConnection(db.Database.Connection.ConnectionString))
                 {
-                    conn.Open();
-                }
-                SqlCommand comm = new SqlCommand();
-                da = new SqlDataAdapter("SELECT c.Id AS 'الرقم', " +
-                    "c.Name AS 'الاسم', " +
-                    "CASE WHEN c.IsActive = 1 THEN N'مفعل' ELSE N'غير مفعل' END AS 'الحالة' " +
-                    "FROM Categories c " +
-                    "WHERE  " +
-                    "c.Name LIKE N'%" + form.textBox3.Text + "%' ", conn.ConnectionString);
+                    if (conn.State == ConnectionState.Closed)
+                    {
+                        conn.Open();
+                    }
+                    SqlCommand comm = new SqlCommand("SELECT c.Id AS 'الرقم', " +
+                                                      "c.Name AS 'الاسم', " +
+                                                      "CASE WHEN c.IsActive = 1 THEN N'مفعل' ELSE N'غير مفعل' END AS 'الحالة' " +
+                                                      "FROM Categories c " +
+                                                      "WHERE c.Name LIKE '%' + @searchText + '%'", conn);
+                    comm.Parameters.AddWithValue("@searchText", form.textBox3.Text);
 
-                da.Fill(dt);
-                if (dt.Rows.Count > 0)
-                {
-                    form.dataGridView1.DataSource = dt;
-                    da.Dispose();
-                    dt.Dispose();
-                }
-                else
-                {
-                    form.dataGridView1.DataSource = null;
-                    MessageBox.Show("لاتوجد بيانات");
+                    SqlDataReader reader = comm.ExecuteReader();
+                    DataTable dt = new DataTable();
+                    dt.Load(reader);
+
+                    if (dt.Rows.Count > 0)
+                    {
+                        form.dataGridView1.DataSource = dt;
+                    }
+                    else
+                    {
+                        form.dataGridView1.DataSource = null;
+                        MessageBox.Show("لاتوجد بيانات");
+                    }
+
+                    reader.Close();
                 }
             }
             catch (Exception ex)
@@ -191,30 +192,31 @@ namespace SalesManagementSystem.Controllers
             var db = new DataBaseContext();
             try
             {
-                var conn = new SqlConnection(db.Database.Connection.ConnectionString);
-                DataTable dt = new DataTable();
-                dt.Clear();
-                SqlDataAdapter da = new SqlDataAdapter();
-                if (conn.State == ConnectionState.Closed)
+                using (var conn = new SqlConnection(db.Database.Connection.ConnectionString))
                 {
-                    conn.Open();
-                }
-                SqlCommand comm = new SqlCommand();
-                da = new SqlDataAdapter("SELECT c.Id AS 'الرقم', " +
-                    "c.Name AS 'الاسم', " +
-                    "CASE WHEN c.IsActive = 1 THEN N'مفعل' ELSE N'غير مفعل' END AS 'الحالة' " +
-                    "FROM Categories c", conn.ConnectionString);
+                    if (conn.State == ConnectionState.Closed)
+                    {
+                        conn.Open();
+                    }
+                    SqlCommand comm = new SqlCommand("SELECT c.Id AS 'الرقم', " +
+                                                      "c.Name AS 'الاسم', " +
+                                                      "CASE WHEN c.IsActive = 1 THEN N'مفعل' ELSE N'غير مفعل' END AS 'الحالة' " +
+                                                      "FROM Categories c", conn);
 
-                da.Fill(dt);
-                if (dt.Rows.Count > 0)
-                {
-                    form.dataGridView1.DataSource = dt;
-                    da.Dispose();
-                    dt.Dispose();
-                }
-                else
-                {
-                    MessageBox.Show("لا توجد بيانات");
+                    SqlDataReader reader = comm.ExecuteReader();
+                    DataTable dt = new DataTable();
+                    dt.Load(reader);
+
+                    if (dt.Rows.Count > 0)
+                    {
+                        form.dataGridView1.DataSource = dt;
+                    }
+                    else
+                    {
+                        MessageBox.Show("لا توجد بيانات");
+                    }
+
+                    reader.Close();
                 }
             }
             catch (Exception ex)
@@ -239,7 +241,8 @@ namespace SalesManagementSystem.Controllers
             var db = new DataBaseContext();
             try
             {
-                var client = db.Categories.FirstOrDefault(x => x.Id == Convert.ToInt32(cellValue));
+                int o = Convert.ToInt32(cellValue);
+                var client = db.Categories.FirstOrDefault(x => x.Id == o);
                 if (client == null)
                 {
                     MessageBox.Show("خطأ في جلب البيانات");
