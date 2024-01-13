@@ -73,7 +73,7 @@ namespace SalesManagementSystem
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(781, 39);
+            this.menuStrip1.Size = new System.Drawing.Size(781, 33);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -83,20 +83,20 @@ namespace SalesManagementSystem
             this.تسجيلالدخولToolStripMenuItem1,
             this.تسجيلالخروجToolStripMenuItem});
             this.تسجيلالدخولToolStripMenuItem.Name = "تسجيلالدخولToolStripMenuItem";
-            this.تسجيلالدخولToolStripMenuItem.Size = new System.Drawing.Size(73, 33);
+            this.تسجيلالدخولToolStripMenuItem.Size = new System.Drawing.Size(60, 27);
             this.تسجيلالدخولToolStripMenuItem.Text = "الرئيسية";
             // 
             // تسجيلالدخولToolStripMenuItem1
             // 
             this.تسجيلالدخولToolStripMenuItem1.Name = "تسجيلالدخولToolStripMenuItem1";
-            this.تسجيلالدخولToolStripMenuItem1.Size = new System.Drawing.Size(224, 34);
+            this.تسجيلالدخولToolStripMenuItem1.Size = new System.Drawing.Size(180, 28);
             this.تسجيلالدخولToolStripMenuItem1.Text = "تسجيل الدخول";
             this.تسجيلالدخولToolStripMenuItem1.Click += new System.EventHandler(this.تسجيلالدخولToolStripMenuItem1_Click_1);
             // 
             // تسجيلالخروجToolStripMenuItem
             // 
             this.تسجيلالخروجToolStripMenuItem.Name = "تسجيلالخروجToolStripMenuItem";
-            this.تسجيلالخروجToolStripMenuItem.Size = new System.Drawing.Size(224, 34);
+            this.تسجيلالخروجToolStripMenuItem.Size = new System.Drawing.Size(180, 28);
             this.تسجيلالخروجToolStripMenuItem.Text = "تسجيل الخروج";
             this.تسجيلالخروجToolStripMenuItem.Visible = false;
             this.تسجيلالخروجToolStripMenuItem.Click += new System.EventHandler(this.تسجيلالخروجToolStripMenuItem_Click_1);
@@ -108,35 +108,35 @@ namespace SalesManagementSystem
             this.ادارةالتجارToolStripMenuItem,
             this.ادارةالمتغيراتToolStripMenuItem});
             this.ادارةالنظامToolStripMenuItem.Name = "ادارةالنظامToolStripMenuItem";
-            this.ادارةالنظامToolStripMenuItem.Size = new System.Drawing.Size(94, 33);
+            this.ادارةالنظامToolStripMenuItem.Size = new System.Drawing.Size(78, 27);
             this.ادارةالنظامToolStripMenuItem.Text = "ادارة النظام";
             this.ادارةالنظامToolStripMenuItem.Visible = false;
             // 
             // ادارةالمستخدمينToolStripMenuItem
             // 
             this.ادارةالمستخدمينToolStripMenuItem.Name = "ادارةالمستخدمينToolStripMenuItem";
-            this.ادارةالمستخدمينToolStripMenuItem.Size = new System.Drawing.Size(224, 34);
+            this.ادارةالمستخدمينToolStripMenuItem.Size = new System.Drawing.Size(150, 28);
             this.ادارةالمستخدمينToolStripMenuItem.Text = "ادارة العملاء";
             this.ادارةالمستخدمينToolStripMenuItem.Click += new System.EventHandler(this.ادارةالمستخدمينToolStripMenuItem_Click);
             // 
             // ادارةالتجارToolStripMenuItem
             // 
             this.ادارةالتجارToolStripMenuItem.Name = "ادارةالتجارToolStripMenuItem";
-            this.ادارةالتجارToolStripMenuItem.Size = new System.Drawing.Size(224, 34);
+            this.ادارةالتجارToolStripMenuItem.Size = new System.Drawing.Size(150, 28);
             this.ادارةالتجارToolStripMenuItem.Text = "ادارة الموردين";
             this.ادارةالتجارToolStripMenuItem.Click += new System.EventHandler(this.ادارةالتجارToolStripMenuItem_Click);
             // 
             // ادارةالمتغيراتToolStripMenuItem
             // 
             this.ادارةالمتغيراتToolStripMenuItem.Name = "ادارةالمتغيراتToolStripMenuItem";
-            this.ادارةالمتغيراتToolStripMenuItem.Size = new System.Drawing.Size(224, 34);
+            this.ادارةالمتغيراتToolStripMenuItem.Size = new System.Drawing.Size(150, 28);
             this.ادارةالمتغيراتToolStripMenuItem.Text = "ادارة المتغيرات";
             this.ادارةالمتغيراتToolStripMenuItem.Click += new System.EventHandler(this.ادارةالمتغيراتToolStripMenuItem_Click);
             // 
             // التقاريرToolStripMenuItem
             // 
             this.التقاريرToolStripMenuItem.Name = "التقاريرToolStripMenuItem";
-            this.التقاريرToolStripMenuItem.Size = new System.Drawing.Size(112, 33);
+            this.التقاريرToolStripMenuItem.Size = new System.Drawing.Size(90, 27);
             this.التقاريرToolStripMenuItem.Text = "ادارة الحسابات";
             this.التقاريرToolStripMenuItem.Visible = false;
             this.التقاريرToolStripMenuItem.Click += new System.EventHandler(this.التقاريرToolStripMenuItem_Click_1);
@@ -147,21 +147,21 @@ namespace SalesManagementSystem
             this.اضافةفاتورةToolStripMenuItem,
             this.ارجاعفاتورةToolStripMenuItem});
             this.ادارةالمبيعاتToolStripMenuItem.Name = "ادارةالمبيعاتToolStripMenuItem";
-            this.ادارةالمبيعاتToolStripMenuItem.Size = new System.Drawing.Size(110, 33);
+            this.ادارةالمبيعاتToolStripMenuItem.Size = new System.Drawing.Size(90, 27);
             this.ادارةالمبيعاتToolStripMenuItem.Text = "ادارة المبيعات";
             this.ادارةالمبيعاتToolStripMenuItem.Visible = false;
             // 
             // اضافةفاتورةToolStripMenuItem
             // 
             this.اضافةفاتورةToolStripMenuItem.Name = "اضافةفاتورةToolStripMenuItem";
-            this.اضافةفاتورةToolStripMenuItem.Size = new System.Drawing.Size(224, 34);
+            this.اضافةفاتورةToolStripMenuItem.Size = new System.Drawing.Size(148, 28);
             this.اضافةفاتورةToolStripMenuItem.Text = "أضافة عملية";
             this.اضافةفاتورةToolStripMenuItem.Click += new System.EventHandler(this.اضافةفاتورةToolStripMenuItem_Click);
             // 
             // ارجاعفاتورةToolStripMenuItem
             // 
             this.ارجاعفاتورةToolStripMenuItem.Name = "ارجاعفاتورةToolStripMenuItem";
-            this.ارجاعفاتورةToolStripMenuItem.Size = new System.Drawing.Size(224, 34);
+            this.ارجاعفاتورةToolStripMenuItem.Size = new System.Drawing.Size(148, 28);
             this.ارجاعفاتورةToolStripMenuItem.Text = "ادارة المبيعات";
             this.ارجاعفاتورةToolStripMenuItem.Click += new System.EventHandler(this.ارجاعفاتورةToolStripMenuItem_Click);
             // 
@@ -171,7 +171,7 @@ namespace SalesManagementSystem
             this.عمليةشراءجديدةToolStripMenuItem,
             this.ادارةالمشToolStripMenuItem});
             this.ادارةالمشترياتToolStripMenuItem.Name = "ادارةالمشترياتToolStripMenuItem";
-            this.ادارةالمشترياتToolStripMenuItem.Size = new System.Drawing.Size(119, 33);
+            this.ادارةالمشترياتToolStripMenuItem.Size = new System.Drawing.Size(95, 27);
             this.ادارةالمشترياتToolStripMenuItem.Text = "ادارة المشتريات";
             this.ادارةالمشترياتToolStripMenuItem.Visible = false;
             this.ادارةالمشترياتToolStripMenuItem.Click += new System.EventHandler(this.ادارةالمشترياتToolStripMenuItem_Click_1);
@@ -179,14 +179,14 @@ namespace SalesManagementSystem
             // عمليةشراءجديدةToolStripMenuItem
             // 
             this.عمليةشراءجديدةToolStripMenuItem.Name = "عمليةشراءجديدةToolStripMenuItem";
-            this.عمليةشراءجديدةToolStripMenuItem.Size = new System.Drawing.Size(178, 34);
+            this.عمليةشراءجديدةToolStripMenuItem.Size = new System.Drawing.Size(144, 28);
             this.عمليةشراءجديدةToolStripMenuItem.Text = "إضافة عملية";
             this.عمليةشراءجديدةToolStripMenuItem.Click += new System.EventHandler(this.عمليةشراءجديدةToolStripMenuItem_Click_1);
             // 
             // ادارةالمشToolStripMenuItem
             // 
             this.ادارةالمشToolStripMenuItem.Name = "ادارةالمشToolStripMenuItem";
-            this.ادارةالمشToolStripMenuItem.Size = new System.Drawing.Size(178, 34);
+            this.ادارةالمشToolStripMenuItem.Size = new System.Drawing.Size(144, 28);
             this.ادارةالمشToolStripMenuItem.Text = "المشتريات";
             this.ادارةالمشToolStripMenuItem.Click += new System.EventHandler(this.ادارةالمشToolStripMenuItem_Click_1);
             // 
@@ -196,33 +196,35 @@ namespace SalesManagementSystem
             this.إدارةالاصنافToolStripMenuItem,
             this.إدارةالاصنافToolStripMenuItem1});
             this.ادارةالمخازنToolStripMenuItem.Name = "ادارةالمخازنToolStripMenuItem";
-            this.ادارةالمخازنToolStripMenuItem.Size = new System.Drawing.Size(103, 33);
+            this.ادارةالمخازنToolStripMenuItem.Size = new System.Drawing.Size(83, 27);
             this.ادارةالمخازنToolStripMenuItem.Text = "ادارة المخازن";
             this.ادارةالمخازنToolStripMenuItem.Visible = false;
             // 
             // إدارةالاصنافToolStripMenuItem
             // 
             this.إدارةالاصنافToolStripMenuItem.Name = "إدارةالاصنافToolStripMenuItem";
-            this.إدارةالاصنافToolStripMenuItem.Size = new System.Drawing.Size(180, 34);
+            this.إدارةالاصنافToolStripMenuItem.Size = new System.Drawing.Size(180, 28);
             this.إدارةالاصنافToolStripMenuItem.Text = "إدارة الفئات";
+            this.إدارةالاصنافToolStripMenuItem.Click += new System.EventHandler(this.إدارةالاصنافToolStripMenuItem_Click_1);
             // 
             // إدارةالاصنافToolStripMenuItem1
             // 
             this.إدارةالاصنافToolStripMenuItem1.Name = "إدارةالاصنافToolStripMenuItem1";
-            this.إدارةالاصنافToolStripMenuItem1.Size = new System.Drawing.Size(180, 34);
+            this.إدارةالاصنافToolStripMenuItem1.Size = new System.Drawing.Size(180, 28);
             this.إدارةالاصنافToolStripMenuItem1.Text = "إدارة الاصناف";
+            this.إدارةالاصنافToolStripMenuItem1.Click += new System.EventHandler(this.إدارةالاصنافToolStripMenuItem1_Click);
             // 
             // ادارةالمصروفاتToolStripMenuItem
             // 
             this.ادارةالمصروفاتToolStripMenuItem.Name = "ادارةالمصروفاتToolStripMenuItem";
-            this.ادارةالمصروفاتToolStripMenuItem.Size = new System.Drawing.Size(107, 33);
+            this.ادارةالمصروفاتToolStripMenuItem.Size = new System.Drawing.Size(85, 27);
             this.ادارةالمصروفاتToolStripMenuItem.Text = "ادارة السندات";
             this.ادارةالمصروفاتToolStripMenuItem.Visible = false;
             // 
             // التقارييرToolStripMenuItem
             // 
             this.التقارييرToolStripMenuItem.Name = "التقارييرToolStripMenuItem";
-            this.التقارييرToolStripMenuItem.Size = new System.Drawing.Size(66, 33);
+            this.التقارييرToolStripMenuItem.Size = new System.Drawing.Size(55, 27);
             this.التقارييرToolStripMenuItem.Text = "التقارير";
             this.التقارييرToolStripMenuItem.Visible = false;
             // 
@@ -230,16 +232,16 @@ namespace SalesManagementSystem
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 39);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 33);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(781, 378);
+            this.pictureBox1.Size = new System.Drawing.Size(781, 384);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
             // HomePage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 29F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(781, 417);
             this.Controls.Add(this.pictureBox1);

@@ -74,8 +74,9 @@ namespace SalesManagementSystem.Controllers
             {
                 try
                 {
-                    var result = db.Items.Where(x => x.CategoryId == Convert.ToInt32(form.comboBox2.SelectedValue))
-                        .ToList();
+                    int selectedCategoryId = Convert.ToInt32(form.comboBox2.SelectedValue);
+                    var result = db.Items.Where(x => x.CategoryId == selectedCategoryId).ToList();
+                        
 
                     if (result.Count > 0)
                     {
@@ -346,7 +347,8 @@ namespace SalesManagementSystem.Controllers
                     // UpdateAccount(Convert.ToInt32(form.comboBox1.SelectedValue.ToString()), Convert.ToDecimal(form.textBox5.Text));
 
 
-                    var result = db.Accounts.FirstOrDefault(x => x.Id == Convert.ToInt32(form.comboBox1.SelectedValue.ToString()));
+                    int selectedAccountId = Convert.ToInt32(form.comboBox1.SelectedValue.ToString());
+                    var result = db.Accounts.FirstOrDefault(x => x.Id == selectedAccountId);
                     if (result == null)
                     {
                         MessageBox.Show("خطأ في جلب الحسابات");
@@ -431,7 +433,9 @@ namespace SalesManagementSystem.Controllers
 
 
                 #region Get Supplier Data
-                var supplier = db.Suppliers.Where(x => x.Id == Convert.ToInt32(form.comboBox5.SelectedValue)).SingleOrDefault();
+                int selectedSupplierId = Convert.ToInt32(form.comboBox5.SelectedValue);
+
+                var supplier = db.Suppliers.SingleOrDefault(x => x.Id == selectedSupplierId);
                 if (supplier == null)
                 {
                     MessageBox.Show("خطأ في جلب بيانات التاجر");

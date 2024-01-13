@@ -82,10 +82,10 @@ namespace SalesManagementSystem
         }
 
 
-        private void إدارةالاصنافToolStripMenuItem_Click(object sender, EventArgs e)
+        private void إدارةالاصنافToolStripMenuItem1_Click(object sender, EventArgs e)
         {
 
-            CategoryForm.GetCategoryForm.Show();
+            ItemForm.GetCategoryForm.Show();
         }
 
         private void اضافةفاتورةToolStripMenuItem_Click(object sender, EventArgs e)
@@ -98,9 +98,9 @@ namespace SalesManagementSystem
             SalesManagmentForm.getSalesManagmentForm.Show();
         }
 
-        private void إدارةالاصنافToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void إدارةالاصنافToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            ItemForm.GetCategoryForm.Show();
+            CategoryForm.GetCategoryForm.Show();
         }
 
         private void ادارةالنظامToolStripMenuItem_Click(object sender, EventArgs e)
@@ -152,5 +152,7 @@ namespace SalesManagementSystem
         {
             AccountForm.GetaccountForm.Show();
         }
+
+       
     }
 }
