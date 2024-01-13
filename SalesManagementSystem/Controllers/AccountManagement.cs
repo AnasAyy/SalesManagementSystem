@@ -101,19 +101,24 @@ namespace SalesManagementSystem.Controllers
                 DataTable dt = new DataTable();
                 dt.Clear();
                 SqlDataAdapter da = new SqlDataAdapter();
+
                 if (conn.State == ConnectionState.Closed)
                 {
                     conn.Open();
                 }
-                SqlCommand comm = new SqlCommand();
-                da = new SqlDataAdapter("SELECT Id as 'الرقم'" +
-                                        ",Name as 'اسم الحساب'" +
-                                        ",Balance as 'الرصيد'" +
-                                        ",CreatedAt as 'تاريخ الانشاء' " +
-                                        ",UpdatedAt as 'تاريخ اخر تعديل على الحساب' " +
-                                        ",Description as 'تفاصيل الحساب' FROM Accounts", conn.ConnectionString);
 
+                SqlCommand comm = new SqlCommand();
+                comm.Connection = conn;
+                comm.CommandText = "SELECT Id as 'الرقم'," +
+                                   "Name as 'اسم الحساب'," +
+                                   "Balance as 'الرصيد'," +
+                                   "CreatedAt as 'تاريخ الانشاء'," +
+                                   "UpdatedAt as 'تاريخ اخر تعديل على الحساب'," +
+                                   "Description as 'تفاصيل الحساب' FROM Accounts";
+
+                da = new SqlDataAdapter(comm);
                 da.Fill(dt);
+
                 if (dt.Rows.Count > 0)
                 {
                     form.dataGridView1.DataSource = dt;
@@ -141,21 +146,28 @@ namespace SalesManagementSystem.Controllers
                 DataTable dt = new DataTable();
                 dt.Clear();
                 SqlDataAdapter da = new SqlDataAdapter();
+
                 if (conn.State == ConnectionState.Closed)
                 {
                     conn.Open();
                 }
-                SqlCommand comm = new SqlCommand();
-                da = new SqlDataAdapter("SELECT Id as 'الرقم'" +
-                                        ",Name as 'اسم الحساب'" +
-                                        ",Balance as 'الرصيد'" +
-                                        ",CreatedAt as 'تاريخ الانشاء' " +
-                                        ",UpdatedAt as 'تاريخ اخر تعديل على الحساب' " +
-                                        ",Description as 'تفاصيل الحساب' FROM Accounts " +
-                    "WHERE  " +
-                    " Name LIKE N'%" + form.textBox3.Text + "%' ", conn.ConnectionString);
 
+                SqlCommand comm = new SqlCommand();
+                comm.Connection = conn;
+                comm.CommandText = "SELECT Id as 'الرقم'," +
+                                   "Name as 'اسم الحساب'," +
+                                   "Balance as 'الرصيد'," +
+                                   "CreatedAt as 'تاريخ الانشاء'," +
+                                   "UpdatedAt as 'تاريخ اخر تعديل على الحساب'," +
+                                   "Description as 'تفاصيل الحساب' " +
+                                   "FROM Accounts " +
+                                   "WHERE Name LIKE '%' + @searchText + '%'";
+
+                comm.Parameters.AddWithValue("@searchText", form.textBox3.Text);
+
+                da = new SqlDataAdapter(comm);
                 da.Fill(dt);
+
                 if (dt.Rows.Count > 0)
                 {
                     form.dataGridView1.DataSource = dt;
@@ -190,7 +202,8 @@ namespace SalesManagementSystem.Controllers
             var db = new DataBaseContext();
             try
             {
-                var client = db.Categories.FirstOrDefault(x => x.Id == Convert.ToInt32(cellValue));
+                int cellValueInt = Convert.ToInt32(cellValue);
+                var client = db.Accounts.FirstOrDefault(x => x.Id == cellValueInt);
                 if (client == null)
                 {
                     MessageBox.Show("خطأ في جلب البيانات");

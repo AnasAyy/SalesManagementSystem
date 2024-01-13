@@ -89,7 +89,7 @@ namespace SalesManagementSystem
             // تسجيلالدخولToolStripMenuItem1
             // 
             this.تسجيلالدخولToolStripMenuItem1.Name = "تسجيلالدخولToolStripMenuItem1";
-            this.تسجيلالدخولToolStripMenuItem1.Size = new System.Drawing.Size(149, 28);
+            this.تسجيلالدخولToolStripMenuItem1.Size = new System.Drawing.Size(180, 28);
             this.تسجيلالدخولToolStripMenuItem1.Text = "تسجيل الدخول";
             this.تسجيلالدخولToolStripMenuItem1.Click += new System.EventHandler(this.تسجيلالدخولToolStripMenuItem1_Click_1);
             // 
@@ -169,18 +169,21 @@ namespace SalesManagementSystem
             this.ادارةالمشترياتToolStripMenuItem.Size = new System.Drawing.Size(95, 27);
             this.ادارةالمشترياتToolStripMenuItem.Text = "ادارة المشتريات";
             this.ادارةالمشترياتToolStripMenuItem.Visible = false;
+            this.ادارةالمشترياتToolStripMenuItem.Click += new System.EventHandler(this.ادارةالمشترياتToolStripMenuItem_Click_1);
             // 
             // عمليةشراءجديدةToolStripMenuItem
             // 
             this.عمليةشراءجديدةToolStripMenuItem.Name = "عمليةشراءجديدةToolStripMenuItem";
-            this.عمليةشراءجديدةToolStripMenuItem.Size = new System.Drawing.Size(144, 28);
+            this.عمليةشراءجديدةToolStripMenuItem.Size = new System.Drawing.Size(180, 28);
             this.عمليةشراءجديدةToolStripMenuItem.Text = "إضافة عملية";
+            this.عمليةشراءجديدةToolStripMenuItem.Click += new System.EventHandler(this.عمليةشراءجديدةToolStripMenuItem_Click_1);
             // 
             // ادارةالمشToolStripMenuItem
             // 
             this.ادارةالمشToolStripMenuItem.Name = "ادارةالمشToolStripMenuItem";
-            this.ادارةالمشToolStripMenuItem.Size = new System.Drawing.Size(144, 28);
+            this.ادارةالمشToolStripMenuItem.Size = new System.Drawing.Size(180, 28);
             this.ادارةالمشToolStripMenuItem.Text = "المشتريات";
+            this.ادارةالمشToolStripMenuItem.Click += new System.EventHandler(this.ادارةالمشToolStripMenuItem_Click_1);
             // 
             // ادارةالمخازنToolStripMenuItem
             // 

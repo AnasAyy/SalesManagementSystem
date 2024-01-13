@@ -22,7 +22,6 @@ namespace SalesManagementSystem.Forms
 
         public static ExchangeForm GetExchangeForm //
         {
-
             get
             {
                 if (exchangeForm == null)
@@ -33,21 +32,21 @@ namespace SalesManagementSystem.Forms
             }
         }
 
-        private void ExchangeForm_Load(object sender, EventArgs e)
+        
+
+        private void ExchangeForm_Load_1(object sender, EventArgs e)
         {
             ExchangeManagement.FillComboBox(this);
             ExchangeManagement.FillComboBox1(this);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e)
         {
             ExchangeManagement.Exchange(this);
-
         }
 
-        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        private void textBox1_KeyPress_1(object sender, KeyPressEventArgs e)
         {
-
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
             {
                 e.Handled = true;
@@ -57,17 +56,6 @@ namespace SalesManagementSystem.Forms
             {
                 e.Handled = true;
             }
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ExchangeForm_Load_1(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -80,7 +80,47 @@ namespace SalesManagementSystem.Forms
 
         private void AccountForm_Load_1(object sender, EventArgs e)
         {
+            AccountManagement.FilldataGridView(this);
+        }
 
+        private void جديدToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            AccountManagement.NewButton(this);
+        }
+
+        private void حفظToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            AccountManagement.Add(this);
+        }
+
+        private void تعديلToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            AccountManagement.Update(this);
+        }
+
+        private void إلغاءToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            AccountManagement.ResetPage(this);
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            if (textBox3.Text.Trim() == "")
+            {
+                AccountManagement.FilldataGridView(this);
+            }
+            else
+                AccountManagement.SearchBox(this);
+        }
+
+        private void تعديلToolStripMenuItem1_Click_1(object sender, EventArgs e)
+        {
+            AccountManagement.Edit(this);
+        }
+
+        private void toolStripMenuItem5_Click(object sender, EventArgs e)
+        {
+            ExchangeForm.GetExchangeForm.Show();
         }
     }
 }

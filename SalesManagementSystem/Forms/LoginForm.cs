@@ -50,5 +50,19 @@ namespace SalesManagementSystem.Forms
                 loginClass.Login(textBox1.Text, textBox2.Text);
             }
         }
+
+        private void button1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+                
+            
+        }
+
+        private void textBox2_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                loginClass.Login(textBox1.Text, textBox2.Text);
+            }
+        }
     }
 }

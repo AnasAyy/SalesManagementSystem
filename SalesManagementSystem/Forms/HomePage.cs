@@ -118,17 +118,17 @@ namespace SalesManagementSystem
             AccountForm.GetaccountForm.Show();
         }
 
-        private void ادارةالمشترياتToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ادارةالمشترياتToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
 
         }
 
-        private void عمليةشراءجديدةToolStripMenuItem_Click(object sender, EventArgs e)
+        private void عمليةشراءجديدةToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             PurchasesForm.GetPurchasesForm.Show();
         }
 
-        private void ادارةالمشToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ادارةالمشToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             PurchasesManagementForm.GetPurchasesManagementForm.Show();
         }
@@ -152,5 +152,7 @@ namespace SalesManagementSystem
         {
             AccountForm.GetaccountForm.Show();
         }
+
+        
     }
 }

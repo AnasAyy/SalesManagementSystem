@@ -85,7 +85,7 @@ namespace SalesManagementSystem.Forms
             // 
             this.textBox2.Enabled = false;
             this.textBox2.Font = new System.Drawing.Font("Cairo", 11F);
-            this.textBox2.Location = new System.Drawing.Point(578, 130);
+            this.textBox2.Location = new System.Drawing.Point(549, 130);
             this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(330, 35);
@@ -96,7 +96,7 @@ namespace SalesManagementSystem.Forms
             this.label2.AutoSize = true;
             this.label2.Enabled = false;
             this.label2.Font = new System.Drawing.Font("Cairo", 11F);
-            this.label2.Location = new System.Drawing.Point(926, 134);
+            this.label2.Location = new System.Drawing.Point(897, 134);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(60, 29);
@@ -107,7 +107,7 @@ namespace SalesManagementSystem.Forms
             // 
             this.textBox1.Enabled = false;
             this.textBox1.Font = new System.Drawing.Font("Cairo", 11F);
-            this.textBox1.Location = new System.Drawing.Point(578, 81);
+            this.textBox1.Location = new System.Drawing.Point(549, 81);
             this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(330, 35);
@@ -118,7 +118,7 @@ namespace SalesManagementSystem.Forms
             this.label1.AutoSize = true;
             this.label1.Enabled = false;
             this.label1.Font = new System.Drawing.Font("Cairo", 11F);
-            this.label1.Location = new System.Drawing.Point(926, 86);
+            this.label1.Location = new System.Drawing.Point(897, 86);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(88, 29);
@@ -154,6 +154,7 @@ namespace SalesManagementSystem.Forms
             this.جديدToolStripMenuItem.Name = "جديدToolStripMenuItem";
             this.جديدToolStripMenuItem.Size = new System.Drawing.Size(44, 27);
             this.جديدToolStripMenuItem.Text = "جديد";
+            this.جديدToolStripMenuItem.Click += new System.EventHandler(this.جديدToolStripMenuItem_Click_1);
             // 
             // حفظToolStripMenuItem
             // 
@@ -161,6 +162,7 @@ namespace SalesManagementSystem.Forms
             this.حفظToolStripMenuItem.Name = "حفظToolStripMenuItem";
             this.حفظToolStripMenuItem.Size = new System.Drawing.Size(47, 27);
             this.حفظToolStripMenuItem.Text = "حفظ";
+            this.حفظToolStripMenuItem.Click += new System.EventHandler(this.حفظToolStripMenuItem_Click_1);
             // 
             // تعديلToolStripMenuItem
             // 
@@ -168,6 +170,7 @@ namespace SalesManagementSystem.Forms
             this.تعديلToolStripMenuItem.Name = "تعديلToolStripMenuItem";
             this.تعديلToolStripMenuItem.Size = new System.Drawing.Size(50, 27);
             this.تعديلToolStripMenuItem.Text = "تعديل";
+            this.تعديلToolStripMenuItem.Click += new System.EventHandler(this.تعديلToolStripMenuItem_Click_1);
             // 
             // إلغاءToolStripMenuItem
             // 
@@ -175,6 +178,7 @@ namespace SalesManagementSystem.Forms
             this.إلغاءToolStripMenuItem.Name = "إلغاءToolStripMenuItem";
             this.إلغاءToolStripMenuItem.Size = new System.Drawing.Size(47, 27);
             this.إلغاءToolStripMenuItem.Text = "إلغاء";
+            this.إلغاءToolStripMenuItem.Click += new System.EventHandler(this.إلغاءToolStripMenuItem_Click_1);
             // 
             // toolStripMenuItem1
             // 
@@ -208,9 +212,13 @@ namespace SalesManagementSystem.Forms
             // 
             // toolStripMenuItem5
             // 
+            this.toolStripMenuItem5.BackColor = System.Drawing.SystemColors.Control;
+            this.toolStripMenuItem5.Font = new System.Drawing.Font("Cairo", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripMenuItem5.ForeColor = System.Drawing.Color.Green;
             this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(130, 27);
-            this.toolStripMenuItem5.Text = "                                    ";
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(133, 27);
+            this.toolStripMenuItem5.Text = "التحويل بين الحسابات";
+            this.toolStripMenuItem5.Click += new System.EventHandler(this.toolStripMenuItem5_Click);
             // 
             // toolStripMenuItem6
             // 
@@ -253,6 +261,7 @@ namespace SalesManagementSystem.Forms
             this.button1.TabIndex = 6;
             this.button1.Text = "بحث";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // textBox3
             // 
@@ -283,13 +292,13 @@ namespace SalesManagementSystem.Forms
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.ContextMenuStrip = this.contextMenuStrip1;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 241);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 258);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 5, 2, 5);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(1012, 368);
+            this.dataGridView1.Size = new System.Drawing.Size(1012, 351);
             this.dataGridView1.TabIndex = 13;
             // 
             // contextMenuStrip1
@@ -304,8 +313,9 @@ namespace SalesManagementSystem.Forms
             // تعديلToolStripMenuItem1
             // 
             this.تعديلToolStripMenuItem1.Name = "تعديلToolStripMenuItem1";
-            this.تعديلToolStripMenuItem1.Size = new System.Drawing.Size(103, 22);
+            this.تعديلToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.تعديلToolStripMenuItem1.Text = "تعديل";
+            this.تعديلToolStripMenuItem1.Click += new System.EventHandler(this.تعديلToolStripMenuItem1_Click_1);
             // 
             // AccountForm
             // 
