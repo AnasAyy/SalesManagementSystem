@@ -97,7 +97,7 @@ namespace SalesManagementSystem.Forms
             FinancialBondManagement.NewButton(this);
         }
 
-        private void ExpenseForm_Load(object sender, EventArgs e)
+        private void FinancialBondForm_Load(object sender, EventArgs e)
         {
             FinancialBondManagement.FillComboBox1(this);
             FinancialBondManagement.FillComboBox5(this);
@@ -242,9 +242,6 @@ namespace SalesManagementSystem.Forms
 
         }
 
-        private void FinancialBondForm_Load(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

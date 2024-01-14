@@ -375,8 +375,8 @@ namespace SalesManagementSystem.Controllers
                 {
                     financialBond.SupplierId = Convert.ToInt32(form.comboBox5.SelectedValue);
                 }
-
-                var account = db.Accounts.SingleOrDefault(x => x.Id == Convert.ToInt32(form.comboBox1.SelectedValue));
+                int o = Convert.ToInt32(form.comboBox1.SelectedValue);
+                var account = db.Accounts.SingleOrDefault(x => x.Id == o);
 
                 if (account != null)
                 {
@@ -425,35 +425,36 @@ namespace SalesManagementSystem.Controllers
             var db = new DataBaseContext();
             try
             {
-                var conn = new SqlConnection(db.Database.Connection.ConnectionString);
-                DataTable dt = new DataTable();
-                dt.Clear();
-                SqlDataAdapter da = new SqlDataAdapter();
-                if (conn.State == ConnectionState.Closed)
+                using (var conn = new SqlConnection(db.Database.Connection.ConnectionString))
                 {
-                    conn.Open();
-                }
-                SqlCommand comm = new SqlCommand();
-                da = new SqlDataAdapter("SELECT  f.Id AS 'رقم السند'," +
-                    "  f.title AS 'عنوان السند'," +
-                    "  CASE   WHEN f.Type = 0 THEN N'صرف'" +
-                    "    WHEN f.Type = 1 THEN N'قبض'  END" +
-                    " AS 'نوع السند', " +
-                    " a.Name AS 'الحساب', " +
-                    " f.TotalPrice AS 'المبلغ الاجمالي للسند'," +
-                    "  f.CreatedAt AS 'التاريخ'" +
-                    " FROM FinancialBonds f JOIN Accounts a ON f.AccountId = a.Id", conn.ConnectionString);
+                    if (conn.State == ConnectionState.Closed)
+                    {
+                        conn.Open();
+                    }
+                    SqlCommand comm = new SqlCommand("SELECT f.Id AS 'رقم السند', " +
+                                                      "f.title AS 'عنوان السند', " +
+                                                      "CASE WHEN f.Type = 0 THEN N'صرف' " +
+                                                      "     WHEN f.Type = 1 THEN N'قبض' END " +
+                                                      "AS 'نوع السند', " +
+                                                      "a.Name AS 'الحساب', " +
+                                                      "f.TotalPrice AS 'المبلغ الاجمالي للسند', " +
+                                                      "f.CreatedAt AS 'التاريخ' " +
+                                                      "FROM FinancialBonds f JOIN Accounts a ON f.AccountId = a.Id", conn);
 
-                da.Fill(dt);
-                if (dt.Rows.Count > 0)
-                {
-                    form.dataGridView1.DataSource = dt;
-                    da.Dispose();
-                    dt.Dispose();
-                }
-                else
-                {
-                    MessageBox.Show("لا توجد بيانات");
+                    SqlDataReader reader = comm.ExecuteReader();
+                    DataTable dt = new DataTable();
+                    dt.Load(reader);
+
+                    if (dt.Rows.Count > 0)
+                    {
+                        form.dataGridView1.DataSource = dt;
+                    }
+                    else
+                    {
+                        MessageBox.Show("لا توجد بيانات");
+                    }
+
+                    reader.Close();
                 }
             }
             catch (Exception ex)
@@ -469,115 +470,68 @@ namespace SalesManagementSystem.Controllers
             var db = new DataBaseContext();
             try
             {
-                var conn = new SqlConnection(db.Database.Connection.ConnectionString);
-                DataTable dt = new DataTable();
-                dt.Clear();
-                SqlDataAdapter da = new SqlDataAdapter();
-                if (conn.State == ConnectionState.Closed)
+                using (var conn = new SqlConnection(db.Database.Connection.ConnectionString))
                 {
-                    conn.Open();
-                }
-                SqlCommand comm = new SqlCommand();
-                if (form.textBox7.Text.Trim() != "" && (form.comboBox6.SelectedIndex == -1 || form.comboBox6.SelectedIndex == 2))
-                {
-                    da = new SqlDataAdapter("SELECT  f.Id AS 'رقم السند'," +
-                        "  f.title AS 'عنوان السند'," +
-                        "  CASE   WHEN f.Type = 0 THEN N'صرف'" +
-                        "    WHEN f.Type = 1 THEN N'قبض'  END" +
-                        " AS 'نوع السند', " +
-                        " a.Name AS 'الحساب', " +
-                        " f.TotalPrice AS 'المبلغ الاجمالي للسند'," +
-                        "  f.CreatedAt AS 'التاريخ'" +
-                        " FROM FinancialBonds f JOIN Accounts a ON f.AccountId = a.Id" +
-                        " where f.id = '" + Convert.ToInt32(form.textBox7.Text.Trim()) + "'", conn.ConnectionString);
-                }
+                    if (conn.State == ConnectionState.Closed)
+                    {
+                        conn.Open();
+                    }
+                    SqlCommand comm = new SqlCommand();
+                    DataTable dt = new DataTable();
+                    dt.Clear();
 
+                    string query = "SELECT  f.Id AS 'رقم السند', " +
+                                   "f.title AS 'عنوان السند', " +
+                                   "CASE WHEN f.Type = 0 THEN N'صرف' " +
+                                   "     WHEN f.Type = 1 THEN N'قبض' END " +
+                                   "AS 'نوع السند', " +
+                                   "a.Name AS 'الحساب', " +
+                                   "f.TotalPrice AS 'المبلغ الاجمالي للسند', " +
+                                   "f.CreatedAt AS 'التاريخ' " +
+                                   "FROM FinancialBonds f JOIN Accounts a ON f.AccountId = a.Id ";
 
-                if (form.textBox7.Text.Trim() != "" && form.comboBox6.SelectedIndex == 0)
-                {
-                    da = new SqlDataAdapter("SELECT  f.Id AS 'رقم السند'," +
-                        "  f.title AS 'عنوان السند'," +
-                        "  CASE   WHEN f.Type = 0 THEN N'صرف'" +
-                        "    WHEN f.Type = 1 THEN N'قبض' END" +
-                        " AS 'نوع السند', " +
-                        " a.Name AS 'الحساب', " +
-                        " f.TotalPrice AS 'المبلغ الاجمالي للسند'," +
-                        "  f.CreatedAt AS 'التاريخ'" +
-                        " FROM FinancialBonds f JOIN Accounts a ON f.AccountId = a.Id" +
-                        " where f.id = '" + Convert.ToInt32(form.textBox7.Text.Trim()) + "'" +
-                        " And f.Type = 1 ", conn.ConnectionString);
-                }
+                    if (form.textBox7.Text.Trim() != "" && (form.comboBox6.SelectedIndex == -1 || form.comboBox6.SelectedIndex == 2))
+                    {
+                        query += "WHERE f.id = '" + Convert.ToInt32(form.textBox7.Text.Trim()) + "'";
+                    }
 
+                    if (form.textBox7.Text.Trim() != "" && form.comboBox6.SelectedIndex == 0)
+                    {
+                        query += "WHERE f.id = '" + Convert.ToInt32(form.textBox7.Text.Trim()) + "' AND f.Type = 1";
+                    }
 
-                if (form.textBox7.Text.Trim() != "" && form.comboBox6.SelectedIndex == 1)
-                {
-                    da = new SqlDataAdapter("SELECT  f.Id AS 'رقم السند'," +
-                        "  f.title AS 'عنوان السند'," +
-                        "  CASE   WHEN f.Type = 0 THEN N'صرف'" +
-                        "    WHEN f.Type = 1 THEN N'قبض'  END" +
-                        " AS 'نوع السند', " +
-                        " a.Name AS 'الحساب', " +
-                        " f.TotalPrice AS 'المبلغ الاجمالي للسند'," +
-                        "  f.CreatedAt AS 'التاريخ'" +
-                        " FROM FinancialBonds f JOIN Accounts a ON f.AccountId = a.Id" +
-                        " where f.id = '" + Convert.ToInt32(form.textBox7.Text.Trim()) + "'" +
-                        " And f.Type = 0 ", conn.ConnectionString);
-                }
+                    if (form.textBox7.Text.Trim() != "" && form.comboBox6.SelectedIndex == 1)
+                    {
+                        query += "WHERE f.id = '" + Convert.ToInt32(form.textBox7.Text.Trim()) + "' AND f.Type = 0";
+                    }
 
+                    if (form.textBox7.Text.Trim() == "" && form.comboBox6.SelectedIndex == 0)
+                    {
+                        query += "WHERE f.Type = 1";
+                    }
 
-                if (form.textBox7.Text.Trim() == "" && form.comboBox6.SelectedIndex == 0)
-                {
-                    da = new SqlDataAdapter("SELECT  f.Id AS 'رقم السند'," +
-                        "  f.title AS 'عنوان السند'," +
-                        "  CASE   WHEN f.Type = 0 THEN N'صرف'" +
-                        "    WHEN f.Type = 1 THEN N'قبض'  END" +
-                        " AS 'نوع السند', " +
-                        " a.Name AS 'الحساب', " +
-                        " f.TotalPrice AS 'المبلغ الاجمالي للسند'," +
-                        "  f.CreatedAt AS 'التاريخ'" +
-                        " FROM FinancialBonds f JOIN Accounts a ON f.AccountId = a.Id" +
-                        " where f.Type = 1 ", conn.ConnectionString);
-                }
+                    if (form.textBox7.Text.Trim() == "" && form.comboBox6.SelectedIndex == 1)
+                    {
+                        query += "WHERE f.Type = 0";
+                    }
 
+                    comm.CommandText = query;
+                    comm.Connection = conn;
 
-                if (form.textBox7.Text.Trim() == "" && form.comboBox6.SelectedIndex == 1)
-                {
-                    da = new SqlDataAdapter("SELECT  f.Id AS 'رقم السند'," +
-                        "  f.title AS 'عنوان السند'," +
-                        "  CASE   WHEN f.Type = 0 THEN N'صرف'" +
-                        "    WHEN f.Type = 1 THEN N'قبض'  END" +
-                        " AS 'نوع السند', " +
-                        " a.Name AS 'الحساب', " +
-                        " f.TotalPrice AS 'المبلغ الاجمالي للسند'," +
-                        "  f.CreatedAt AS 'التاريخ'" +
-                        " FROM FinancialBonds f JOIN Accounts a ON f.AccountId = a.Id" +
-                        " where f.Type = 0 ", conn.ConnectionString);
-                }
+                    SqlDataReader reader = comm.ExecuteReader();
+                    dt.Load(reader);
 
+                    if (dt.Rows.Count > 0)
+                    {
+                        form.dataGridView1.DataSource = dt;
+                    }
+                    else
+                    {
+                        form.dataGridView1.DataSource = null;
+                        MessageBox.Show("لا توجد بيانات");
+                    }
 
-                if (form.textBox7.Text.Trim() == "" && (form.comboBox6.SelectedIndex == -1 || form.comboBox6.SelectedIndex == 2))
-                {
-                    da = new SqlDataAdapter("SELECT  f.Id AS 'رقم السند'," +
-                        "  f.title AS 'عنوان السند'," +
-                        "  CASE   WHEN f.Type = 0 THEN N'صرف'" +
-                        "    WHEN f.Type = 1 THEN N'قبض'  END" +
-                        " AS 'نوع السند', " +
-                        " a.Name AS 'الحساب', " +
-                        " f.TotalPrice AS 'المبلغ الاجمالي للسند'," +
-                        "  f.CreatedAt AS 'التاريخ'" +
-                        " FROM FinancialBonds f JOIN Accounts a ON f.AccountId = a.Id ", conn.ConnectionString);
-                }
-                da.Fill(dt);
-                if (dt.Rows.Count > 0)
-                {
-                    form.dataGridView1.DataSource = dt;
-                    da.Dispose();
-                    dt.Dispose();
-                }
-                else
-                {
-                    form.dataGridView1.DataSource = null;
-                    MessageBox.Show("لاتوجد بيانات");
+                    reader.Close();
                 }
             }
             catch (Exception ex)
@@ -624,7 +578,8 @@ namespace SalesManagementSystem.Controllers
             var db = new DataBaseContext();
             try
             {
-                var fin = db.FinancialBonds.SingleOrDefault(x => x.Id == Convert.ToInt32(cellValue));
+                int o = Convert.ToInt32(cellValue);
+                var fin = db.FinancialBonds.SingleOrDefault(x => x.Id == o);
                 if (fin == null)
                 {
                     MessageBox.Show("خطأ في جلب البيانات");
@@ -638,17 +593,25 @@ namespace SalesManagementSystem.Controllers
                         form.comboBox1.SelectedValue = fin.AccountId;
                         form.comboBox3.SelectedValue = fin.FeeType;
                         form.comboBox2.SelectedIndex = fin.Type;
-                        form.textBox2.Text = fin.Price.ToString();
+                        if (fin.TotalPrice != 0)
+                        {
+                            form.textBox4.Text = (fin.TotalLocalPrice / fin.TotalPrice).ToString("0");
+                        }
+                        else
+                        {
+                            form.textBox4.Text = "";
+                        }
                         form.textBox3.Text = fin.Fee.ToString();
-                        form.textBox4.Text = (fin.TotalLocalPrice / fin.TotalPrice).ToString("0");
+                        //form.textBox4.Text = (fin.TotalLocalPrice / fin.TotalPrice).ToString("0");
                         form.textBox5.Text = fin.TotalPrice.ToString();
+                        form.textBox2.Text = fin.Price.ToString();
                         form.textBox6.Text = fin.TotalLocalPrice.ToString();
                         form.richTextBox1.Text = fin.Description.ToString();
 
                         if (fin.ClientId != null)
                         {
                             form.comboBox4.SelectedIndex = 0;
-                            var client = db.Clients.SingleOrDefaultAsync(x => x.Id == fin.ClientId);
+                            var client = db.Clients.SingleOrDefault(x => x.Id == fin.ClientId);
                             if (client != null)
                             {
                                 FillComboBox5(form);
@@ -658,7 +621,7 @@ namespace SalesManagementSystem.Controllers
                         else if (fin.SupplierId != null)
                         {
                             form.comboBox4.SelectedIndex = 1;
-                            var supplier = db.Suppliers.SingleOrDefaultAsync(x => x.Id == fin.SupplierId);
+                            var supplier = db.Suppliers.SingleOrDefault(x => x.Id == fin.SupplierId);
                             if (supplier != null)
                             {
                                 form.comboBox5.SelectedValue = supplier.Id;
@@ -733,7 +696,7 @@ namespace SalesManagementSystem.Controllers
                 }
                 if (financialBond != null)
                 {
-                    if(financialBond.BoudType != 0)
+                    if (financialBond.BoudType != 0)
                     {
                         MessageBox.Show("لا يمكن تعديل السندات المرتبطة بالمبيعات او المشتريات");
                         return;
@@ -770,8 +733,8 @@ namespace SalesManagementSystem.Controllers
                     {
                         financialBond.SupplierId = Convert.ToInt32(form.comboBox5.SelectedValue);
                     }
-
-                    var account = db.Accounts.SingleOrDefault(x => x.Id == Convert.ToInt32(form.comboBox1.SelectedValue));
+                    int o = Convert.ToInt32(form.comboBox1.SelectedValue);
+                    var account = db.Accounts.SingleOrDefault(x => x.Id == o);
 
                     if (account != null)
                     {
@@ -844,7 +807,7 @@ namespace SalesManagementSystem.Controllers
                         if (account.Id == oldAccountId && financialBond.Type != oldType)
                         {
                             //var oldAccount = db.Accounts.SingleOrDefaultAsync(x => x.Id == oldAccountId);
-                            if (oldType==0)
+                            if (oldType == 0)
                             {
                                 account.Balance += oldTotalPrice;
                             }
@@ -854,7 +817,7 @@ namespace SalesManagementSystem.Controllers
                             }
                             if (form.comboBox2.SelectedIndex == 0)
                             {
-                                if (Convert.ToDecimal(form.textBox5.Text.Trim()) > (account.Balance ))
+                                if (Convert.ToDecimal(form.textBox5.Text.Trim()) > (account.Balance))
                                 {
                                     MessageBox.Show("ليس لديك الرصيد الكافي لاتمام العملية");
                                     return;

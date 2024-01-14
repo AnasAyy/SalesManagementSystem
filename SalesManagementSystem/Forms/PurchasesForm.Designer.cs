@@ -109,7 +109,7 @@ namespace SalesManagementSystem.Forms
             // 
             this.textBox7.Font = new System.Drawing.Font("Cairo", 8.999999F);
             this.textBox7.Location = new System.Drawing.Point(685, 64);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox7.Margin = new System.Windows.Forms.Padding(2);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(232, 30);
             this.textBox7.TabIndex = 36;
@@ -132,7 +132,7 @@ namespace SalesManagementSystem.Forms
             this.button2.Font = new System.Drawing.Font("Cairo", 9F, System.Drawing.FontStyle.Bold);
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Location = new System.Drawing.Point(10, 23);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(140, 29);
             this.button2.TabIndex = 34;
@@ -144,7 +144,7 @@ namespace SalesManagementSystem.Forms
             // 
             this.textBox8.Font = new System.Drawing.Font("Cairo", 8.999999F);
             this.textBox8.Location = new System.Drawing.Point(468, 24);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox8.Margin = new System.Windows.Forms.Padding(2);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(72, 30);
             this.textBox8.TabIndex = 33;
@@ -156,7 +156,7 @@ namespace SalesManagementSystem.Forms
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.ItemHeight = 13;
             this.comboBox2.Location = new System.Drawing.Point(800, 28);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(154, 21);
             this.comboBox2.TabIndex = 15;
@@ -166,7 +166,7 @@ namespace SalesManagementSystem.Forms
             // 
             this.textBox2.Font = new System.Drawing.Font("Cairo", 8.999999F);
             this.textBox2.Location = new System.Drawing.Point(308, 24);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(72, 30);
             this.textBox2.TabIndex = 19;
@@ -176,7 +176,7 @@ namespace SalesManagementSystem.Forms
             // 
             this.textBox1.Font = new System.Drawing.Font("Cairo", 8.999999F);
             this.textBox1.Location = new System.Drawing.Point(168, 24);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(72, 30);
             this.textBox1.TabIndex = 3;
@@ -210,7 +210,7 @@ namespace SalesManagementSystem.Forms
             this.comboBox4.FormattingEnabled = true;
             this.comboBox4.ItemHeight = 13;
             this.comboBox4.Location = new System.Drawing.Point(596, 28);
-            this.comboBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox4.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(154, 21);
             this.comboBox4.TabIndex = 27;
@@ -255,7 +255,7 @@ namespace SalesManagementSystem.Forms
             this.comboBox5.FormattingEnabled = true;
             this.comboBox5.ItemHeight = 13;
             this.comboBox5.Location = new System.Drawing.Point(716, 19);
-            this.comboBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox5.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(204, 21);
             this.comboBox5.TabIndex = 29;
@@ -276,7 +276,7 @@ namespace SalesManagementSystem.Forms
             this.textBox6.Enabled = false;
             this.textBox6.Font = new System.Drawing.Font("Cairo", 11F);
             this.textBox6.Location = new System.Drawing.Point(366, 115);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox6.Margin = new System.Windows.Forms.Padding(2);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(204, 35);
             this.textBox6.TabIndex = 23;
@@ -286,7 +286,7 @@ namespace SalesManagementSystem.Forms
             this.textBox5.Enabled = false;
             this.textBox5.Font = new System.Drawing.Font("Cairo", 11F);
             this.textBox5.Location = new System.Drawing.Point(367, 69);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(2);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(204, 35);
             this.textBox5.TabIndex = 23;
@@ -295,7 +295,7 @@ namespace SalesManagementSystem.Forms
             // 
             this.textBox4.Font = new System.Drawing.Font("Cairo", 11F);
             this.textBox4.Location = new System.Drawing.Point(366, 16);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(2);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(204, 35);
             this.textBox4.TabIndex = 23;
@@ -339,7 +339,7 @@ namespace SalesManagementSystem.Forms
             // 
             this.textBox3.Font = new System.Drawing.Font("Cairo", 11F);
             this.textBox3.Location = new System.Drawing.Point(718, 119);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(204, 35);
             this.textBox3.TabIndex = 21;
@@ -363,7 +363,7 @@ namespace SalesManagementSystem.Forms
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.ItemHeight = 13;
             this.comboBox3.Location = new System.Drawing.Point(718, 87);
-            this.comboBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox3.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(204, 21);
             this.comboBox3.TabIndex = 17;
@@ -386,7 +386,7 @@ namespace SalesManagementSystem.Forms
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.ItemHeight = 13;
             this.comboBox1.Location = new System.Drawing.Point(716, 50);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(204, 21);
             this.comboBox1.TabIndex = 17;
@@ -407,9 +407,9 @@ namespace SalesManagementSystem.Forms
             this.groupBox2.Controls.Add(this.dataGridView1);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox2.Location = new System.Drawing.Point(0, 109);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(1012, 323);
             this.groupBox2.TabIndex = 30;
             this.groupBox2.TabStop = false;
@@ -430,7 +430,7 @@ namespace SalesManagementSystem.Forms
             this.TotalSellPrice});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(2, 15);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
@@ -501,10 +501,10 @@ namespace SalesManagementSystem.Forms
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.comboBox1);
             this.groupBox3.Location = new System.Drawing.Point(0, 434);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox3.Size = new System.Drawing.Size(1010, 154);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox3.Size = new System.Drawing.Size(1010, 171);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "البيانات الاساسية";
@@ -514,9 +514,9 @@ namespace SalesManagementSystem.Forms
             this.groupBox5.Controls.Add(this.radioButton3);
             this.groupBox5.Controls.Add(this.radioButton4);
             this.groupBox5.Location = new System.Drawing.Point(224, 11);
-            this.groupBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox5.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox5.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox5.Size = new System.Drawing.Size(114, 54);
             this.groupBox5.TabIndex = 31;
             this.groupBox5.TabStop = false;
@@ -528,7 +528,7 @@ namespace SalesManagementSystem.Forms
             this.radioButton3.Checked = true;
             this.radioButton3.Dock = System.Windows.Forms.DockStyle.Left;
             this.radioButton3.Location = new System.Drawing.Point(55, 15);
-            this.radioButton3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioButton3.Margin = new System.Windows.Forms.Padding(2);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.radioButton3.Size = new System.Drawing.Size(48, 37);
@@ -543,7 +543,7 @@ namespace SalesManagementSystem.Forms
             this.radioButton4.AutoSize = true;
             this.radioButton4.Dock = System.Windows.Forms.DockStyle.Left;
             this.radioButton4.Location = new System.Drawing.Point(2, 15);
-            this.radioButton4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioButton4.Margin = new System.Windows.Forms.Padding(2);
             this.radioButton4.Name = "radioButton4";
             this.radioButton4.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.radioButton4.Size = new System.Drawing.Size(53, 37);
@@ -558,7 +558,7 @@ namespace SalesManagementSystem.Forms
             this.button4.Font = new System.Drawing.Font("Cairo", 9F, System.Drawing.FontStyle.Bold);
             this.button4.ForeColor = System.Drawing.Color.White;
             this.button4.Location = new System.Drawing.Point(224, 113);
-            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(114, 33);
             this.button4.TabIndex = 36;
@@ -572,7 +572,7 @@ namespace SalesManagementSystem.Forms
             this.button1.Font = new System.Drawing.Font("Cairo", 9F, System.Drawing.FontStyle.Bold);
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(224, 70);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(114, 33);
             this.button1.TabIndex = 35;
@@ -584,11 +584,11 @@ namespace SalesManagementSystem.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1012, 588);
+            this.ClientSize = new System.Drawing.Size(1012, 604);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox3);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(1029, 687);
             this.MinimizeBox = false;

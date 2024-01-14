@@ -149,6 +149,7 @@ namespace SalesManagementSystem.Forms
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(205, 21);
             this.comboBox4.TabIndex = 27;
+            this.comboBox4.SelectedIndexChanged += new System.EventHandler(this.comboBox4_SelectedIndexChanged);
             // 
             // label15
             // 
@@ -164,9 +165,9 @@ namespace SalesManagementSystem.Forms
             // richTextBox1
             // 
             this.richTextBox1.Enabled = false;
-            this.richTextBox1.Location = new System.Drawing.Point(53, 231);
+            this.richTextBox1.Location = new System.Drawing.Point(34, 231);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(865, 69);
+            this.richTextBox1.Size = new System.Drawing.Size(884, 69);
             this.richTextBox1.TabIndex = 25;
             this.richTextBox1.Text = "";
             // 
@@ -184,7 +185,7 @@ namespace SalesManagementSystem.Forms
             // 
             this.textBox6.Enabled = false;
             this.textBox6.Font = new System.Drawing.Font("Cairo", 11F);
-            this.textBox6.Location = new System.Drawing.Point(53, 151);
+            this.textBox6.Location = new System.Drawing.Point(34, 151);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(205, 35);
             this.textBox6.TabIndex = 23;
@@ -193,7 +194,7 @@ namespace SalesManagementSystem.Forms
             // 
             this.textBox5.Enabled = false;
             this.textBox5.Font = new System.Drawing.Font("Cairo", 11F);
-            this.textBox5.Location = new System.Drawing.Point(53, 105);
+            this.textBox5.Location = new System.Drawing.Point(34, 105);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(205, 35);
             this.textBox5.TabIndex = 23;
@@ -202,17 +203,19 @@ namespace SalesManagementSystem.Forms
             // 
             this.textBox4.Enabled = false;
             this.textBox4.Font = new System.Drawing.Font("Cairo", 11F);
-            this.textBox4.Location = new System.Drawing.Point(53, 64);
+            this.textBox4.Location = new System.Drawing.Point(34, 64);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(205, 35);
             this.textBox4.TabIndex = 23;
+            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            this.textBox4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox4_KeyPress);
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Enabled = false;
             this.label10.Font = new System.Drawing.Font("Cairo", 11F);
-            this.label10.Location = new System.Drawing.Point(262, 156);
+            this.label10.Location = new System.Drawing.Point(243, 156);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(139, 29);
             this.label10.TabIndex = 22;
@@ -223,7 +226,7 @@ namespace SalesManagementSystem.Forms
             this.label9.AutoSize = true;
             this.label9.Enabled = false;
             this.label9.Font = new System.Drawing.Font("Cairo", 11F);
-            this.label9.Location = new System.Drawing.Point(262, 110);
+            this.label9.Location = new System.Drawing.Point(243, 110);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(141, 29);
             this.label9.TabIndex = 22;
@@ -234,7 +237,7 @@ namespace SalesManagementSystem.Forms
             this.label7.AutoSize = true;
             this.label7.Enabled = false;
             this.label7.Font = new System.Drawing.Font("Cairo", 11F);
-            this.label7.Location = new System.Drawing.Point(262, 69);
+            this.label7.Location = new System.Drawing.Point(243, 69);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(114, 29);
             this.label7.TabIndex = 22;
@@ -248,6 +251,8 @@ namespace SalesManagementSystem.Forms
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(205, 35);
             this.textBox3.TabIndex = 21;
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.textBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox3_KeyPress);
             // 
             // label6
             // 
@@ -268,6 +273,8 @@ namespace SalesManagementSystem.Forms
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(205, 35);
             this.textBox2.TabIndex = 19;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
             // 
             // label3
             // 
@@ -390,6 +397,7 @@ namespace SalesManagementSystem.Forms
             this.جديدToolStripMenuItem.Name = "جديدToolStripMenuItem";
             this.جديدToolStripMenuItem.Size = new System.Drawing.Size(44, 27);
             this.جديدToolStripMenuItem.Text = "جديد";
+            this.جديدToolStripMenuItem.Click += new System.EventHandler(this.جديدToolStripMenuItem_Click);
             // 
             // حفظToolStripMenuItem
             // 
@@ -397,6 +405,7 @@ namespace SalesManagementSystem.Forms
             this.حفظToolStripMenuItem.Name = "حفظToolStripMenuItem";
             this.حفظToolStripMenuItem.Size = new System.Drawing.Size(47, 27);
             this.حفظToolStripMenuItem.Text = "حفظ";
+            this.حفظToolStripMenuItem.Click += new System.EventHandler(this.حفظToolStripMenuItem_Click);
             // 
             // تعديلToolStripMenuItem
             // 
@@ -404,6 +413,7 @@ namespace SalesManagementSystem.Forms
             this.تعديلToolStripMenuItem.Name = "تعديلToolStripMenuItem";
             this.تعديلToolStripMenuItem.Size = new System.Drawing.Size(50, 27);
             this.تعديلToolStripMenuItem.Text = "تعديل";
+            this.تعديلToolStripMenuItem.Click += new System.EventHandler(this.تعديلToolStripMenuItem_Click);
             // 
             // إلغاءToolStripMenuItem
             // 
@@ -411,6 +421,7 @@ namespace SalesManagementSystem.Forms
             this.إلغاءToolStripMenuItem.Name = "إلغاءToolStripMenuItem";
             this.إلغاءToolStripMenuItem.Size = new System.Drawing.Size(47, 27);
             this.إلغاءToolStripMenuItem.Text = "إلغاء";
+            this.إلغاءToolStripMenuItem.Click += new System.EventHandler(this.إلغاءToolStripMenuItem_Click);
             // 
             // groupBox2
             // 
@@ -462,6 +473,7 @@ namespace SalesManagementSystem.Forms
             this.button1.TabIndex = 6;
             this.button1.Text = "بحث";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox7
             // 
@@ -470,6 +482,7 @@ namespace SalesManagementSystem.Forms
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(247, 35);
             this.textBox7.TabIndex = 5;
+            this.textBox7.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox7_KeyPress);
             // 
             // label11
             // 
@@ -490,13 +503,13 @@ namespace SalesManagementSystem.Forms
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.ContextMenuStrip = this.contextMenuStrip1;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 306);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 379);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(1002, 282);
+            this.dataGridView1.Size = new System.Drawing.Size(1002, 209);
             this.dataGridView1.TabIndex = 13;
             // 
             // contextMenuStrip1
@@ -512,6 +525,7 @@ namespace SalesManagementSystem.Forms
             this.تعديلToolStripMenuItem1.Name = "تعديلToolStripMenuItem1";
             this.تعديلToolStripMenuItem1.Size = new System.Drawing.Size(103, 22);
             this.تعديلToolStripMenuItem1.Text = "تعديل";
+            this.تعديلToolStripMenuItem1.Click += new System.EventHandler(this.تعديلToolStripMenuItem1_Click);
             // 
             // FinancialBondForm
             // 
