@@ -2,6 +2,7 @@
 using SalesManagementSystem.Forms;
 using SalesManagementSystem.Models;
 using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Migrations;
 using System.Linq;
@@ -16,7 +17,7 @@ namespace SalesManagementSystem.Controllers
             var db = new DataBaseContext();
             try
             {
-                var result = db.PublicLists.Where(x => x.Code == "FEE" && x.IsParent == false).ToListAsync();
+                var result = db.PublicLists.Where(x => x.Code == "FEE" && x.IsParent == false).ToList();
                 if (result == null)
                 {
                     MessageBox.Show("يرجى تهيئة عناصر انواع الضريبة");
@@ -56,7 +57,7 @@ namespace SalesManagementSystem.Controllers
             var db = new DataBaseContext();
             try
             {
-                var result = db.PublicLists.Where(x => x.Code == "DISCOUNT" && x.IsParent == false).ToListAsync();
+                var result = db.PublicLists.Where(x => x.Code == "DISCOUNT" && x.IsParent == false).ToList();
                 if (result == null)
                 {
                     MessageBox.Show("يرجى تهيئة عناصر انواع التخفيضات");
@@ -80,44 +81,48 @@ namespace SalesManagementSystem.Controllers
 
         public static void AddComboCategories(NewSaleForm form)
         {
-            var db = new DataBaseContext();
-            try
+            using (var db = new DataBaseContext())
             {
-                var result = db.Categories.Where(x => x.IsActive == true).ToList();
-                form.comboBox1.BindingContext = new BindingContext();
-                form.comboBox1.DisplayMember = "Name";
-                form.comboBox1.ValueMember = "Id";
-                result.Add(new Category()
+                try
                 {
-                    Id = 0,
-                    Name = "كل العناصر",
-                    IsActive = true,
+                    var result = db.Categories.Where(x => x.IsActive == true).ToList();
+                    var comboBoxItems = new List<Category>();
+                    comboBoxItems.Add(new Category { Id = 0, Name = "كل العناصر" });
 
-                });
-                form.comboBox1.DataSource = result;
-                form.comboBox1.SelectedIndex = form.comboBox1.Items.Count - 1;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
+                    if(result.Count > 0)
+                    {
+                        comboBoxItems.AddRange(result);
+                        form.comboBox1.BindingContext = new BindingContext();
+                        form.comboBox1.DisplayMember = "Name";
+                        form.comboBox1.ValueMember = "Id";
+                        form.comboBox1.DataSource = comboBoxItems;
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 
 
         public static void GetAllItems(NewSaleForm form)
         {
-            var db = new DataBaseContext();
-            try
+            using (var db = new DataBaseContext())
             {
-                var result = db.Items.Where(x => x.IsActive == true).ToList();
-                form.comboBox2.BindingContext = new BindingContext();
-                form.comboBox2.DataSource = result;
-                form.comboBox2.DisplayMember = "Name";
-                form.comboBox2.ValueMember = "Id";
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
+                try
+                {
+                    var result = db.Items.Where(x => x.IsActive == true).ToList();
+                    form.comboBox2.BindingContext = new BindingContext();
+                    form.comboBox2.DataSource = result;
+                    form.comboBox2.DisplayMember = "Name";
+                    form.comboBox2.ValueMember = "Id";
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 
@@ -127,7 +132,7 @@ namespace SalesManagementSystem.Controllers
             var db = new DataBaseContext();
             try
             {
-                var result = db.Accounts.ToListAsync();
+                var result = db.Accounts.ToList();
                 form.comboBox5.BindingContext = new BindingContext();
                 form.comboBox5.DataSource = result;
                 form.comboBox5.DisplayMember = "Name";
@@ -145,7 +150,8 @@ namespace SalesManagementSystem.Controllers
             var db = new DataBaseContext();
             try
             {
-                var result = db.Items.Where(x => x.CategoryId == Convert.ToInt32(form.comboBox1.SelectedValue)).ToListAsync();
+                var categoryId = Convert.ToInt32(form.comboBox1.SelectedValue);
+                var result = db.Items.Where(x => x.CategoryId == categoryId).ToList();
                 if (result == null)
                 {
                     MessageBox.Show("لا توجد عناصر");
@@ -216,7 +222,8 @@ namespace SalesManagementSystem.Controllers
             var db = new DataBaseContext();
             try
             {
-                var result = db.Items.FirstOrDefault(x => x.Id == Convert.ToUInt32(form.comboBox2.SelectedValue));
+                var itemId = Convert.ToUInt32(form.comboBox2.SelectedValue);
+                var result = db.Items.FirstOrDefault(x => x.Id == itemId);
                 if (result == null)
                 {
                     MessageBox.Show("لايوجد بيانات");

@@ -170,5 +170,21 @@ namespace SalesManagementSystem.Forms
                 label13.Visible = false;
             }
         }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox3.Text.Length > 0)
+            {
+                if (!PublicOperations.CheckNumbersOnly(textBox3.Text))
+                {
+                    MessageBox.Show("ادخال خاطئ");
+                    textBox3.Text = textBox3.Text.Remove(textBox3.Text.Length - 1);
+                }
+                else if (dataGridView1.RowCount > 0)
+                {
+                    NewSalesManagment.CalculateBill(this);
+                }
+            }
+        }
     }
 }

@@ -24,8 +24,10 @@ namespace SalesManagementSystem.Forms
         {
             get
             {
-                addAmountForm = new AddAmountForm();
-                addAmountForm.FormClosed += AddAmountForm_Closed;
+                if(addAmountForm == null)
+
+                    addAmountForm= new AddAmountForm();
+                addAmountForm.FormClosed += new FormClosedEventHandler(AddAmountForm_Closed);
                 return addAmountForm;
             }
         }

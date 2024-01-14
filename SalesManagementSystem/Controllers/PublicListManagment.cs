@@ -3,6 +3,7 @@
 using SalesManagementSystem.Forms;
 using SalesManagementSystem.Models;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity.Migrations;
 using System.Data.SqlClient;
@@ -115,28 +116,32 @@ namespace SalesManagementSystem.Controllers
 
         public static void GetPublicListGategory(PublicListManagmentForm form)
         {
-            var db = new DataBaseContext();
-            try
+            using (var db = new DataBaseContext())
             {
-                var result = db.PublicLists.Where(x => x.IsParent == true).ToList();
-                form.comboBox1.BindingContext = new BindingContext();
-                form.comboBox1.DisplayMember = "Name";
-                form.comboBox1.ValueMember = "Code";
-                form.comboBox2.BindingContext = new BindingContext();
-                form.comboBox1.DataSource = result;
-                form.comboBox2.DisplayMember = "Name";
-                form.comboBox2.ValueMember = "Code";
-                result.Add(new PublicList()
+                try
                 {
-                    Id = 0,
-                    Name = "كل العناصر"
-                });
-                form.comboBox2.DataSource = result;
-                form.comboBox2.SelectedIndex = form.comboBox1.Items.Count;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
+                    var result = db.PublicLists.Where(x => x.IsParent == true).ToList();
+                    var comboBoxItems = new List<PublicList>();
+                    comboBoxItems.Add(new PublicList { Id = 0, Name = "كل العناصر" });
+                    
+                    if (result.Count > 0)
+                    {
+                        comboBoxItems.AddRange(result);
+                        form.comboBox1.BindingContext = new BindingContext();
+                        form.comboBox1.DisplayMember = "Name";
+                        form.comboBox1.ValueMember = "Code";
+                        form.comboBox2.BindingContext = new BindingContext();
+                        form.comboBox1.DataSource = comboBoxItems;
+                        form.comboBox2.DisplayMember = "Name";
+                        form.comboBox2.ValueMember = "Code";
+                        form.comboBox2.DataSource = comboBoxItems;
+                    }
+                    
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 
@@ -256,7 +261,7 @@ namespace SalesManagementSystem.Controllers
                     "p2.IsParent = 1 AND " +
                     "p1.Code = p2.Code AND " +
                     "p1.Code = (select Code from PublicLists " +
-                    "Where Name LIKE N'%" + selectedText + "%') ", conn.ConnectionString);
+                    "Where Name LIKE N'%" + selectedText + "%') ", conn);
 
                 da.Fill(dt);
                 if (dt.Rows.Count > 0)
@@ -280,11 +285,11 @@ namespace SalesManagementSystem.Controllers
         {
             int selectedrowindex = form.dataGridView1.SelectedCells[0].RowIndex;
             DataGridViewRow selectedRow = form.dataGridView1.Rows[selectedrowindex];
-            var cellValue = selectedRow.Cells["الرقم"].Value.ToString();
+            var cellValue = Convert.ToInt32(selectedRow.Cells["الرقم"].Value.ToString());
             var db = new DataBaseContext();
             try
             {
-                var publicList = db.PublicLists.FirstOrDefault(x => x.Id == Convert.ToInt32(cellValue));
+                var publicList = db.PublicLists.FirstOrDefault(x => x.Id == cellValue);
                 if (publicList == null)
                 {
                     MessageBox.Show("خطأ في جلب البيانات");

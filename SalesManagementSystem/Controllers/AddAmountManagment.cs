@@ -21,7 +21,8 @@ namespace SalesManagementSystem.Controllers
                 var db = new DataBaseContext();
                 try
                 {
-                    var result = db.Items.FirstOrDefault(x => x.Id == Convert.ToInt32(form.label1.Text));
+                    var itemId = Convert.ToInt32(form.label1.Text);
+                    var result = db.Items.FirstOrDefault(x => x.Id == itemId);
                     if (result == null)
                     {
                         MessageBox.Show("خطأ اثناء جلب البيانات");

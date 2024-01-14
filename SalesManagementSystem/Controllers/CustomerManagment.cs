@@ -46,11 +46,11 @@ namespace SalesManagementSystem.Controllers
         {
             int selectedrowindex = form.dataGridView1.SelectedCells[0].RowIndex;
             DataGridViewRow selectedRow = form.dataGridView1.Rows[selectedrowindex];
-            var cellValue = selectedRow.Cells["الرقم"].Value.ToString();
+            var cellValue = Convert.ToInt32(selectedRow.Cells["الرقم"].Value.ToString());
             var db = new DataBaseContext();
             try
             {
-                var client = db.Clients.FirstOrDefault(x => x.Id == Convert.ToInt32(cellValue));
+                var client = db.Clients.FirstOrDefault(x => x.Id == cellValue);
                 if (client == null)
                 {
                     MessageBox.Show("خطأ في جلب البيانات");

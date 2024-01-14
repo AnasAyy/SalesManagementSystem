@@ -7,12 +7,30 @@ using System.Data;
 using System.Data.Entity.Migrations;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace SalesManagementSystem.Controllers
 {
     public class SupplierManagment
     {
+        public static void ResetForm(SupplierManagmentForm form)
+        {
+            form.جديدToolStripMenuItem.Enabled = true;
+            form.حفظToolStripMenuItem.Enabled = false;
+            form.تعديلToolStripMenuItem.Enabled = false;
+            form.إلغاءToolStripMenuItem.Enabled = false;
+            form.label1.Enabled = false;
+            form.label2.Enabled = false;
+            form.label4.Enabled = false;
+            form.textBox1.Enabled = false;
+            form.textBox2.Enabled = false;
+            form.textBox4.Enabled = false;
+            form.textBox1.Text = string.Empty;
+            form.textBox2.Text = string.Empty;
+            form.textBox4.Text = string.Empty;
+        }
         public static void ClearForm(SupplierManagmentForm form)
         {
             form.textBox1.Text = string.Empty;
@@ -46,11 +64,11 @@ namespace SalesManagementSystem.Controllers
         {
             int selectedrowindex = form.dataGridView1.SelectedCells[0].RowIndex;
             DataGridViewRow selectedRow = form.dataGridView1.Rows[selectedrowindex];
-            var cellValue = selectedRow.Cells["الرقم"].Value.ToString();
+            var cellValue = Convert.ToInt32(selectedRow.Cells["الرقم"].Value.ToString());
             try
             {
                 var db = new DataBaseContext();
-                var supplier = db.Suppliers.FirstOrDefault(x => x.Id == Convert.ToInt32(cellValue));
+                var supplier = db.Suppliers.FirstOrDefault(x => x.Id == cellValue);
                 if (supplier == null)
                 {
                     MessageBox.Show("خطأ في جلب البيانات");

@@ -56,16 +56,7 @@ namespace SalesManagementSystem.Forms
 
         private void إلغاءToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            جديدToolStripMenuItem.Enabled = true;
-            حفظToolStripMenuItem.Enabled = false;
-            تعديلToolStripMenuItem.Enabled = false;
-            إلغاءToolStripMenuItem.Enabled = false;
-            label1.Enabled = false;
-            label2.Enabled = false;
-            label4.Enabled = false;
-            textBox1.Enabled = false;
-            textBox2.Enabled = false;
-            textBox4.Enabled = false;
+            SupplierManagment.ResetForm(this);
         }
 
         private void تعديلToolStripMenuItem1_Click(object sender, EventArgs e)

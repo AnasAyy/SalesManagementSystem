@@ -84,13 +84,14 @@ namespace SalesManagementSystem.Forms
             this.تعديلToolStripMenuItem1});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.contextMenuStrip1.Size = new System.Drawing.Size(116, 28);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(211, 56);
             // 
             // تعديلToolStripMenuItem1
             // 
             this.تعديلToolStripMenuItem1.Name = "تعديلToolStripMenuItem1";
-            this.تعديلToolStripMenuItem1.Size = new System.Drawing.Size(115, 24);
+            this.تعديلToolStripMenuItem1.Size = new System.Drawing.Size(210, 24);
             this.تعديلToolStripMenuItem1.Text = "تعديل";
+            this.تعديلToolStripMenuItem1.Click += new System.EventHandler(this.تعديلToolStripMenuItem1_Click);
             // 
             // groupBox1
             // 

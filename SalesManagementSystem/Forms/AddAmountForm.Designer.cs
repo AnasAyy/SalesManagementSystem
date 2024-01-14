@@ -31,90 +31,90 @@ namespace SalesManagementSystem.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
-            textBox1 = new TextBox();
-            label2 = new Label();
-            button4 = new Button();
-            button3 = new Button();
-            SuspendLayout();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.SuspendLayout();
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(12, 9);
-            label1.Name = "label1";
-            label1.Size = new Size(0, 23);
-            label1.TabIndex = 8;
-            label1.Visible = false;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 29);
+            this.label1.TabIndex = 8;
+            this.label1.Visible = false;
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(16, 63);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(107, 30);
-            textBox1.TabIndex = 9;
-            textBox1.TextChanged += textBox1_TextChanged;
+            this.textBox1.Location = new System.Drawing.Point(16, 63);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(107, 36);
+            this.textBox1.TabIndex = 9;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(45, 28);
-            label2.Name = "label2";
-            label2.Size = new Size(43, 23);
-            label2.TabIndex = 11;
-            label2.Text = "الكمية";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(45, 28);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(54, 29);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "الكمية";
             // 
             // button4
             // 
-            button4.BackColor = Color.Red;
-            button4.Font = new Font("Cairo", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button4.ForeColor = Color.White;
-            button4.Location = new Point(16, 162);
-            button4.Name = "button4";
-            button4.Size = new Size(107, 38);
-            button4.TabIndex = 18;
-            button4.Text = "إلغاء";
-            button4.UseVisualStyleBackColor = false;
-            button4.Click += button4_Click;
+            this.button4.BackColor = System.Drawing.Color.Red;
+            this.button4.Font = new System.Drawing.Font("Cairo", 9F, System.Drawing.FontStyle.Bold);
+            this.button4.ForeColor = System.Drawing.Color.White;
+            this.button4.Location = new System.Drawing.Point(16, 162);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(107, 38);
+            this.button4.TabIndex = 18;
+            this.button4.Text = "إلغاء";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
-            button3.BackColor = Color.RoyalBlue;
-            button3.Font = new Font("Cairo", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button3.ForeColor = Color.White;
-            button3.Location = new Point(16, 119);
-            button3.Name = "button3";
-            button3.Size = new Size(107, 42);
-            button3.TabIndex = 17;
-            button3.Text = "إضافة";
-            button3.UseVisualStyleBackColor = false;
-            button3.Click += button3_Click;
+            this.button3.BackColor = System.Drawing.Color.RoyalBlue;
+            this.button3.Font = new System.Drawing.Font("Cairo", 9F, System.Drawing.FontStyle.Bold);
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(16, 119);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(107, 42);
+            this.button3.TabIndex = 17;
+            this.button3.Text = "إضافة";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // AddAmountForm
             // 
-            AutoScaleDimensions = new SizeF(6F, 23F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(138, 211);
-            Controls.Add(button4);
-            Controls.Add(button3);
-            Controls.Add(label2);
-            Controls.Add(textBox1);
-            Controls.Add(label1);
-            Font = new Font("Cairo", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            FormBorderStyle = FormBorderStyle.FixedSingle;
-            Margin = new Padding(3, 5, 3, 5);
-            MaximizeBox = false;
-            MinimizeBox = false;
-            Name = "AddAmountForm";
-            RightToLeft = RightToLeft.Yes;
-            RightToLeftLayout = true;
-            ShowIcon = false;
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "إضافة الكمية";
-            TopMost = true;
-            Load += AddAmountForm_Load;
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 29F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(148, 211);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label1);
+            this.Font = new System.Drawing.Font("Cairo", 9F);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "AddAmountForm";
+            this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.RightToLeftLayout = true;
+            this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "إضافة الكمية";
+            this.TopMost = true;
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion

@@ -180,6 +180,7 @@ namespace SalesManagementSystem.Forms
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(193, 36);
             this.textBox5.TabIndex = 14;
+            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // label9
             // 
@@ -215,6 +216,7 @@ namespace SalesManagementSystem.Forms
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(193, 37);
             this.comboBox4.TabIndex = 10;
+            this.comboBox4.SelectedIndexChanged += new System.EventHandler(this.comboBox4_SelectedIndexChanged);
             // 
             // label7
             // 
@@ -233,6 +235,7 @@ namespace SalesManagementSystem.Forms
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(193, 37);
             this.comboBox3.TabIndex = 8;
+            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
             // 
             // label6
             // 

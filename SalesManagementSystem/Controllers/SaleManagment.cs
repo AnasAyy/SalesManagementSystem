@@ -10,7 +10,7 @@ namespace SalesManagementSystem.Controllers
 {
     public class SaleManagment
     {
-        public static  void GetAllSaleBills(SalesManagmentForm form)
+        public static void GetAllSaleBills(SalesManagmentForm form)
         {
             var db = new DataBaseContext();
             try
@@ -22,7 +22,8 @@ namespace SalesManagementSystem.Controllers
                 da = new SqlDataAdapter("GetAllSales", conn.ConnectionString);
                 da.Fill(dt);
                 form.dataGridView1.DataSource = dt;
-            }catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -33,7 +34,7 @@ namespace SalesManagementSystem.Controllers
             var db = new DataBaseContext();
             try
             {
-                if(form.textBox1.TextLength <= 0)
+                if (form.textBox1.TextLength <= 0)
                 {
                     MessageBox.Show("لم يتم ادخال رقم الفاتورة");
                     return;
@@ -43,17 +44,29 @@ namespace SalesManagementSystem.Controllers
                 {
                     conn.Open();
                 }
-                DataTable dt = new DataTable();
-                dt.Clear();
-                SqlDataAdapter da = new SqlDataAdapter();
-                da = new SqlDataAdapter("GetAllSalesByBillId '" + Convert.ToInt32(form.textBox1.Text) + "' ", conn.ConnectionString);
-                da.Fill(dt);
-                if(dt.Rows.Count <= 0)
+                /*
+                using (var adapter = new SqlDataAdapter("StoredProcedureName", ConnectionString))
                 {
-                    MessageBox.Show("لايوجد فاتورة بهذا الرقم");
-                    return;
+                    sda.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    sda.SelectCommand.Parameters.Add("@ParameterName", SqlDbType.Int).Value = 123;
+                    sda.Fill(dataTable);
+                };
+                */
+                using (var sda = new SqlDataAdapter("GetAllSalesByBillId", conn))
+                {
+                    sda.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    sda.SelectCommand.Parameters.Add("@billNumber", SqlDbType.Int).Value = Convert.ToInt32(form.textBox1.Text);
+                    DataTable dt = new DataTable();
+                    dt.Clear();
+                    sda.Fill(dt);
+                    if (dt.Rows.Count <= 0)
+                    {
+                        MessageBox.Show("لايوجد فاتورة بهذا الرقم");
+                        return;
+                    }
+                    form.dataGridView1.DataSource = dt;
                 }
-                form.dataGridView1.DataSource = dt;
+
             }
             catch (Exception ex)
             {
@@ -66,42 +79,49 @@ namespace SalesManagementSystem.Controllers
             var db = new DataBaseContext();
             try
             {
-                if (!form.radioButton1.Checked && !form.radioButton2.Checked)
+                if (!form.radioButton1.Checked && !form.radioButton2.Checked && !form.radioButton3.Checked)
                 {
                     MessageBox.Show("يرجى تحديد نوع الفاتورة");
                     return;
                 }
-                var conn = new SqlConnection(db.Database.Connection.ConnectionString);
-                if (conn.State == ConnectionState.Closed)
+                if (form.radioButton3.Checked)
                 {
-                    conn.Open();
-                }
-                DataTable dt = new DataTable();
-                SqlDataAdapter da = new SqlDataAdapter();
-                if (form.radioButton1.Checked)
-                {
-                    da = new SqlDataAdapter("select Id as \"رقم الفاتورة\", " +
-                    "CASE BillType WHEN 1 THEN N'بيع' else N'مرتجع' END as \"نوع الفاتورة\", " +
-                    "TotalPrice as \"المبلغ\", " +
-                    "TotalLocalPrice as \"المبلغ بالعملة المحلية\", " +
-                    "Note as \"ملاحظات\" from Bills where BillType = 1 ", conn.ConnectionString);
+                    GetAllSaleBills(form);
                 }
                 else
                 {
-                    da = new SqlDataAdapter("select Id as \"رقم الفاتورة\", " +
-                    "CASE BillType WHEN 1 THEN N'بيع' else N'مرتجع' END as \"نوع الفاتورة\", " +
-                    "TotalPrice as \"المبلغ\", " +
-                    "TotalLocalPrice as \"المبلغ بالعملة المحلية\", " +
-                    "Note as \"ملاحظات\" from Bills where BillType = 3 ", conn.ConnectionString);
+                    var conn = new SqlConnection(db.Database.Connection.ConnectionString);
+                    if (conn.State == ConnectionState.Closed)
+                    {
+                        conn.Open();
+                    }
+                    DataTable dt = new DataTable();
+                    SqlDataAdapter da = new SqlDataAdapter();
+                    if (form.radioButton1.Checked)
+                    {
+                        da = new SqlDataAdapter("select Id as \"رقم الفاتورة\", " +
+                        "CASE BillType WHEN 1 THEN N'بيع' else N'مرتجع' END as \"نوع الفاتورة\", " +
+                        "TotalPrice as \"المبلغ\", " +
+                        "TotalLocalPrice as \"المبلغ بالعملة المحلية\", " +
+                        "Note as \"ملاحظات\" from Bills where BillType = 1 ", conn);
+                    }
+                    else
+                    {
+                        da = new SqlDataAdapter("select Id as \"رقم الفاتورة\", " +
+                        "CASE BillType WHEN 1 THEN N'بيع' else N'مرتجع' END as \"نوع الفاتورة\", " +
+                        "TotalPrice as \"المبلغ\", " +
+                        "TotalLocalPrice as \"المبلغ بالعملة المحلية\", " +
+                        "Note as \"ملاحظات\" from Bills where BillType = 3 ", conn);
+                    }
+
+                    da.Fill(dt);
+                    if (dt.Rows.Count <= 0)
+                    {
+                        MessageBox.Show("لايوجد فواتير");
+                        return;
+                    }
+                    form.dataGridView1.DataSource = dt;
                 }
-                
-                da.Fill(dt);
-                if(dt.Rows.Count <= 0)
-                {
-                    MessageBox.Show("لايوجد فواتير");
-                    return;
-                }
-                form.dataGridView1.DataSource = dt;
 
             }
             catch (Exception ex)

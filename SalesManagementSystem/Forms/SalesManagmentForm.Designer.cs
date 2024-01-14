@@ -31,170 +31,183 @@ namespace SalesManagementSystem.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            groupBox1 = new GroupBox();
-            groupBox3 = new GroupBox();
-            button1 = new Button();
-            radioButton2 = new RadioButton();
-            radioButton1 = new RadioButton();
-            button5 = new Button();
-            textBox1 = new TextBox();
-            label1 = new Label();
-            groupBox2 = new GroupBox();
-            dataGridView1 = new DataGridView();
-            groupBox1.SuspendLayout();
-            groupBox3.SuspendLayout();
-            groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            SuspendLayout();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.button5 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.groupBox1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.SuspendLayout();
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(groupBox3);
-            groupBox1.Controls.Add(button5);
-            groupBox1.Controls.Add(textBox1);
-            groupBox1.Controls.Add(label1);
-            groupBox1.Dock = DockStyle.Top;
-            groupBox1.Location = new Point(0, 0);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(1182, 101);
-            groupBox1.TabIndex = 0;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "بحث";
+            this.groupBox1.Controls.Add(this.groupBox3);
+            this.groupBox1.Controls.Add(this.button5);
+            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1182, 101);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "بحث";
             // 
             // groupBox3
             // 
-            groupBox3.Controls.Add(button1);
-            groupBox3.Controls.Add(radioButton2);
-            groupBox3.Controls.Add(radioButton1);
-            groupBox3.Dock = DockStyle.Left;
-            groupBox3.Location = new Point(3, 32);
-            groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(401, 66);
-            groupBox3.TabIndex = 8;
-            groupBox3.TabStop = false;
-            groupBox3.Text = "نوع الفاتورة";
+            this.groupBox3.Controls.Add(this.radioButton3);
+            this.groupBox3.Controls.Add(this.button1);
+            this.groupBox3.Controls.Add(this.radioButton2);
+            this.groupBox3.Controls.Add(this.radioButton1);
+            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.groupBox3.Location = new System.Drawing.Point(3, 32);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(441, 66);
+            this.groupBox3.TabIndex = 8;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "نوع الفاتورة";
             // 
             // button1
             // 
-            button1.BackColor = Color.RoyalBlue;
-            button1.Font = new Font("Cairo", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(41, 19);
-            button1.Name = "button1";
-            button1.Size = new Size(98, 42);
-            button1.TabIndex = 8;
-            button1.Text = "بحث";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            this.button1.BackColor = System.Drawing.Color.RoyalBlue;
+            this.button1.Font = new System.Drawing.Font("Cairo", 9F, System.Drawing.FontStyle.Bold);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(41, 19);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(98, 42);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "بحث";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // radioButton2
             // 
-            radioButton2.AutoSize = true;
-            radioButton2.CheckAlign = ContentAlignment.MiddleRight;
-            radioButton2.Location = new Point(158, 25);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(70, 33);
-            radioButton2.TabIndex = 1;
-            radioButton2.Text = "مرتجع";
-            radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.radioButton2.Location = new System.Drawing.Point(158, 25);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(70, 33);
+            this.radioButton2.TabIndex = 1;
+            this.radioButton2.Text = "مرتجع";
+            this.radioButton2.UseVisualStyleBackColor = true;
             // 
             // radioButton1
             // 
-            radioButton1.AutoSize = true;
-            radioButton1.CheckAlign = ContentAlignment.MiddleRight;
-            radioButton1.Checked = true;
-            radioButton1.Location = new Point(243, 25);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(78, 33);
-            radioButton1.TabIndex = 0;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "مبيعات";
-            radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.radioButton1.Location = new System.Drawing.Point(243, 25);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(78, 33);
+            this.radioButton1.TabIndex = 0;
+            this.radioButton1.Text = "مبيعات";
+            this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // button5
             // 
-            button5.BackColor = Color.RoyalBlue;
-            button5.Font = new Font("Cairo", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button5.ForeColor = Color.White;
-            button5.Location = new Point(740, 35);
-            button5.Name = "button5";
-            button5.Size = new Size(75, 42);
-            button5.TabIndex = 7;
-            button5.Text = "بحث";
-            button5.UseVisualStyleBackColor = false;
-            button5.Click += button5_Click;
+            this.button5.BackColor = System.Drawing.Color.RoyalBlue;
+            this.button5.Font = new System.Drawing.Font("Cairo", 9F, System.Drawing.FontStyle.Bold);
+            this.button5.ForeColor = System.Drawing.Color.White;
+            this.button5.Location = new System.Drawing.Point(740, 35);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 42);
+            this.button5.TabIndex = 7;
+            this.button5.Text = "بحث";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(821, 37);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(256, 36);
-            textBox1.TabIndex = 1;
-            textBox1.TextChanged += textBox1_TextChanged;
+            this.textBox1.Location = new System.Drawing.Point(821, 37);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(256, 36);
+            this.textBox1.TabIndex = 1;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(1083, 40);
-            label1.Name = "label1";
-            label1.Size = new Size(87, 29);
-            label1.TabIndex = 0;
-            label1.Text = "رقم الفاتورة";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(1083, 40);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(87, 29);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "رقم الفاتورة";
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(dataGridView1);
-            groupBox2.Dock = DockStyle.Bottom;
-            groupBox2.Location = new Point(0, 129);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(1182, 624);
-            groupBox2.TabIndex = 1;
-            groupBox2.TabStop = false;
-            groupBox2.Text = "فواتير المبيعات";
+            this.groupBox2.Controls.Add(this.dataGridView1);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupBox2.Location = new System.Drawing.Point(0, 129);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(1182, 624);
+            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "فواتير المبيعات";
             // 
             // dataGridView1
             // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.AllowUserToOrderColumns = true;
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Cursor = Cursors.IBeam;
-            dataGridView1.Dock = DockStyle.Fill;
-            dataGridView1.Location = new Point(3, 32);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Sunken;
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new Size(1176, 589);
-            dataGridView1.TabIndex = 0;
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 32);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 29;
+            this.dataGridView1.Size = new System.Drawing.Size(1176, 589);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.radioButton3.Checked = true;
+            this.radioButton3.Location = new System.Drawing.Point(327, 25);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(62, 33);
+            this.radioButton3.TabIndex = 9;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "الكل";
+            this.radioButton3.UseVisualStyleBackColor = true;
             // 
             // SalesManagmentForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 29F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1182, 753);
-            Controls.Add(groupBox2);
-            Controls.Add(groupBox1);
-            Font = new Font("Cairo", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            Margin = new Padding(3, 4, 3, 4);
-            MaximizeBox = false;
-            MinimizeBox = false;
-            Name = "SalesManagmentForm";
-            RightToLeft = RightToLeft.Yes;
-            RightToLeftLayout = true;
-            ShowIcon = false;
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "ادارة المبيعات";
-            Load += SalesManagmentForm_Load;
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
-            groupBox3.ResumeLayout(false);
-            groupBox3.PerformLayout();
-            groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 29F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1182, 753);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
+            this.Font = new System.Drawing.Font("Cairo", 9F);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "SalesManagmentForm";
+            this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.RightToLeftLayout = true;
+            this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "ادارة المبيعات";
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
@@ -208,5 +221,6 @@ namespace SalesManagementSystem.Forms
         public GroupBox groupBox3;
         public RadioButton radioButton2;
         public RadioButton radioButton1;
+        public RadioButton radioButton3;
     }
 }
