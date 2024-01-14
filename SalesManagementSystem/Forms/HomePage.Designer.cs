@@ -203,14 +203,14 @@ namespace SalesManagementSystem
             // إدارةالاصنافToolStripMenuItem
             // 
             this.إدارةالاصنافToolStripMenuItem.Name = "إدارةالاصنافToolStripMenuItem";
-            this.إدارةالاصنافToolStripMenuItem.Size = new System.Drawing.Size(180, 28);
+            this.إدارةالاصنافToolStripMenuItem.Size = new System.Drawing.Size(146, 28);
             this.إدارةالاصنافToolStripMenuItem.Text = "إدارة الفئات";
             this.إدارةالاصنافToolStripMenuItem.Click += new System.EventHandler(this.إدارةالاصنافToolStripMenuItem_Click_1);
             // 
             // إدارةالاصنافToolStripMenuItem1
             // 
             this.إدارةالاصنافToolStripMenuItem1.Name = "إدارةالاصنافToolStripMenuItem1";
-            this.إدارةالاصنافToolStripMenuItem1.Size = new System.Drawing.Size(180, 28);
+            this.إدارةالاصنافToolStripMenuItem1.Size = new System.Drawing.Size(146, 28);
             this.إدارةالاصنافToolStripMenuItem1.Text = "إدارة الاصناف";
             this.إدارةالاصنافToolStripMenuItem1.Click += new System.EventHandler(this.إدارةالاصنافToolStripMenuItem1_Click);
             // 
@@ -220,6 +220,7 @@ namespace SalesManagementSystem
             this.ادارةالمصروفاتToolStripMenuItem.Size = new System.Drawing.Size(85, 27);
             this.ادارةالمصروفاتToolStripMenuItem.Text = "ادارة السندات";
             this.ادارةالمصروفاتToolStripMenuItem.Visible = false;
+            this.ادارةالمصروفاتToolStripMenuItem.Click += new System.EventHandler(this.ادارةالمصروفاتToolStripMenuItem_Click);
             // 
             // التقارييرToolStripMenuItem
             // 
