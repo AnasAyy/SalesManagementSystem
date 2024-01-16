@@ -53,6 +53,7 @@ namespace SalesManagementSystem
             this.ادارةالمصروفاتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.التقارييرToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.تقريرالمشترياتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -224,6 +225,8 @@ namespace SalesManagementSystem
             // 
             // التقارييرToolStripMenuItem
             // 
+            this.التقارييرToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.تقريرالمشترياتToolStripMenuItem});
             this.التقارييرToolStripMenuItem.Name = "التقارييرToolStripMenuItem";
             this.التقارييرToolStripMenuItem.Size = new System.Drawing.Size(55, 27);
             this.التقارييرToolStripMenuItem.Text = "التقارير";
@@ -239,6 +242,13 @@ namespace SalesManagementSystem
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
+            // 
+            // تقريرالمشترياتToolStripMenuItem
+            // 
+            this.تقريرالمشترياتToolStripMenuItem.Name = "تقريرالمشترياتToolStripMenuItem";
+            this.تقريرالمشترياتToolStripMenuItem.Size = new System.Drawing.Size(180, 28);
+            this.تقريرالمشترياتToolStripMenuItem.Text = "تقرير المشتريات";
+            this.تقريرالمشترياتToolStripMenuItem.Click += new System.EventHandler(this.تقريرالمشترياتToolStripMenuItem_Click);
             // 
             // HomePage
             // 
@@ -288,5 +298,6 @@ namespace SalesManagementSystem
         public ToolStripMenuItem التقارييرToolStripMenuItem;
         private ToolStripMenuItem عمليةشراءجديدةToolStripMenuItem;
         private ToolStripMenuItem ادارةالمشToolStripMenuItem;
+        private ToolStripMenuItem تقريرالمشترياتToolStripMenuItem;
     }
 }

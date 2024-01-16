@@ -1,5 +1,7 @@
 ﻿using SalesManagementSystem.Controllers;
 using SalesManagementSystem.Forms;
+using SalesManagementSystem.Reports.Designs;
+using SalesManagementSystem.Reports.Forms;
 using System;
 using System.Windows.Forms;
 
@@ -151,6 +153,11 @@ namespace SalesManagementSystem
         private void التقاريرToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             AccountForm.GetaccountForm.Show();
+        }
+
+        private void تقريرالمشترياتToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PurchasesReportForm.GetPurchasesReportForm.Show();
         }
     }
 }

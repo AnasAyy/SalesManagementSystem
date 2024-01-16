@@ -1,5 +1,6 @@
 ﻿using Dapper;
 using SalesManagementSystem.Data.Dtos;
+using SalesManagementSystem.Forms;
 using SalesManagementSystem.Reports.Designs;
 using System;
 using System.Collections.Generic;
@@ -16,9 +17,29 @@ namespace SalesManagementSystem.Reports.Forms
 {
     public partial class PurchasesReportForm : Form
     {
+        static PurchasesReportForm purchasesReportForm;//
         public PurchasesReportForm()
         {
+            if (purchasesReportForm == null) purchasesReportForm = this;//
             InitializeComponent();
+        }
+
+        static void PurchasesReportForm_FormClosed(object sender, FormClosedEventArgs e)//
+        {
+            purchasesReportForm = null;
+        }
+
+        public static PurchasesReportForm GetPurchasesReportForm //
+        {
+
+            get
+            {
+                if (purchasesReportForm == null)
+                    purchasesReportForm = new PurchasesReportForm();
+                purchasesReportForm.FormClosed += PurchasesReportForm_FormClosed;
+                return purchasesReportForm;
+
+            }
         }
 
         private void PurchasesReportForm_Load(object sender, EventArgs e)
