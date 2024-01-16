@@ -108,6 +108,7 @@
     <Compile Include="Data\Dtos\AddSaleDataResponseDto.cs" />
     <Compile Include="Data\Dtos\GetBillByBillIdResponseDto.cs" />
     <Compile Include="Data\Dtos\GetBillDetailsByBillIdResponseDto.cs" />
+    <Compile Include="Data\Dtos\PurchasesReportDto.cs" />
     <Compile Include="Forms\AccountForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -227,11 +228,23 @@
       <DependentUpon>GetBillDetailsByIdReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reports\Designs\PurchasesReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PurchasesReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reports\Forms\GetBillDetailsById.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reports\Forms\GetBillDetailsById.Designer.cs">
       <DependentUpon>GetBillDetailsById.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Forms\PurchasesReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Forms\PurchasesReportForm.Designer.cs">
+      <DependentUpon>PurchasesReportForm.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Forms\AccountForm.resx">
       <DependentUpon>AccountForm.cs</DependentUpon>
@@ -297,8 +310,15 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>GetBillDetailsByIdReport.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Designs\PurchasesReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PurchasesReport.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\Forms\GetBillDetailsById.resx">
       <DependentUpon>GetBillDetailsById.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Forms\PurchasesReportForm.resx">
+      <DependentUpon>PurchasesReportForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\SalesManagementSystem.Data.Dtos.GetBillByBillIdResponseDto.datasource" />
