@@ -172,7 +172,7 @@ namespace SalesManagementSystem.Controllers
                     "PurchaseCount as \"عدد مرات الشراء\" ," +
                     "CAST(CreatedAt AS DATE) as \"تاريخ الاضافة\" " +
                     "from Clients " +
-                    "WHERE Name LIKE N'%" + form.textBox3.Text + "%' ", conn.ConnectionString);
+                    "WHERE Name LIKE N'%" + form.textBox3.Text + "%' ", conn);
 
                 da.Fill(dt);
                 if (dt.Rows.Count > 0)

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SalesManagementSystem.Reports.Forms;
+using System;
 using System.Windows.Forms;
 
 namespace SalesManagementSystem
@@ -13,7 +14,7 @@ namespace SalesManagementSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new HomePage());
+            Application.Run(new GetBillDetailsById());
         }
     }
 }
