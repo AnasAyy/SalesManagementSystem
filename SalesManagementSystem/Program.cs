@@ -14,7 +14,7 @@ namespace SalesManagementSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new GetBillDetailsById());
+            Application.Run(new HomePage());
         }
     }
 }
