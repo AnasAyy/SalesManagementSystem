@@ -416,6 +416,7 @@ namespace SalesManagementSystem.Controllers
                     Fee = feee,
                     FeeType = Convert.ToInt32(form.comboBox3.SelectedValue.ToString()),
                     Price = sum,
+                    DiscountType=5,
                     TotalPrice = Convert.ToDecimal(form.textBox5.Text),
                     TotalLocalPrice = Convert.ToDecimal(form.textBox6.Text),
                     Note = form.textBox8.Text,

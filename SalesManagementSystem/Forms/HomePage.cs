@@ -159,5 +159,10 @@ namespace SalesManagementSystem
         {
             PurchasesReportForm.GetPurchasesReportForm.Show();
         }
+
+        private void تقريرالعملاءToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CustmoerReport.GetCustmoerReport.Show();
+        }
     }
 }

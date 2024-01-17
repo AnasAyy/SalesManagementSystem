@@ -52,8 +52,9 @@ namespace SalesManagementSystem
             this.إدارةالاصنافToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.ادارةالمصروفاتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.التقارييرToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.تقريرالمشترياتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.تقريرالعملاءToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -226,11 +227,19 @@ namespace SalesManagementSystem
             // التقارييرToolStripMenuItem
             // 
             this.التقارييرToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.تقريرالمشترياتToolStripMenuItem});
+            this.تقريرالمشترياتToolStripMenuItem,
+            this.تقريرالعملاءToolStripMenuItem});
             this.التقارييرToolStripMenuItem.Name = "التقارييرToolStripMenuItem";
             this.التقارييرToolStripMenuItem.Size = new System.Drawing.Size(55, 27);
             this.التقارييرToolStripMenuItem.Text = "التقارير";
             this.التقارييرToolStripMenuItem.Visible = false;
+            // 
+            // تقريرالمشترياتToolStripMenuItem
+            // 
+            this.تقريرالمشترياتToolStripMenuItem.Name = "تقريرالمشترياتToolStripMenuItem";
+            this.تقريرالمشترياتToolStripMenuItem.Size = new System.Drawing.Size(180, 28);
+            this.تقريرالمشترياتToolStripMenuItem.Text = "تقرير المشتريات";
+            this.تقريرالمشترياتToolStripMenuItem.Click += new System.EventHandler(this.تقريرالمشترياتToolStripMenuItem_Click);
             // 
             // pictureBox1
             // 
@@ -243,12 +252,12 @@ namespace SalesManagementSystem
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
-            // تقريرالمشترياتToolStripMenuItem
+            // تقريرالعملاءToolStripMenuItem
             // 
-            this.تقريرالمشترياتToolStripMenuItem.Name = "تقريرالمشترياتToolStripMenuItem";
-            this.تقريرالمشترياتToolStripMenuItem.Size = new System.Drawing.Size(180, 28);
-            this.تقريرالمشترياتToolStripMenuItem.Text = "تقرير المشتريات";
-            this.تقريرالمشترياتToolStripMenuItem.Click += new System.EventHandler(this.تقريرالمشترياتToolStripMenuItem_Click);
+            this.تقريرالعملاءToolStripMenuItem.Name = "تقريرالعملاءToolStripMenuItem";
+            this.تقريرالعملاءToolStripMenuItem.Size = new System.Drawing.Size(180, 28);
+            this.تقريرالعملاءToolStripMenuItem.Text = "تقرير العملاء";
+            this.تقريرالعملاءToolStripMenuItem.Click += new System.EventHandler(this.تقريرالعملاءToolStripMenuItem_Click);
             // 
             // HomePage
             // 
@@ -299,5 +308,6 @@ namespace SalesManagementSystem
         private ToolStripMenuItem عمليةشراءجديدةToolStripMenuItem;
         private ToolStripMenuItem ادارةالمشToolStripMenuItem;
         private ToolStripMenuItem تقريرالمشترياتToolStripMenuItem;
+        private ToolStripMenuItem تقريرالعملاءToolStripMenuItem;
     }
 }
