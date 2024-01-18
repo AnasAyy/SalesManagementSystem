@@ -1,15 +1,44 @@
 ﻿
 
 using SalesManagementSystem.Forms;
+using SalesManagementSystem.Reports.Forms;
 using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace SalesManagementSystem.Controllers
 {
     public class SaleManagment
     {
+        public static bool IsSaleBillExist(int billId)
+        {
+            var db = new DataBaseContext();
+            try
+            {
+                return db.Bills.Any(x=>x.Id == billId && x.BillType == 1 || x.BillType == 3);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return false;
+        }
+        public static void ShowBillReportById(SalesManagmentForm form)
+        {
+            var billNumber = Convert.ToInt32(form.textBox1.Text);
+            if (!IsSaleBillExist(billNumber))
+            {
+                MessageBox.Show("رقم فاتورة غير صحيح");
+                return;
+            }
+            else
+            {
+                BillDetailsByIdReportForm.GetBillDetailsByIdReportForm.billNumber = billNumber;
+                BillDetailsByIdReportForm.GetBillDetailsByIdReportForm.Show();
+            }
+        }
         public static void GetAllSaleBills(SalesManagmentForm form)
         {
             var db = new DataBaseContext();

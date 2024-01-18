@@ -33,6 +33,7 @@ namespace SalesManagementSystem.Forms
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.button1 = new System.Windows.Forms.Button();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
@@ -41,7 +42,7 @@ namespace SalesManagementSystem.Forms
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -50,6 +51,7 @@ namespace SalesManagementSystem.Forms
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.button5);
             this.groupBox1.Controls.Add(this.textBox1);
@@ -76,6 +78,19 @@ namespace SalesManagementSystem.Forms
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "نوع الفاتورة";
             // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.radioButton3.Checked = true;
+            this.radioButton3.Location = new System.Drawing.Point(327, 25);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(62, 33);
+            this.radioButton3.TabIndex = 9;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "الكل";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.RoyalBlue;
@@ -83,7 +98,7 @@ namespace SalesManagementSystem.Forms
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(41, 19);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(98, 42);
+            this.button1.Size = new System.Drawing.Size(98, 39);
             this.button1.TabIndex = 8;
             this.button1.Text = "بحث";
             this.button1.UseVisualStyleBackColor = false;
@@ -118,7 +133,7 @@ namespace SalesManagementSystem.Forms
             this.button5.ForeColor = System.Drawing.Color.White;
             this.button5.Location = new System.Drawing.Point(740, 35);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 42);
+            this.button5.Size = new System.Drawing.Size(75, 38);
             this.button5.TabIndex = 7;
             this.button5.Text = "بحث";
             this.button5.UseVisualStyleBackColor = false;
@@ -170,18 +185,18 @@ namespace SalesManagementSystem.Forms
             this.dataGridView1.Size = new System.Drawing.Size(1176, 589);
             this.dataGridView1.TabIndex = 0;
             // 
-            // radioButton3
+            // button2
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.radioButton3.Checked = true;
-            this.radioButton3.Location = new System.Drawing.Point(327, 25);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(62, 33);
-            this.radioButton3.TabIndex = 9;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "الكل";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.button2.BackColor = System.Drawing.Color.RoyalBlue;
+            this.button2.Font = new System.Drawing.Font("Cairo", 9F, System.Drawing.FontStyle.Bold);
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(659, 35);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 38);
+            this.button2.TabIndex = 9;
+            this.button2.Text = "طباعة";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // SalesManagmentForm
             // 
@@ -222,5 +237,6 @@ namespace SalesManagementSystem.Forms
         public RadioButton radioButton2;
         public RadioButton radioButton1;
         public RadioButton radioButton3;
+        public Button button2;
     }
 }

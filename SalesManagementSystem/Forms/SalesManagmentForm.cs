@@ -61,5 +61,17 @@ namespace SalesManagementSystem.Forms
                 SaleManagment.GetAllSaleBills(this);
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if(textBox1.Text.Length > 0)
+            {
+                SaleManagment.ShowBillReportById(this);
+            }
+            else
+            {
+                MessageBox.Show("يرجى ادخال رقم الفاتورة");
+            }
+        }
     }
 }

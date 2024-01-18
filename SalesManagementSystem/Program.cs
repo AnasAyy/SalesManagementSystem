@@ -1,4 +1,5 @@
-﻿using SalesManagementSystem.Reports.Forms;
+﻿using SalesManagementSystem.Forms;
+using SalesManagementSystem.Reports.Forms;
 using System;
 using System.Windows.Forms;
 

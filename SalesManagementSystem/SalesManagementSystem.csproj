@@ -223,17 +223,17 @@
     <Compile Include="Models\Supplier.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Reports\Designs\GetBillDetailsByIdReport.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>GetBillDetailsByIdReport.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Reports\Designs\ClientReport.cs">
       <DependentUpon>ClientReport.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\Designs\GetBillDetailsByIdReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GetBillDetailsByIdReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reports\Designs\PurchasesReport.cs">
       <AutoGen>True</AutoGen>
@@ -253,11 +253,11 @@
     <Compile Include="Reports\Forms\CustmoerReport.Designer.cs">
       <DependentUpon>CustmoerReport.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reports\Forms\GetBillDetailsById.cs">
+    <Compile Include="Reports\Forms\BillDetailsByIdReportForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reports\Forms\GetBillDetailsById.Designer.cs">
-      <DependentUpon>GetBillDetailsById.cs</DependentUpon>
+    <Compile Include="Reports\Forms\BillDetailsByIdReportForm.Designer.cs">
+      <DependentUpon>BillDetailsByIdReportForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Reports\Forms\PurchasesReportForm.cs">
       <SubType>Form</SubType>
@@ -325,13 +325,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Reports\Designs\GetBillDetailsByIdReport.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>GetBillDetailsByIdReport.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="Reports\Designs\ClientReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ClientReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Designs\GetBillDetailsByIdReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>GetBillDetailsByIdReport.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\Designs\PurchasesReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -343,8 +343,8 @@
     <EmbeddedResource Include="Reports\Forms\CustmoerReport.resx">
       <DependentUpon>CustmoerReport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports\Forms\GetBillDetailsById.resx">
-      <DependentUpon>GetBillDetailsById.cs</DependentUpon>
+    <EmbeddedResource Include="Reports\Forms\BillDetailsByIdReportForm.resx">
+      <DependentUpon>BillDetailsByIdReportForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\Forms\PurchasesReportForm.resx">
       <DependentUpon>PurchasesReportForm.cs</DependentUpon>
