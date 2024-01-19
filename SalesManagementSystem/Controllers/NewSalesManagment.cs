@@ -1,6 +1,7 @@
 ﻿using SalesManagementSystem.Data.Dtos;
 using SalesManagementSystem.Forms;
 using SalesManagementSystem.Models;
+using SalesManagementSystem.Reports.Forms;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -632,7 +633,9 @@ namespace SalesManagementSystem.Controllers
                 {
                     MessageBox.Show("خطأ في تعديل حساب العميل");
                 }
-
+                SaleBillReportForm.GetSaleBillReportForm.billNumber = bill.Id;
+                SaleBillReportForm.GetSaleBillReportForm.clientName = form.textBox7.Text;
+                SaleBillReportForm.GetSaleBillReportForm.Show();
                 ClearForm(form);
             }
             catch (Exception ex)
