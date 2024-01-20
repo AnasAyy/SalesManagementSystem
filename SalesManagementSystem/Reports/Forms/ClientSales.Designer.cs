@@ -108,7 +108,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Cairo", 11.25F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(945, 6);
+            this.label2.Location = new System.Drawing.Point(914, 6);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(166, 29);
             this.label2.TabIndex = 0;
@@ -140,7 +140,7 @@
             this.RightToLeftLayout = true;
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "مبيعات العميل";
+            this.Text = "مشتريات العميل";
             this.Load += new System.EventHandler(this.ClientSales_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
