@@ -12,6 +12,7 @@ namespace SalesManagementSystem.Data.Dtos
         public string Name { get; set; }
         public string ClientName { get; set; }
         public int Quantity { get; set; }
+        public int TotalNumber { get; set; }
         public decimal TotalPrice { get; set; }
         public decimal Total { get; set; }
         public DateTime CreatedDate { get; set; }

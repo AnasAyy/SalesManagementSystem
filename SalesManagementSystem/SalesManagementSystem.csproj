@@ -208,9 +208,9 @@
     <Compile Include="Forms\SupplierManagmentForm.Designer.cs">
       <DependentUpon>SupplierManagmentForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202401111718517_first.cs" />
-    <Compile Include="Migrations\202401111718517_first.designer.cs">
-      <DependentUpon>202401111718517_first.cs</DependentUpon>
+    <Compile Include="Migrations\202401201825470_m1.cs" />
+    <Compile Include="Migrations\202401201825470_m1.designer.cs">
+      <DependentUpon>202401201825470_m1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
@@ -279,6 +279,12 @@
     <Compile Include="Reports\Forms\BillDetailsByIdReportForm.Designer.cs">
       <DependentUpon>BillDetailsByIdReportForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reports\Forms\ExpenseReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Forms\ExpenseReportForm.Designer.cs">
+      <DependentUpon>ExpenseReportForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reports\Forms\PurchasesReportForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -339,8 +345,8 @@
     <EmbeddedResource Include="Forms\SupplierManagmentForm.resx">
       <DependentUpon>SupplierManagmentForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202401111718517_first.resx">
-      <DependentUpon>202401111718517_first.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202401201825470_m1.resx">
+      <DependentUpon>202401201825470_m1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -382,6 +388,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\Forms\BillDetailsByIdReportForm.resx">
       <DependentUpon>BillDetailsByIdReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Forms\ExpenseReportForm.resx">
+      <DependentUpon>ExpenseReportForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\Forms\PurchasesReportForm.resx">
       <DependentUpon>PurchasesReportForm.cs</DependentUpon>

@@ -102,6 +102,7 @@ namespace SalesManagementSystem.Forms
             FinancialBondManagement.FillComboBox1(this);
             FinancialBondManagement.FillComboBox5(this);
             FinancialBondManagement.FillComboBox3(this);
+            FinancialBondManagement.FillComboBox7(this);
             FinancialBondManagement.FilldataGridView(this);
         }
 
@@ -242,6 +243,18 @@ namespace SalesManagementSystem.Forms
 
         }
 
-        
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox2.SelectedIndex == 0)
+            {
+                label13.Visible = true;
+                comboBox7.Visible = true;
+            }
+            else
+            {
+                label13.Visible = false;
+                comboBox7.Visible = false;
+            }
+        }
     }
 }

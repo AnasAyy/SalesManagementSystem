@@ -71,6 +71,8 @@ namespace SalesManagementSystem.Forms
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.تعديلToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.comboBox7 = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -80,6 +82,8 @@ namespace SalesManagementSystem.Forms
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.comboBox7);
+            this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.comboBox5);
             this.groupBox1.Controls.Add(this.label16);
             this.groupBox1.Controls.Add(this.comboBox4);
@@ -344,6 +348,7 @@ namespace SalesManagementSystem.Forms
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(205, 21);
             this.comboBox2.TabIndex = 15;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -527,6 +532,28 @@ namespace SalesManagementSystem.Forms
             this.تعديلToolStripMenuItem1.Text = "تعديل";
             this.تعديلToolStripMenuItem1.Click += new System.EventHandler(this.تعديلToolStripMenuItem1_Click);
             // 
+            // comboBox7
+            // 
+            this.comboBox7.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox7.FormattingEnabled = true;
+            this.comboBox7.ItemHeight = 13;
+            this.comboBox7.Location = new System.Drawing.Point(34, 197);
+            this.comboBox7.Name = "comboBox7";
+            this.comboBox7.Size = new System.Drawing.Size(205, 21);
+            this.comboBox7.TabIndex = 31;
+            this.comboBox7.Visible = false;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Cairo", 11F);
+            this.label13.Location = new System.Drawing.Point(244, 192);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(95, 29);
+            this.label13.TabIndex = 30;
+            this.label13.Text = "نوع المصروف";
+            this.label13.Visible = false;
+            // 
             // FinancialBondForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -599,5 +626,7 @@ namespace SalesManagementSystem.Forms
         public ComboBox comboBox6;
         private ContextMenuStrip contextMenuStrip1;
         private ToolStripMenuItem تعديلToolStripMenuItem1;
+        public ComboBox comboBox7;
+        public Label label13;
     }
 }

@@ -60,7 +60,7 @@ namespace SalesManagementSystem.Reports.Forms
                         clientSalesReport1.SetDataSource(list);
 
 
-                        string SumQuery = "SELECT SUM(bi.TotalPrice) AS Total " +
+                        string SumQuery = "SELECT SUM(bi.TotalPrice) AS Total, COUNT(*) AS TotalNumber " +
                         " FROM Bills b " +
                         " JOIN BillItems bi ON b.Id = bi.BillId " +
                         " JOIN Items i ON i.Id = bi.ItemId " +
@@ -74,6 +74,7 @@ namespace SalesManagementSystem.Reports.Forms
 
                         clientSalesReport1.SetParameterValue("ClientName", clientName.ToString());
                         clientSalesReport1.SetParameterValue("Total", list2.FirstOrDefault()?.Total.ToString());
+                        clientSalesReport1.SetParameterValue("TotalNumber", list2.FirstOrDefault()?.TotalNumber.ToString());
 
                         crystalReportViewer1.ReportSource = clientSalesReport1;
                         crystalReportViewer1.Refresh();

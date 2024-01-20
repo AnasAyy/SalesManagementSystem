@@ -45,7 +45,7 @@ namespace SalesManagementSystem.Reports.Forms
 
         private void CustmoerReport_Load(object sender, EventArgs e)
         {
-            FilldataGridView(this);
+
         }
 
         public static void FilldataGridView(CustmoerReport form)
@@ -62,15 +62,21 @@ namespace SalesManagementSystem.Reports.Forms
                 {
                     conn.Open();
                 }
-
+                DateTime startDate = form.dateTimePicker1.Value.Date;
+                DateTime endDate = form.dateTimePicker2.Value.Date;
                 SqlCommand comm = new SqlCommand();
                 comm.Connection = conn;
-                comm.CommandText = "SELECT Id as 'الرقم'," +
-                                   "Name as 'الاسم'," +
-                                   "PhoneNumber as 'رقم الهاتف'," +
-                                   "Address as 'الموقع'," +
-                                   "PurchaseCount as 'عدد مرات الشراء'" +
-                                   " FROM Clients";
+                comm.CommandText = "SELECT Id AS 'الرقم'," +
+                                   "Name AS 'الاسم'," +
+                                   "PhoneNumber AS 'رقم الهاتف'," +
+                                   "Address AS 'الموقع'," +
+                                   "PurchaseCount AS 'عدد مرات الشراء'" +
+                                   "FROM Clients " +
+                                   "WHERE CONVERT(DATE, CreatedAt) >= @StartDate " +
+                                   "AND CONVERT(DATE, CreatedAt) <= @EndDate";
+
+                comm.Parameters.AddWithValue("@StartDate", startDate);
+                comm.Parameters.AddWithValue("@EndDate", endDate);
 
                 da = new SqlDataAdapter(comm);
                 da.Fill(dt);
@@ -106,27 +112,27 @@ namespace SalesManagementSystem.Reports.Forms
                             sqlconn.Open();
                         }
 
-                        string clientQuery = "SELECT Id , " +
-                     "Name,  " +
-                     "PhoneNumber , " +
-                     "Address  , " +
-                     "PurchaseCount  " +
-                     "FROM Clients";
+                        DateTime startDate = dateTimePicker1.Value.Date;
+                        DateTime endDate = dateTimePicker2.Value.Date;
 
-                        List<ClientReportDto> list = sqlconn.Query<ClientReportDto>(clientQuery, commandType: CommandType.Text).ToList();
+                        string clientQuery = "SELECT Id ," +
+                                                "Name ," +
+                                                "PhoneNumber ," +
+                                                "Address ," +
+                                                "PurchaseCount " +
+                                                " FROM Clients " +
+                                                "WHERE CONVERT(DATE, CreatedAt) >= @StartDate " +
+                                                "AND CONVERT(DATE, CreatedAt) <= @EndDate";
+
+                        List<ClientReportDto> list = sqlconn.Query<ClientReportDto>(clientQuery, new { StartDate = startDate, EndDate = endDate }).ToList();
 
                         clientReports.clientReport1.SetDataSource(list);
 
+                        string sumQuery = "SELECT SUM(PurchaseCount) as Total FROM Clients";
 
+                        int total = sqlconn.QuerySingleOrDefault<int>(sumQuery);
 
-                        string SumQuery = "SELECT SUM(PurchaseCount)  as Total  " +
-                     "FROM Clients";
-
-                        List<ClientReportDto> list2 = sqlconn.Query<ClientReportDto>(SumQuery, commandType: CommandType.Text).ToList();
-
-                        clientReports.clientReport1.SetParameterValue("Total", list2.FirstOrDefault()?.Total.ToString());
-
-
+                        clientReports.clientReport1.SetParameterValue("Total", total);
 
                         clientReports.crystalReportViewer1.ReportSource = clientReports.clientReport1;
                         clientReports.crystalReportViewer1.Refresh();
@@ -134,7 +140,9 @@ namespace SalesManagementSystem.Reports.Forms
                         clientReports.Show();
                     }
                 }
+
             }
+
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
@@ -149,9 +157,14 @@ namespace SalesManagementSystem.Reports.Forms
             int selectedrowindex1 = dataGridView1.SelectedCells[0].RowIndex;
             DataGridViewRow selectedRow1 = dataGridView1.Rows[selectedrowindex];
             var cellValue1 = selectedRow.Cells["الاسم"].Value.ToString();
-            ClientSales clientSales = new ClientSales(cellValue,cellValue1);
-                clientSales.Show();
-            
+            ClientSales clientSales = new ClientSales(cellValue, cellValue1);
+            clientSales.Show();
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FilldataGridView(this);
         }
     }
 

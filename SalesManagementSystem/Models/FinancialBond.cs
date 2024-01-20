@@ -12,6 +12,7 @@ namespace SalesManagementSystem.Models
         public int Type { get; set; } // صرف / قبض
         public int BoudType { get; set; } //2 سند عادي 0/ سند تمت اضافته من مبيعات 1/ سند تمت اضافته من مشتريات
         public string Description { get; set; } = string.Empty;
+        public int? ExpenseType { get; set; } // نوع المصروف
         public int? FeeType { get; set; }//
         public decimal? Fee { get; set; }//
         public decimal Price { get; set; }

@@ -111,6 +111,38 @@ namespace SalesManagementSystem.Controllers
                     MessageBox.Show(ex.Message);
                 }
             }
+        }public static void FillComboBox7(FinancialBondForm form)
+        {
+            using (var db = new DataBaseContext())
+            {
+                try
+                {
+                    var result = db.PublicLists
+                        .Where(x => x.Code == "Expense" && !x.IsParent)
+                        .ToList();
+
+                    var comboBoxItems = new List<PublicList>();
+
+                    comboBoxItems.Add(new PublicList { Id = 0, Name = "اختر عنصر" });
+
+                    if (result.Count > 0)
+                    {
+                        comboBoxItems.AddRange(result);
+
+                        form.comboBox7.DataSource = comboBoxItems;
+                        form.comboBox7.ValueMember = nameof(PublicList.Id);
+                        form.comboBox7.DisplayMember = nameof(PublicList.Name);
+                    }
+                    else
+                    {
+                        form.comboBox7.DataSource = null;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
         public static void FillComboBox5(FinancialBondForm form)
         {
@@ -294,6 +326,7 @@ namespace SalesManagementSystem.Controllers
                 MessageBox.Show("الرجاء تحديد طريقة الدفع");
                 return;
             }
+            
             if (form.comboBox3.SelectedItem != null && form.comboBox3.Text == "اختر عنصر")
             {
                 MessageBox.Show("الرجاء تحديد نوع الضريبة");
@@ -349,6 +382,15 @@ namespace SalesManagementSystem.Controllers
                 financialBond.Title = form.textBox1.Text.Trim();
                 financialBond.FeeType = Convert.ToInt32(form.comboBox3.SelectedValue);
                 financialBond.Type = form.comboBox2.SelectedIndex;
+                if(financialBond.Type == 0)
+                {
+                    if (form.comboBox7.SelectedItem != null && form.comboBox7.Text == "اختر عنصر")
+                    {
+                        MessageBox.Show("الرجاء تحديد نوع المصروف");
+                        return;
+                    }
+                    financialBond.ExpenseType = Convert.ToInt32(form.comboBox7.SelectedValue);
+                }
                 financialBond.Price = Convert.ToDecimal(form.textBox2.Text.Trim());
                 financialBond.CreatedAt = DateTime.Now;
                 financialBond.TotalPrice = Convert.ToDecimal(form.textBox5.Text.Trim());
@@ -593,6 +635,10 @@ namespace SalesManagementSystem.Controllers
                         form.comboBox1.SelectedValue = fin.AccountId;
                         form.comboBox3.SelectedValue = fin.FeeType;
                         form.comboBox2.SelectedIndex = fin.Type;
+                        if (fin.Type == 0)
+                        {
+                            form.comboBox3.SelectedValue = fin.ExpenseType;
+                        }
                         if (fin.TotalPrice != 0)
                         {
                             form.textBox4.Text = (fin.TotalLocalPrice / fin.TotalPrice).ToString("0");
@@ -708,6 +754,15 @@ namespace SalesManagementSystem.Controllers
                     financialBond.Title = form.textBox1.Text.Trim();
                     financialBond.FeeType = Convert.ToInt32(form.comboBox3.SelectedValue);
                     financialBond.Type = form.comboBox2.SelectedIndex;
+                    if (financialBond.Type == 0)
+                    {
+                        if (form.comboBox7.SelectedItem != null && form.comboBox7.Text == "اختر عنصر")
+                        {
+                            MessageBox.Show("الرجاء تحديد نوع المصروف");
+                            return;
+                        }
+                        financialBond.ExpenseType = Convert.ToInt32(form.comboBox7.SelectedValue);
+                    }
                     financialBond.Price = Convert.ToDecimal(form.textBox2.Text.Trim());
                     financialBond.CreatedAt = DateTime.Now;
                     financialBond.TotalPrice = Convert.ToDecimal(form.textBox5.Text.Trim());
