@@ -140,6 +140,19 @@ namespace SalesManagementSystem.Reports.Forms
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void استعراضالمشترياتToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int selectedrowindex = dataGridView1.SelectedCells[0].RowIndex;
+            DataGridViewRow selectedRow = dataGridView1.Rows[selectedrowindex];
+            var cellValue = selectedRow.Cells["الرقم"].Value.ToString();
+            int selectedrowindex1 = dataGridView1.SelectedCells[0].RowIndex;
+            DataGridViewRow selectedRow1 = dataGridView1.Rows[selectedrowindex];
+            var cellValue1 = selectedRow.Cells["الاسم"].Value.ToString();
+            ClientSales clientSales = new ClientSales(cellValue,cellValue1);
+                clientSales.Show();
+            
+        }
     }
 
 }

@@ -107,6 +107,7 @@
     <Compile Include="Data\DataContext.cs" />
     <Compile Include="Data\Dtos\AddSaleDataResponseDto.cs" />
     <Compile Include="Data\Dtos\ClientReportDto.cs" />
+    <Compile Include="Data\Dtos\ClientSalesReportDto.cs" />
     <Compile Include="Data\Dtos\GetBillByBillIdResponseDto.cs" />
     <Compile Include="Data\Dtos\GetBillDetailsByBillIdResponseDto.cs" />
     <Compile Include="Data\Dtos\PurchasesReportDto.cs" />
@@ -224,6 +225,12 @@
     <Compile Include="Models\Supplier.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\Designs\ClientSalesReport.cs">
+      <DependentUpon>ClientSalesReport.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Reports\Designs\ClientReport.cs">
       <DependentUpon>ClientReport.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -253,6 +260,12 @@
     </Compile>
     <Compile Include="Reports\Forms\ClientReport.Designer.cs">
       <DependentUpon>ClientReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Forms\ClientSales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Forms\ClientSales.Designer.cs">
+      <DependentUpon>ClientSales.cs</DependentUpon>
     </Compile>
     <Compile Include="Reports\Forms\CustmoerReport.cs">
       <SubType>Form</SubType>
@@ -338,6 +351,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Reports\Designs\ClientSalesReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ClientSalesReport.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\Designs\ClientReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ClientReport.cs</LastGenOutput>
@@ -356,6 +373,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\Forms\ClientReport.resx">
       <DependentUpon>ClientReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Forms\ClientSales.resx">
+      <DependentUpon>ClientSales.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\Forms\CustmoerReport.resx">
       <DependentUpon>CustmoerReport.cs</DependentUpon>

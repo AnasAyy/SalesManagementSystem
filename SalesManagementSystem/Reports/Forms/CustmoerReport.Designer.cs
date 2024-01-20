@@ -30,14 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.استعراضالمشترياتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.استعراضالمشترياتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -51,6 +51,21 @@
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(1017, 408);
             this.dataGridView1.TabIndex = 3;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.استعراضالمشترياتToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.contextMenuStrip1.Size = new System.Drawing.Size(206, 48);
+            // 
+            // استعراضالمشترياتToolStripMenuItem
+            // 
+            this.استعراضالمشترياتToolStripMenuItem.Name = "استعراضالمشترياتToolStripMenuItem";
+            this.استعراضالمشترياتToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.استعراضالمشترياتToolStripMenuItem.Text = "استعراض مشتريات العميل";
+            this.استعراضالمشترياتToolStripMenuItem.Click += new System.EventHandler(this.استعراضالمشترياتToolStripMenuItem_Click);
             // 
             // label1
             // 
@@ -86,19 +101,6 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.استعراضالمشترياتToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(197, 26);
-            // 
-            // استعراضالمشترياتToolStripMenuItem
-            // 
-            this.استعراضالمشترياتToolStripMenuItem.Name = "استعراضالمشترياتToolStripMenuItem";
-            this.استعراضالمشترياتToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
-            this.استعراضالمشترياتToolStripMenuItem.Text = "استعراض مبيعات العميل";
-            // 
             // CustmoerReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -119,9 +121,9 @@
             this.Text = "تقرير العملاء";
             this.Load += new System.EventHandler(this.CustmoerReport_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

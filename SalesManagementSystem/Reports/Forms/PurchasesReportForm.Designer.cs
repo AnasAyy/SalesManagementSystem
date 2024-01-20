@@ -47,6 +47,7 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(85, 20);
             this.dateTimePicker1.TabIndex = 0;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // panel1
             // 
@@ -61,6 +62,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1086, 41);
             this.panel1.TabIndex = 4;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // button1
             // 
@@ -83,6 +85,7 @@
             this.label3.Size = new System.Drawing.Size(69, 29);
             this.label3.TabIndex = 3;
             this.label3.Text = "الى تاريخ";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // dateTimePicker2
             // 
@@ -91,6 +94,7 @@
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(85, 20);
             this.dateTimePicker2.TabIndex = 2;
+            this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
             // label1
             // 
@@ -102,6 +106,7 @@
             this.label1.Size = new System.Drawing.Size(68, 29);
             this.label1.TabIndex = 1;
             this.label1.Text = "من تاريخ";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -113,6 +118,7 @@
             this.label2.Size = new System.Drawing.Size(116, 29);
             this.label2.TabIndex = 0;
             this.label2.Text = "تقرير المشتريات";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // crystalReportViewer1
             // 
