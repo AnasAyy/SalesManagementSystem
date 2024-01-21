@@ -209,8 +209,36 @@
       <DependentUpon>SupplierManagmentForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\202401201825470_m1.cs" />
-    <Compile Include="Migrations\202401201825470_m1.designer.cs">
+    <Compile Include="Migrations\202401201825470_m1.Designer.cs">
       <DependentUpon>202401201825470_m1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202401211643083_MigrationName.cs" />
+    <Compile Include="Migrations\202401211643083_MigrationName.designer.cs">
+      <DependentUpon>202401211643083_MigrationName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202401211738002_test2.cs" />
+    <Compile Include="Migrations\202401211738002_test2.designer.cs">
+      <DependentUpon>202401211738002_test2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202401211742266_test3.cs" />
+    <Compile Include="Migrations\202401211742266_test3.designer.cs">
+      <DependentUpon>202401211742266_test3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202401211749054_Initial.cs" />
+    <Compile Include="Migrations\202401211749054_Initial.designer.cs">
+      <DependentUpon>202401211749054_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202401211924361_last22.cs" />
+    <Compile Include="Migrations\202401211924361_last22.designer.cs">
+      <DependentUpon>202401211924361_last22.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202401211929245_last21.cs" />
+    <Compile Include="Migrations\202401211929245_last21.designer.cs">
+      <DependentUpon>202401211929245_last21.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202401211931581_last24.cs" />
+    <Compile Include="Migrations\202401211931581_last24.designer.cs">
+      <DependentUpon>202401211931581_last24.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
@@ -347,6 +375,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202401201825470_m1.resx">
       <DependentUpon>202401201825470_m1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202401211643083_MigrationName.resx">
+      <DependentUpon>202401211643083_MigrationName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202401211738002_test2.resx">
+      <DependentUpon>202401211738002_test2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202401211742266_test3.resx">
+      <DependentUpon>202401211742266_test3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202401211749054_Initial.resx">
+      <DependentUpon>202401211749054_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202401211924361_last22.resx">
+      <DependentUpon>202401211924361_last22.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202401211929245_last21.resx">
+      <DependentUpon>202401211929245_last21.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202401211931581_last24.resx">
+      <DependentUpon>202401211931581_last24.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
