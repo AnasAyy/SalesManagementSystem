@@ -141,6 +141,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "مشتريات العميل";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.ClientSales_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

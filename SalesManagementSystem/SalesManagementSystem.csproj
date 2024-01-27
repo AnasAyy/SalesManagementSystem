@@ -132,6 +132,7 @@
     <Compile Include="Data\Dtos\GetBillDetailsByBillIdResponseDto.cs" />
     <Compile Include="Data\Dtos\PurchasesReportDto.cs" />
     <Compile Include="Data\Dtos\SaleBillResponseDto.cs" />
+    <Compile Include="Data\Dtos\WarehouseReportDto.cs" />
     <Compile Include="Forms\AccountForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -291,6 +292,12 @@
       <DependentUpon>GetBillDetailsByIdReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reports\Designs\WarehouseReport.cs">
+      <DependentUpon>WarehouseReport.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Reports\Designs\PurchasesReport.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -344,6 +351,12 @@
     </Compile>
     <Compile Include="Reports\Forms\SaleBillReportForm.Designer.cs">
       <DependentUpon>SaleBillReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Forms\WarehouseReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Forms\WarehouseReportForm.Designer.cs">
+      <DependentUpon>WarehouseReportForm.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Forms\AccountForm.resx">
       <DependentUpon>AccountForm.cs</DependentUpon>
@@ -438,6 +451,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>GetBillDetailsByIdReport.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Designs\WarehouseReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>WarehouseReport.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\Designs\PurchasesReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>PurchasesReport.cs</LastGenOutput>
@@ -466,6 +483,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\Forms\SaleBillReportForm.resx">
       <DependentUpon>SaleBillReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Forms\WarehouseReportForm.resx">
+      <DependentUpon>WarehouseReportForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\SalesManagementSystem.Data.Dtos.GetBillByBillIdResponseDto.datasource" />

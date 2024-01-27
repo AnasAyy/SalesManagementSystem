@@ -59,6 +59,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "تقرير العملاء";
+            this.TopMost = true;
             this.ResumeLayout(false);
 
         }

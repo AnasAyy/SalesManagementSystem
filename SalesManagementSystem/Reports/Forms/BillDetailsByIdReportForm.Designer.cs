@@ -40,14 +40,14 @@
             this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.Size = new System.Drawing.Size(1182, 753);
+            this.crystalReportViewer1.Size = new System.Drawing.Size(1182, 749);
             this.crystalReportViewer1.TabIndex = 0;
             // 
             // BillDetailsByIdReportForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 29F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1182, 753);
+            this.ClientSize = new System.Drawing.Size(1182, 749);
             this.Controls.Add(this.crystalReportViewer1);
             this.Font = new System.Drawing.Font("Cairo", 9F);
             this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
@@ -57,6 +57,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "تقرير تفاصيل الفاتورة";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.GetBillDetailsById_Load);
             this.ResumeLayout(false);
 
