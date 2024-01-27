@@ -128,7 +128,9 @@ namespace SalesManagementSystem.Reports.Forms
 
                         clientReports.clientReport1.SetDataSource(list);
 
-                        string sumQuery = "SELECT SUM(PurchaseCount) as Total FROM Clients";
+                        string sumQuery = "SELECT SUM(PurchaseCount) as Total FROM Clients " +
+                            " WHERE CONVERT(DATE, CreatedAt) >= '"+ dateTimePicker1.Value.Date + "' " +
+                            " AND CONVERT(DATE, CreatedAt) <= '"+ dateTimePicker2.Value.Date + "' ";
 
                         int total = sqlconn.QuerySingleOrDefault<int>(sumQuery);
 

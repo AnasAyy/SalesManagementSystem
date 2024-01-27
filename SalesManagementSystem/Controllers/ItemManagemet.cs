@@ -272,7 +272,7 @@ namespace SalesManagementSystem.Controllers
                                                       "i.LessQuantity AS 'اقل كمية', " +
                                                       "CASE WHEN i.IsActive = 1 THEN N'مفعل' ELSE N'غير مفعل' END AS 'الحالة' " +
                                                       "FROM Items i join Categories c on i.CategoryId = c.Id " +
-                                                      "WHERE i.Name LIKE '%' + @searchText + '%'", conn);
+                                                      "WHERE i.Name LIKE '%' + @searchText + '%' OR i.Barcode LIKE '%' + @searchText + '%'  ", conn);
                     comm.Parameters.AddWithValue("@searchText", form.textBox3.Text);
 
                     SqlDataReader reader = comm.ExecuteReader();
