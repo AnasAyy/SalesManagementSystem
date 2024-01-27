@@ -15,7 +15,7 @@ namespace SalesManagementSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new WarehouseReportForm());
+            Application.Run(new HomePage());
         }
     }
 }
