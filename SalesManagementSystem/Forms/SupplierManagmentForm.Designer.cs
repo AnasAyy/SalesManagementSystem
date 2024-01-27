@@ -70,6 +70,7 @@ namespace SalesManagementSystem.Forms
             this.button1.TabIndex = 6;
             this.button1.Text = "بحث";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label3
             // 
@@ -145,6 +146,7 @@ namespace SalesManagementSystem.Forms
             this.تعديلToolStripMenuItem.Name = "تعديلToolStripMenuItem";
             this.تعديلToolStripMenuItem.Size = new System.Drawing.Size(63, 33);
             this.تعديلToolStripMenuItem.Text = "تعديل";
+            this.تعديلToolStripMenuItem.Click += new System.EventHandler(this.تعديلToolStripMenuItem_Click);
             // 
             // حفظToolStripMenuItem
             // 
@@ -152,12 +154,14 @@ namespace SalesManagementSystem.Forms
             this.حفظToolStripMenuItem.Name = "حفظToolStripMenuItem";
             this.حفظToolStripMenuItem.Size = new System.Drawing.Size(57, 33);
             this.حفظToolStripMenuItem.Text = "حفظ";
+            this.حفظToolStripMenuItem.Click += new System.EventHandler(this.حفظToolStripMenuItem_Click);
             // 
             // جديدToolStripMenuItem
             // 
             this.جديدToolStripMenuItem.Name = "جديدToolStripMenuItem";
             this.جديدToolStripMenuItem.Size = new System.Drawing.Size(55, 33);
             this.جديدToolStripMenuItem.Text = "جديد";
+            this.جديدToolStripMenuItem.Click += new System.EventHandler(this.جديدToolStripMenuItem_Click);
             // 
             // textBox1
             // 
@@ -182,8 +186,9 @@ namespace SalesManagementSystem.Forms
             // تعديلToolStripMenuItem1
             // 
             this.تعديلToolStripMenuItem1.Name = "تعديلToolStripMenuItem1";
-            this.تعديلToolStripMenuItem1.Size = new System.Drawing.Size(115, 24);
+            this.تعديلToolStripMenuItem1.Size = new System.Drawing.Size(210, 24);
             this.تعديلToolStripMenuItem1.Text = "تعديل";
+            this.تعديلToolStripMenuItem1.Click += new System.EventHandler(this.تعديلToolStripMenuItem1_Click);
             // 
             // contextMenuStrip1
             // 
@@ -287,6 +292,7 @@ namespace SalesManagementSystem.Forms
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "إدارة الموردين";
+            this.TopMost = true;
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.contextMenuStrip1.ResumeLayout(false);

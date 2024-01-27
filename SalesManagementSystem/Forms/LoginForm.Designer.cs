@@ -45,7 +45,7 @@ namespace SalesManagementSystem.Forms
             this.label1.Font = new System.Drawing.Font("Cairo", 11.25F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(46, 42);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(113, 29);
+            this.label1.Size = new System.Drawing.Size(141, 36);
             this.label1.TabIndex = 0;
             this.label1.Text = "اسم المستخدم";
             // 
@@ -54,7 +54,7 @@ namespace SalesManagementSystem.Forms
             this.textBox1.Location = new System.Drawing.Point(46, 76);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(291, 30);
+            this.textBox1.Size = new System.Drawing.Size(291, 36);
             this.textBox1.TabIndex = 1;
             // 
             // button1
@@ -77,7 +77,7 @@ namespace SalesManagementSystem.Forms
             this.textBox2.Location = new System.Drawing.Point(46, 145);
             this.textBox2.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(291, 30);
+            this.textBox2.Size = new System.Drawing.Size(291, 36);
             this.textBox2.TabIndex = 2;
             this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress_1);
             // 
@@ -87,7 +87,7 @@ namespace SalesManagementSystem.Forms
             this.label2.Font = new System.Drawing.Font("Cairo", 11.25F, System.Drawing.FontStyle.Bold);
             this.label2.Location = new System.Drawing.Point(46, 111);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 29);
+            this.label2.Size = new System.Drawing.Size(113, 36);
             this.label2.TabIndex = 3;
             this.label2.Text = "كلمة المرور";
             // 
@@ -98,12 +98,12 @@ namespace SalesManagementSystem.Forms
             this.wrongLoginLable.ForeColor = System.Drawing.Color.Red;
             this.wrongLoginLable.Location = new System.Drawing.Point(40, 237);
             this.wrongLoginLable.Name = "wrongLoginLable";
-            this.wrongLoginLable.Size = new System.Drawing.Size(0, 29);
+            this.wrongLoginLable.Size = new System.Drawing.Size(0, 36);
             this.wrongLoginLable.TabIndex = 5;
             // 
             // LoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(406, 279);
             this.Controls.Add(this.wrongLoginLable);
@@ -122,6 +122,7 @@ namespace SalesManagementSystem.Forms
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "تسجيل الدخول";
+            this.TopMost = true;
             this.ResumeLayout(false);
             this.PerformLayout();
 

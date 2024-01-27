@@ -97,10 +97,10 @@ namespace SalesManagementSystem.Forms
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.groupBox1.Size = new System.Drawing.Size(1012, 109);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox1.Size = new System.Drawing.Size(1348, 134);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "اضافة منتج";
@@ -108,10 +108,10 @@ namespace SalesManagementSystem.Forms
             // textBox7
             // 
             this.textBox7.Font = new System.Drawing.Font("Cairo", 8.999999F);
-            this.textBox7.Location = new System.Drawing.Point(685, 64);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox7.Location = new System.Drawing.Point(913, 79);
+            this.textBox7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(232, 30);
+            this.textBox7.Size = new System.Drawing.Size(308, 36);
             this.textBox7.TabIndex = 36;
             this.textBox7.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox7_KeyPress);
             // 
@@ -119,10 +119,9 @@ namespace SalesManagementSystem.Forms
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Cairo", 11F);
-            this.label8.Location = new System.Drawing.Point(922, 63);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Location = new System.Drawing.Point(1229, 78);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(88, 29);
+            this.label8.Size = new System.Drawing.Size(114, 36);
             this.label8.TabIndex = 35;
             this.label8.Text = "باركود المنتج";
             // 
@@ -131,10 +130,10 @@ namespace SalesManagementSystem.Forms
             this.button2.BackColor = System.Drawing.Color.RoyalBlue;
             this.button2.Font = new System.Drawing.Font("Cairo", 9F, System.Drawing.FontStyle.Bold);
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(10, 23);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
+            this.button2.Location = new System.Drawing.Point(13, 28);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(140, 29);
+            this.button2.Size = new System.Drawing.Size(187, 36);
             this.button2.TabIndex = 34;
             this.button2.Text = "إضافة";
             this.button2.UseVisualStyleBackColor = false;
@@ -143,10 +142,10 @@ namespace SalesManagementSystem.Forms
             // textBox8
             // 
             this.textBox8.Font = new System.Drawing.Font("Cairo", 8.999999F);
-            this.textBox8.Location = new System.Drawing.Point(468, 24);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox8.Location = new System.Drawing.Point(624, 30);
+            this.textBox8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(72, 30);
+            this.textBox8.Size = new System.Drawing.Size(95, 36);
             this.textBox8.TabIndex = 33;
             this.textBox8.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox8_KeyPress);
             // 
@@ -154,31 +153,31 @@ namespace SalesManagementSystem.Forms
             // 
             this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.ItemHeight = 13;
-            this.comboBox2.Location = new System.Drawing.Point(800, 28);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBox2.ItemHeight = 16;
+            this.comboBox2.Location = new System.Drawing.Point(1067, 34);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(154, 21);
+            this.comboBox2.Size = new System.Drawing.Size(204, 24);
             this.comboBox2.TabIndex = 15;
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Cairo", 8.999999F);
-            this.textBox2.Location = new System.Drawing.Point(308, 24);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox2.Location = new System.Drawing.Point(411, 30);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(72, 30);
+            this.textBox2.Size = new System.Drawing.Size(95, 36);
             this.textBox2.TabIndex = 19;
             this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
             // 
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Cairo", 8.999999F);
-            this.textBox1.Location = new System.Drawing.Point(168, 24);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox1.Location = new System.Drawing.Point(224, 30);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(72, 30);
+            this.textBox1.Size = new System.Drawing.Size(95, 36);
             this.textBox1.TabIndex = 3;
             this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
@@ -186,10 +185,9 @@ namespace SalesManagementSystem.Forms
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Cairo", 11F);
-            this.label1.Location = new System.Drawing.Point(244, 24);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(325, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 29);
+            this.label1.Size = new System.Drawing.Size(87, 36);
             this.label1.TabIndex = 2;
             this.label1.Text = "سعر البيع";
             // 
@@ -197,10 +195,9 @@ namespace SalesManagementSystem.Forms
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Cairo", 11F);
-            this.label3.Location = new System.Drawing.Point(384, 25);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(512, 31);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(79, 29);
+            this.label3.Size = new System.Drawing.Size(100, 36);
             this.label3.TabIndex = 18;
             this.label3.Text = "سعر الشراء";
             // 
@@ -208,11 +205,11 @@ namespace SalesManagementSystem.Forms
             // 
             this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.ItemHeight = 13;
-            this.comboBox4.Location = new System.Drawing.Point(596, 28);
-            this.comboBox4.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBox4.ItemHeight = 16;
+            this.comboBox4.Location = new System.Drawing.Point(795, 34);
+            this.comboBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(154, 21);
+            this.comboBox4.Size = new System.Drawing.Size(204, 24);
             this.comboBox4.TabIndex = 27;
             this.comboBox4.SelectedIndexChanged += new System.EventHandler(this.comboBox4_SelectedIndexChanged);
             // 
@@ -220,10 +217,9 @@ namespace SalesManagementSystem.Forms
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Cairo", 11F);
-            this.label12.Location = new System.Drawing.Point(544, 24);
-            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label12.Location = new System.Drawing.Point(725, 30);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(54, 29);
+            this.label12.Size = new System.Drawing.Size(68, 36);
             this.label12.TabIndex = 32;
             this.label12.Text = "الكمية";
             // 
@@ -231,10 +227,9 @@ namespace SalesManagementSystem.Forms
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Cairo", 11F);
-            this.label15.Location = new System.Drawing.Point(754, 24);
-            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label15.Location = new System.Drawing.Point(1005, 30);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(48, 29);
+            this.label15.Size = new System.Drawing.Size(62, 36);
             this.label15.TabIndex = 26;
             this.label15.Text = "المنتج";
             // 
@@ -242,10 +237,9 @@ namespace SalesManagementSystem.Forms
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Cairo", 11F);
-            this.label4.Location = new System.Drawing.Point(959, 24);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(1279, 30);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(44, 29);
+            this.label4.Size = new System.Drawing.Size(54, 36);
             this.label4.TabIndex = 14;
             this.label4.Text = "الفئة";
             // 
@@ -253,21 +247,20 @@ namespace SalesManagementSystem.Forms
             // 
             this.comboBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.ItemHeight = 13;
-            this.comboBox5.Location = new System.Drawing.Point(716, 19);
-            this.comboBox5.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBox5.ItemHeight = 16;
+            this.comboBox5.Location = new System.Drawing.Point(955, 23);
+            this.comboBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(204, 21);
+            this.comboBox5.Size = new System.Drawing.Size(271, 24);
             this.comboBox5.TabIndex = 29;
             // 
             // label16
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Cairo", 11F);
-            this.label16.Location = new System.Drawing.Point(925, 18);
-            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label16.Location = new System.Drawing.Point(1233, 22);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(70, 29);
+            this.label16.Size = new System.Drawing.Size(92, 36);
             this.label16.TabIndex = 28;
             this.label16.Text = "اسم التاجر";
             // 
@@ -275,29 +268,29 @@ namespace SalesManagementSystem.Forms
             // 
             this.textBox6.Enabled = false;
             this.textBox6.Font = new System.Drawing.Font("Cairo", 11F);
-            this.textBox6.Location = new System.Drawing.Point(366, 115);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox6.Location = new System.Drawing.Point(488, 142);
+            this.textBox6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(204, 35);
+            this.textBox6.Size = new System.Drawing.Size(271, 42);
             this.textBox6.TabIndex = 23;
             // 
             // textBox5
             // 
             this.textBox5.Enabled = false;
             this.textBox5.Font = new System.Drawing.Font("Cairo", 11F);
-            this.textBox5.Location = new System.Drawing.Point(367, 69);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox5.Location = new System.Drawing.Point(489, 85);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(204, 35);
+            this.textBox5.Size = new System.Drawing.Size(271, 42);
             this.textBox5.TabIndex = 23;
             // 
             // textBox4
             // 
             this.textBox4.Font = new System.Drawing.Font("Cairo", 11F);
-            this.textBox4.Location = new System.Drawing.Point(366, 16);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox4.Location = new System.Drawing.Point(488, 20);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(204, 35);
+            this.textBox4.Size = new System.Drawing.Size(271, 42);
             this.textBox4.TabIndex = 23;
             this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             this.textBox4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox4_KeyPress);
@@ -306,10 +299,9 @@ namespace SalesManagementSystem.Forms
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Cairo", 11F);
-            this.label10.Location = new System.Drawing.Point(575, 121);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Location = new System.Drawing.Point(767, 149);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(139, 29);
+            this.label10.Size = new System.Drawing.Size(180, 36);
             this.label10.TabIndex = 22;
             this.label10.Text = "اجمالي المبلغ باليمني";
             // 
@@ -317,10 +309,9 @@ namespace SalesManagementSystem.Forms
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Cairo", 11F);
-            this.label9.Location = new System.Drawing.Point(575, 75);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Location = new System.Drawing.Point(767, 92);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(141, 29);
+            this.label9.Size = new System.Drawing.Size(181, 36);
             this.label9.TabIndex = 22;
             this.label9.Text = "اجمالي المبلغ بالدولار ";
             // 
@@ -328,20 +319,19 @@ namespace SalesManagementSystem.Forms
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Cairo", 11F);
-            this.label7.Location = new System.Drawing.Point(575, 23);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Location = new System.Drawing.Point(767, 28);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(114, 29);
+            this.label7.Size = new System.Drawing.Size(145, 36);
             this.label7.TabIndex = 22;
             this.label7.Text = "سعر صرف الدولار";
             // 
             // textBox3
             // 
             this.textBox3.Font = new System.Drawing.Font("Cairo", 11F);
-            this.textBox3.Location = new System.Drawing.Point(718, 119);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox3.Location = new System.Drawing.Point(957, 146);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(204, 35);
+            this.textBox3.Size = new System.Drawing.Size(271, 42);
             this.textBox3.TabIndex = 21;
             this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             this.textBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox3_KeyPress);
@@ -350,10 +340,9 @@ namespace SalesManagementSystem.Forms
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Cairo", 11F);
-            this.label6.Location = new System.Drawing.Point(929, 124);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Location = new System.Drawing.Point(1239, 153);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(87, 29);
+            this.label6.Size = new System.Drawing.Size(110, 36);
             this.label6.TabIndex = 20;
             this.label6.Text = "مبلغ الضريبة";
             // 
@@ -361,11 +350,11 @@ namespace SalesManagementSystem.Forms
             // 
             this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.ItemHeight = 13;
-            this.comboBox3.Location = new System.Drawing.Point(718, 87);
-            this.comboBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBox3.ItemHeight = 16;
+            this.comboBox3.Location = new System.Drawing.Point(957, 107);
+            this.comboBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(204, 21);
+            this.comboBox3.Size = new System.Drawing.Size(271, 24);
             this.comboBox3.TabIndex = 17;
             this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
             // 
@@ -373,10 +362,9 @@ namespace SalesManagementSystem.Forms
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Cairo", 11F);
-            this.label5.Location = new System.Drawing.Point(926, 82);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Location = new System.Drawing.Point(1235, 101);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(80, 29);
+            this.label5.Size = new System.Drawing.Size(100, 36);
             this.label5.TabIndex = 16;
             this.label5.Text = "نوع الضريبة";
             // 
@@ -384,21 +372,20 @@ namespace SalesManagementSystem.Forms
             // 
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.ItemHeight = 13;
-            this.comboBox1.Location = new System.Drawing.Point(716, 50);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBox1.ItemHeight = 16;
+            this.comboBox1.Location = new System.Drawing.Point(955, 62);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(204, 21);
+            this.comboBox1.Size = new System.Drawing.Size(271, 24);
             this.comboBox1.TabIndex = 17;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Cairo", 11F);
-            this.label2.Location = new System.Drawing.Point(925, 46);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(1233, 57);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 29);
+            this.label2.Size = new System.Drawing.Size(113, 36);
             this.label2.TabIndex = 16;
             this.label2.Text = "طريقة الدفع";
             // 
@@ -406,11 +393,11 @@ namespace SalesManagementSystem.Forms
             // 
             this.groupBox2.Controls.Add(this.dataGridView1);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox2.Location = new System.Drawing.Point(0, 109);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox2.Location = new System.Drawing.Point(0, 134);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(1012, 323);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox2.Size = new System.Drawing.Size(1348, 398);
             this.groupBox2.TabIndex = 30;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "عناصر الفاتورة";
@@ -429,13 +416,13 @@ namespace SalesManagementSystem.Forms
             this.SellPrice,
             this.TotalSellPrice});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(2, 15);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridView1.Location = new System.Drawing.Point(3, 17);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(1008, 306);
+            this.dataGridView1.Size = new System.Drawing.Size(1342, 379);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dataGridView1_RowsAdded);
             // 
@@ -500,11 +487,11 @@ namespace SalesManagementSystem.Forms
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.comboBox1);
-            this.groupBox3.Location = new System.Drawing.Point(0, 434);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox3.Location = new System.Drawing.Point(0, 534);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox3.Size = new System.Drawing.Size(1010, 171);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox3.Size = new System.Drawing.Size(1347, 210);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "البيانات الاساسية";
@@ -513,11 +500,11 @@ namespace SalesManagementSystem.Forms
             // 
             this.groupBox5.Controls.Add(this.radioButton3);
             this.groupBox5.Controls.Add(this.radioButton4);
-            this.groupBox5.Location = new System.Drawing.Point(224, 11);
-            this.groupBox5.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox5.Location = new System.Drawing.Point(299, 14);
+            this.groupBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox5.Size = new System.Drawing.Size(114, 54);
+            this.groupBox5.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox5.Size = new System.Drawing.Size(152, 66);
             this.groupBox5.TabIndex = 31;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "نوع الفاتورة";
@@ -527,11 +514,11 @@ namespace SalesManagementSystem.Forms
             this.radioButton3.AutoSize = true;
             this.radioButton3.Checked = true;
             this.radioButton3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.radioButton3.Location = new System.Drawing.Point(55, 15);
-            this.radioButton3.Margin = new System.Windows.Forms.Padding(2);
+            this.radioButton3.Location = new System.Drawing.Point(63, 17);
+            this.radioButton3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.radioButton3.Size = new System.Drawing.Size(48, 37);
+            this.radioButton3.Size = new System.Drawing.Size(51, 47);
             this.radioButton3.TabIndex = 1;
             this.radioButton3.TabStop = true;
             this.radioButton3.Text = "شراء";
@@ -542,11 +529,11 @@ namespace SalesManagementSystem.Forms
             // 
             this.radioButton4.AutoSize = true;
             this.radioButton4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.radioButton4.Location = new System.Drawing.Point(2, 15);
-            this.radioButton4.Margin = new System.Windows.Forms.Padding(2);
+            this.radioButton4.Location = new System.Drawing.Point(3, 17);
+            this.radioButton4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioButton4.Name = "radioButton4";
             this.radioButton4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.radioButton4.Size = new System.Drawing.Size(53, 37);
+            this.radioButton4.Size = new System.Drawing.Size(60, 47);
             this.radioButton4.TabIndex = 0;
             this.radioButton4.Text = "مرتجع";
             this.radioButton4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -557,10 +544,10 @@ namespace SalesManagementSystem.Forms
             this.button4.BackColor = System.Drawing.Color.Red;
             this.button4.Font = new System.Drawing.Font("Cairo", 9F, System.Drawing.FontStyle.Bold);
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(224, 113);
-            this.button4.Margin = new System.Windows.Forms.Padding(2);
+            this.button4.Location = new System.Drawing.Point(299, 139);
+            this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(114, 33);
+            this.button4.Size = new System.Drawing.Size(152, 41);
             this.button4.TabIndex = 36;
             this.button4.Text = "إلغاء";
             this.button4.UseVisualStyleBackColor = false;
@@ -571,10 +558,10 @@ namespace SalesManagementSystem.Forms
             this.button1.BackColor = System.Drawing.Color.RoyalBlue;
             this.button1.Font = new System.Drawing.Font("Cairo", 9F, System.Drawing.FontStyle.Bold);
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(224, 70);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Location = new System.Drawing.Point(299, 86);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(114, 33);
+            this.button1.Size = new System.Drawing.Size(152, 41);
             this.button1.TabIndex = 35;
             this.button1.Text = "حفظ";
             this.button1.UseVisualStyleBackColor = false;
@@ -582,23 +569,24 @@ namespace SalesManagementSystem.Forms
             // 
             // PurchasesForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1012, 604);
+            this.ClientSize = new System.Drawing.Size(1348, 743);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox3);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(1029, 687);
+            this.MaximumSize = new System.Drawing.Size(1366, 835);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(1027, 591);
+            this.MinimumSize = new System.Drawing.Size(1363, 717);
             this.Name = "PurchasesForm";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ادارة المشتريات";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.PurchasesForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
