@@ -164,5 +164,15 @@ namespace SalesManagementSystem
         {
             CustmoerReport.GetCustmoerReport.Show();
         }
+
+        private void تقريرالمخازنToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            WarehouseReportForm.GetWarehouseReportForm.Show();
+        }
+
+        private void تقريرالمشترياتToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ExpencesReportForm.GetExpencesReportForm.Show();
+        }
     }
 }

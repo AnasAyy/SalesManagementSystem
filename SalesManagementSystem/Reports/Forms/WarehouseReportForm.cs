@@ -17,9 +17,29 @@ namespace SalesManagementSystem.Reports.Forms
 {
     public partial class WarehouseReportForm : Form
     {
+        static WarehouseReportForm warehouseReportForm;//
         public WarehouseReportForm()
         {
+            if (warehouseReportForm == null) warehouseReportForm = this;//
             InitializeComponent();
+        }
+
+        static void WarehouseReportForm_FormClosed(object sender, FormClosedEventArgs e)//
+        {
+            warehouseReportForm = null;
+        }
+
+        public static WarehouseReportForm GetWarehouseReportForm //
+        {
+
+            get
+            {
+                if (warehouseReportForm == null)
+                    warehouseReportForm = new WarehouseReportForm();
+                warehouseReportForm.FormClosed += WarehouseReportForm_FormClosed;
+                return warehouseReportForm;
+
+            }
         }
 
         private void WarehouseReportForm_Load(object sender, EventArgs e)

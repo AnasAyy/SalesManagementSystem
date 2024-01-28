@@ -60,6 +60,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "تقرير العملاء";
             this.TopMost = true;
+            this.Load += new System.EventHandler(this.ClientReport_Load);
             this.ResumeLayout(false);
 
         }

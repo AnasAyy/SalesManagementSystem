@@ -16,5 +16,10 @@ namespace SalesManagementSystem.Reports.Forms
         {
             InitializeComponent();
         }
+
+        private void ClientReport_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

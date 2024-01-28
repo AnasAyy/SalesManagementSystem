@@ -128,6 +128,7 @@
     <Compile Include="Data\Dtos\AddSaleDataResponseDto.cs" />
     <Compile Include="Data\Dtos\ClientReportDto.cs" />
     <Compile Include="Data\Dtos\ClientSalesReportDto.cs" />
+    <Compile Include="Data\Dtos\ExpencesReportDto.cs" />
     <Compile Include="Data\Dtos\GetBillByBillIdResponseDto.cs" />
     <Compile Include="Data\Dtos\GetBillDetailsByBillIdResponseDto.cs" />
     <Compile Include="Data\Dtos\PurchasesReportDto.cs" />
@@ -292,6 +293,12 @@
       <DependentUpon>GetBillDetailsByIdReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reports\Designs\ExpencesReport.cs">
+      <DependentUpon>ExpencesReport.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Reports\Designs\WarehouseReport.cs">
       <DependentUpon>WarehouseReport.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -334,11 +341,11 @@
     <Compile Include="Reports\Forms\BillDetailsByIdReportForm.Designer.cs">
       <DependentUpon>BillDetailsByIdReportForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reports\Forms\ExpenseReportForm.cs">
+    <Compile Include="Reports\Forms\ExpencesReportForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reports\Forms\ExpenseReportForm.Designer.cs">
-      <DependentUpon>ExpenseReportForm.cs</DependentUpon>
+    <Compile Include="Reports\Forms\ExpencesReportForm.Designer.cs">
+      <DependentUpon>ExpencesReportForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Reports\Forms\PurchasesReportForm.cs">
       <SubType>Form</SubType>
@@ -451,6 +458,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>GetBillDetailsByIdReport.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Designs\ExpencesReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ExpencesReport.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\Designs\WarehouseReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>WarehouseReport.cs</LastGenOutput>
@@ -475,8 +486,8 @@
     <EmbeddedResource Include="Reports\Forms\BillDetailsByIdReportForm.resx">
       <DependentUpon>BillDetailsByIdReportForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports\Forms\ExpenseReportForm.resx">
-      <DependentUpon>ExpenseReportForm.cs</DependentUpon>
+    <EmbeddedResource Include="Reports\Forms\ExpencesReportForm.resx">
+      <DependentUpon>ExpencesReportForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\Forms\PurchasesReportForm.resx">
       <DependentUpon>PurchasesReportForm.cs</DependentUpon>
