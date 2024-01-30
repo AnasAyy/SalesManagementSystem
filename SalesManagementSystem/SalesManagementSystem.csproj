@@ -123,6 +123,7 @@
     <Compile Include="Controllers\PurchasesManagement.cs" />
     <Compile Include="Controllers\ReturnSale.cs" />
     <Compile Include="Controllers\SaleManagment.cs" />
+    <Compile Include="Controllers\SalesReportManagement.cs" />
     <Compile Include="Controllers\SupplierManagment.cs" />
     <Compile Include="Data\DataContext.cs" />
     <Compile Include="Data\Dtos\AddSaleDataResponseDto.cs" />
@@ -131,8 +132,10 @@
     <Compile Include="Data\Dtos\ExpencesReportDto.cs" />
     <Compile Include="Data\Dtos\GetBillByBillIdResponseDto.cs" />
     <Compile Include="Data\Dtos\GetBillDetailsByBillIdResponseDto.cs" />
+    <Compile Include="Data\Dtos\GetSalesByCategoryIdResponseDto.cs" />
     <Compile Include="Data\Dtos\PurchasesReportDto.cs" />
     <Compile Include="Data\Dtos\SaleBillResponseDto.cs" />
+    <Compile Include="Data\Dtos\SalesGeneralReportResponseDto.cs" />
     <Compile Include="Data\Dtos\WarehouseReportDto.cs" />
     <Compile Include="Forms\AccountForm.cs">
       <SubType>Form</SubType>
@@ -299,6 +302,12 @@
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Reports\Designs\SalesReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SalesReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reports\Designs\WarehouseReport.cs">
       <DependentUpon>WarehouseReport.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -358,6 +367,12 @@
     </Compile>
     <Compile Include="Reports\Forms\SaleBillReportForm.Designer.cs">
       <DependentUpon>SaleBillReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Forms\SaleManagementReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Forms\SaleManagementReportForm.Designer.cs">
+      <DependentUpon>SaleManagementReportForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Reports\Forms\WarehouseReportForm.cs">
       <SubType>Form</SubType>
@@ -462,6 +477,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ExpencesReport.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Designs\SalesReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SalesReport.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\Designs\WarehouseReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>WarehouseReport.cs</LastGenOutput>
@@ -494,6 +513,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\Forms\SaleBillReportForm.resx">
       <DependentUpon>SaleBillReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Forms\SaleManagementReportForm.resx">
+      <DependentUpon>SaleManagementReportForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\Forms\WarehouseReportForm.resx">
       <DependentUpon>WarehouseReportForm.cs</DependentUpon>

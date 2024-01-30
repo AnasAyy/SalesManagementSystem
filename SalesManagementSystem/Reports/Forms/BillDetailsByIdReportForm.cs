@@ -52,7 +52,7 @@ namespace SalesManagementSystem.Reports.Forms
                             ", discount.Name as DiscountType , bill.Discount , fee.Name as FeeType , bill.Fee , bill.Price, bill.TotalPrice, bill.TotalLocalPrice, bill.CreatedAt as Date , bill.ClientId , bill.SupplierId FROM Bills AS bill, PublicLists AS fee, PublicLists AS discount WHERE bill.Id = " + billNumber + " AND bill.DiscountType = discount.Id AND bill.FeeType = fee.Id";
                         List<GetBillDetailsByBillIdResponseDto> list2 = sqlconn.Query<GetBillDetailsByBillIdResponseDto>(billDetails, commandType: CommandType.Text).ToList();
 
-                        string billItems = "SELECT i.Name as ItemName , bi.Quantity as Quantity , CAST(ROUND(bi.TotalPrice/bi.Quantity, 2) AS DECIMAL(10,2)) as Price , bi.TotalPrice as TotalPrice FROM BillItems bi, Items i WHERE bi.BillId = " + billNumber + " AND bi.ItemId = i.Id AND bi.Quantity != 0";
+                        string billItems = "SELECT i.Barcode , i.Name as ItemName , bi.Quantity as Quantity , CAST(ROUND(bi.TotalPrice/bi.Quantity, 2) AS DECIMAL(10,2)) as Price , bi.TotalPrice as TotalPrice FROM BillItems bi, Items i WHERE bi.BillId = " + billNumber + " AND bi.ItemId = i.Id AND bi.Quantity != 0";
                         List<GetBillByBillIdResponseDto> list = sqlconn.Query<GetBillByBillIdResponseDto>(billItems, commandType: CommandType.Text).ToList();
 
                         getBillDetailsByIdReport1.SetDataSource(list);

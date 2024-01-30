@@ -295,7 +295,7 @@ namespace SalesManagementSystem.Forms
             this.RightToLeftLayout = true;
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ادارة الكميات";
+            this.Text = "ادارة المتغيرات";
             this.TopMost = true;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
