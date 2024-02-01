@@ -174,5 +174,10 @@ namespace SalesManagementSystem
         {
             ExpencesReportForm.GetExpencesReportForm.Show();
         }
+
+        private void تقريرالمبيعاتToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaleManagementReportForm.GetSaleManagementReportForm.Show();
+        }
     }
 }
