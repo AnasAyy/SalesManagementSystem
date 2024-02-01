@@ -130,6 +130,7 @@ namespace SalesManagementSystem.Forms
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(594, 42);
             this.textBox4.TabIndex = 7;
+            this.textBox4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox4_KeyPress);
             // 
             // label4
             // 
@@ -152,6 +153,7 @@ namespace SalesManagementSystem.Forms
             this.textBox2.Size = new System.Drawing.Size(318, 42);
             this.textBox2.TabIndex = 5;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
             // 
             // label2
             // 
@@ -173,6 +175,7 @@ namespace SalesManagementSystem.Forms
             this.textBox1.Size = new System.Drawing.Size(384, 42);
             this.textBox1.TabIndex = 3;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // label1
             // 
@@ -298,6 +301,7 @@ namespace SalesManagementSystem.Forms
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "إدارة العملاء";
             this.TopMost = true;
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CustomerManagmentForm_KeyPress);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);

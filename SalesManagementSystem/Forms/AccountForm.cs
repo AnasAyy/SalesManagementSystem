@@ -122,5 +122,13 @@ namespace SalesManagementSystem.Forms
         {
             ExchangeForm.GetExchangeForm.Show();
         }
+
+        private void AccountForm_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                AccountManagement.Add(this);
+            }
+        }
     }
 }

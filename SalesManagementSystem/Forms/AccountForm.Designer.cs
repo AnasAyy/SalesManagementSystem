@@ -335,6 +335,7 @@ namespace SalesManagementSystem.Forms
             this.Text = "إدارة الحسابات";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.AccountForm_Load_1);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AccountForm_KeyPress);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);

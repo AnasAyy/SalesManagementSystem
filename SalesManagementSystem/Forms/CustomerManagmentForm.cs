@@ -125,5 +125,37 @@ namespace SalesManagementSystem.Forms
         {
             CustomerManagment.UpdateClient(this);
         }
+
+        private void CustomerManagmentForm_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                CustomerManagment.CreateClient(this);
+            }
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                CustomerManagment.CreateClient(this);
+            }
+        }
+
+        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                CustomerManagment.CreateClient(this);
+            }
+        }
+
+        private void textBox4_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                CustomerManagment.CreateClient(this);
+            }
+        }
     }
 }
