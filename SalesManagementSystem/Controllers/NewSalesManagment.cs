@@ -134,10 +134,12 @@ namespace SalesManagementSystem.Controllers
             try
             {
                 var result = db.Accounts.ToList();
+                result.Insert(0, new Account { Name = "اختر حساب", Id = 0 }); // Insert at index 0
                 form.comboBox5.BindingContext = new BindingContext();
                 form.comboBox5.DataSource = result;
                 form.comboBox5.DisplayMember = "Name";
                 form.comboBox5.ValueMember = "Id";
+                form.comboBox5.SelectedIndex = 0; // Set the selected index to the first item
             }
             catch (Exception ex)
             {
@@ -556,6 +558,17 @@ namespace SalesManagementSystem.Controllers
                 {
                     MessageBox.Show("خطأ في جلب بيانات العميل");
                     return;
+                }
+                #endregion
+
+                #region Check account is choosen
+                if(form.radioButton1.Checked)
+                {
+                    if(form.comboBox5.Text == "اختر حساب")
+                    {
+                        MessageBox.Show("يرجى اختيار نوع الحساب");
+                        return;
+                    }
                 }
                 #endregion
 

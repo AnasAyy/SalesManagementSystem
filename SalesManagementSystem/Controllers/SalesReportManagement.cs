@@ -38,7 +38,8 @@ namespace SalesManagementSystem.Controllers
             {
                 string name = string.Empty, profitType = string.Empty;
                 int numberOfSoldItems = 0, numberOfReturnItems = 0;
-                decimal totalPurchasePrice = 0, totalSalePrice = 0, totalProfit = 0 , totalLose = 0;
+                decimal totalPurchasePrice = 0, totalSalePrice = 0, totalProfit = 0;
+                decimal totalReturnPurchasePrice = 0, totalReturnSalePrice = 0, totalLose = 0;
                 string fromDate = form.dateTimePicker1.Value.Date.ToString("yyyy-MM-dd"), toDate = form.dateTimePicker2.Value.Date.ToString("yyyy-MM-dd");
                 try
                 {
@@ -58,7 +59,7 @@ namespace SalesManagementSystem.Controllers
                                     for (int i = 0; i < billItems.Count(); i++)
                                     {
                                         numberOfSoldItems += billItems[i].Quantity;
-                                        int itemId = billItems[i].Id;
+                                        var itemId = billItems[i].ItemId;
                                         var item = db.Items.FirstOrDefault(x => x.Id == itemId);
                                         if (item == null)
                                         {
@@ -114,22 +115,17 @@ namespace SalesManagementSystem.Controllers
                             {
                                 sqlconn.Open();
                             }
-                            string saleBillDetails = "SELECT Items.Id, BillItems.Quantity, BillItems.TotalPrice " +
-                                "FROM BillItems INNER JOIN Items ON BillItems.Id = Items.Id " +
-                                "INNER JOIN Categories ON Items.CategoryId = Categories.Id " +
-                                "INNER JOIN Bills ON BillItems.BillId = Bills.Id " +
-                                "WHERE Categories.Id = " + categoryId + " " +
-                                "AND ( Bills.CreatedAt > '" + form.dateTimePicker1.Value.Date.ToString("yyyy-MM-dd") + "' AND Bills.CreatedAt < '" + form.dateTimePicker2.Value.Date.ToString("yyyy-MM-dd") + "' )  " +
-                                "AND Bills.BillType = 1";
+                            string saleBillDetails = "SELECT i.Id , bi.Quantity , bi.TotalPrice " +
+                                "FROM Items AS i JOIN BillItems AS bi ON i.Id = bi.ItemId JOIN Bills AS b ON bi.BillId = b.Id " +
+                                "WHERE i.CategoryId = " + categoryId + " AND b.CreatedAt BETWEEN '" + form.dateTimePicker1.Value.Date.ToString("yyyy-MM-dd") + "' AND '"+ form.dateTimePicker2.Value.Date.ToString("yyyy-MM-dd") +"' " +
+                                "AND b.BillType = 1";
+                            
                             List<GetSalesByCategoryIdResponseDto> saleResult = sqlconn.Query<GetSalesByCategoryIdResponseDto>(saleBillDetails, commandType: CommandType.Text).ToList();
 
-                            string returnBillDetails = "SELECT Items.Id, BillItems.Quantity, BillItems.TotalPrice " +
-                                "FROM BillItems INNER JOIN Items ON BillItems.Id = Items.Id " +
-                                "INNER JOIN Categories ON Items.CategoryId = Categories.Id " +
-                                "INNER JOIN Bills ON BillItems.BillId = Bills.Id " +
-                                "WHERE Categories.Id = " + categoryId + " " +
-                                "AND ( Bills.CreatedAt > '" + form.dateTimePicker1.Value.Date.ToString("yyyy-MM-dd") + "' AND Bills.CreatedAt < '" + form.dateTimePicker2.Value.Date.ToString("yyyy-MM-dd") + "' )  " +
-                                "AND Bills.BillType = 3";
+                            string returnBillDetails = "SELECT i.Id , bi.Quantity , bi.TotalPrice " +
+                                "FROM Items AS i JOIN BillItems AS bi ON i.Id = bi.ItemId JOIN Bills AS b ON bi.BillId = b.Id " +
+                                "WHERE i.CategoryId = " + categoryId + " AND b.CreatedAt BETWEEN '" + form.dateTimePicker1.Value.Date.ToString("yyyy-MM-dd") + "' AND '" + form.dateTimePicker2.Value.Date.ToString("yyyy-MM-dd") + "' " +
+                                "AND b.BillType = 3";
                             List<GetSalesByCategoryIdResponseDto> returnResult = sqlconn.Query<GetSalesByCategoryIdResponseDto>(returnBillDetails, commandType: CommandType.Text).ToList();
 
                             if (saleResult.Count <= 0 && returnResult.Count <= 0)
@@ -162,10 +158,10 @@ namespace SalesManagementSystem.Controllers
                                 {
                                     return;
                                 }
-                                totalPurchasePrice += item.BuyPrice * returnResult[i].Quantity;
-                                totalSalePrice += returnResult[i].TotalPrice;
+                                totalReturnPurchasePrice += item.BuyPrice * returnResult[i].Quantity;
+                                totalReturnSalePrice += returnResult[i].TotalPrice;
                             }
-                            totalLose =  totalPurchasePrice - totalSalePrice;
+                            totalLose = totalReturnPurchasePrice - totalReturnSalePrice;
 
                         }
 
@@ -204,21 +200,22 @@ namespace SalesManagementSystem.Controllers
                             {
                                 sqlconn.Open();
                             }
-                            string saleBillDetails = "SELECT Items.Id, BillItems.Quantity, BillItems.TotalPrice " +
-                                "FROM BillItems INNER JOIN Items ON BillItems.Id = Items.Id " +
-                                "INNER JOIN Bills ON BillItems.BillId = Bills.Id " +
-                                "WHERE Items.Id = " + itemId + " " +
-                                "AND ( Bills.CreatedAt > '" + form.dateTimePicker1.Value.Date.ToString("yyyy-MM-dd") + "' AND Bills.CreatedAt < '" + form.dateTimePicker2.Value.Date.ToString("yyyy-MM-dd") + "' )  " +
-                                "AND Bills.BillType = 1";
+                            string saleBillDetails = "SELECT i.Id , bi.Quantity , bi.TotalPrice " +
+                                "FROM Items AS i JOIN BillItems AS bi ON i.Id = bi.ItemId JOIN Bills AS b ON bi.BillId = b.Id " +
+                                "WHERE i.Id = " + itemId + " AND b.CreatedAt BETWEEN '" + form.dateTimePicker1.Value.Date.ToString("yyyy-MM-dd") + "' AND '" + form.dateTimePicker2.Value.Date.ToString("yyyy-MM-dd") + "' " +
+                                "AND b.BillType = 1";
                             List<GetSalesByCategoryIdResponseDto> saleResult = sqlconn.Query<GetSalesByCategoryIdResponseDto>(saleBillDetails, commandType: CommandType.Text).ToList();
 
-                            string returnBillDetails = "SELECT Items.Id, BillItems.Quantity, BillItems.TotalPrice " +
-                                "FROM BillItems INNER JOIN Items ON BillItems.Id = Items.Id " +
-                                "INNER JOIN Bills ON BillItems.BillId = Bills.Id " +
-                                "WHERE Items.Id = " + itemId + " " +
-                                "AND ( Bills.CreatedAt > '" + form.dateTimePicker1.Value.Date.ToString("yyyy-MM-dd") + "' AND Bills.CreatedAt < '" + form.dateTimePicker2.Value.Date.ToString("yyyy-MM-dd") + "' )  " +
-                                "AND Bills.BillType = 3";
+                            string returnBillDetails = "SELECT i.Id , bi.Quantity , bi.TotalPrice " +
+                                "FROM Items AS i JOIN BillItems AS bi ON i.Id = bi.ItemId JOIN Bills AS b ON bi.BillId = b.Id " +
+                                "WHERE i.Id = " + itemId + " AND b.CreatedAt BETWEEN '" + form.dateTimePicker1.Value.Date.ToString("yyyy-MM-dd") + "' AND '" + form.dateTimePicker2.Value.Date.ToString("yyyy-MM-dd") + "' " +
+                                "AND b.BillType = 3";
                             List<GetSalesByCategoryIdResponseDto> returnResult = sqlconn.Query<GetSalesByCategoryIdResponseDto>(returnBillDetails, commandType: CommandType.Text).ToList();
+
+                            //string test = "SELECT i.Id , bi.Quantity , bi.TotalPrice " +
+                            //    "FROM Items AS i JOIN BillItems AS bi ON i.Id = bi.ItemId JOIN Bills AS b ON bi.BillId = b.Id " +
+                            //    "WHERE i.Id = " + itemId + " AND b.CreatedAt BETWEEN '" + form.dateTimePicker1.Value.Date.ToString("yyyy-MM-dd") + "' AND '" + form.dateTimePicker2.Value.Date.ToString("yyyy-MM-dd") + "' " +
+                            //    "AND b.BillType = 3";
 
                             if (saleResult.Count <= 0 && returnResult.Count <= 0)
                             {
@@ -246,10 +243,10 @@ namespace SalesManagementSystem.Controllers
                             for (int i = 0; i < returnResult.Count; i++)
                             {
                                 numberOfReturnItems += returnResult[i].Quantity;
-                                totalPurchasePrice += item.BuyPrice * returnResult[i].Quantity;
-                                totalSalePrice += returnResult[i].TotalPrice;
+                                totalReturnPurchasePrice += item.BuyPrice * returnResult[i].Quantity;
+                                totalReturnSalePrice += returnResult[i].TotalPrice;
                             }
-                            totalLose =  totalPurchasePrice - totalSalePrice;
+                            totalLose = totalReturnPurchasePrice - totalReturnSalePrice;
 
                         }
                     }

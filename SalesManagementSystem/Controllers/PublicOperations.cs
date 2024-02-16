@@ -17,6 +17,12 @@ namespace SalesManagementSystem.Controllers
             return rg.IsMatch(text);
         }
 
+        public static bool CheckDecimal(string text)
+        {
+            Regex rg = new Regex(@"^-?(0|[1-9]\d*)(\.\d*)?$"); //^-?(0|[1-9]\d*)(\.\d*)?$
+            return rg.IsMatch(text);
+        }
+
         public static bool CheckPhoneNumber(string text)
         {
             string internationalPattern = @"^\+\w{7,}$";

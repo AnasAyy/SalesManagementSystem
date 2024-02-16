@@ -74,7 +74,7 @@ namespace SalesManagementSystem.Forms
         {
             if (textBox2.Text.Length > 0)
             {
-                if (!PublicOperations.CheckNumbersOnly(textBox2.Text))
+                if (!PublicOperations.CheckDecimal(textBox2.Text))
                 {
                     MessageBox.Show("ادخال خاطئ");
                     textBox2.Text = textBox2.Text.Remove(textBox2.Text.Length - 1);
@@ -90,7 +90,7 @@ namespace SalesManagementSystem.Forms
         {
             if (textBox3.Text.Length > 0)
             {
-                if (!PublicOperations.CheckNumbersOnly(textBox3.Text))
+                if (!PublicOperations.CheckDecimal(textBox3.Text))
                 {
                     MessageBox.Show("ادخال خاطئ");
                     textBox3.Text = textBox3.Text.Remove(textBox3.Text.Length - 1);
@@ -175,7 +175,7 @@ namespace SalesManagementSystem.Forms
         {
             if (textBox3.Text.Length > 0)
             {
-                if (!PublicOperations.CheckNumbersOnly(textBox3.Text))
+                if (!PublicOperations.CheckDecimal(textBox3.Text))
                 {
                     MessageBox.Show("ادخال خاطئ");
                     textBox3.Text = textBox3.Text.Remove(textBox3.Text.Length - 1);
