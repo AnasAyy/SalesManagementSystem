@@ -580,7 +580,7 @@ namespace SalesManagementSystem.Controllers
 
                 var bill = new Bill()
                 {
-                    BillType = form.radioButton1.Checked ? 1 : 2,
+                    BillType = form.radioButton1.Checked ? 1 : 5,
                     Discount = Convert.ToDecimal(form.textBox3.Text),
                     DiscountType = Convert.ToInt32(form.comboBox4.SelectedValue.ToString()),
                     Fee = Convert.ToDecimal(form.textBox2.Text),

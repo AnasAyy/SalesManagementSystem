@@ -12,7 +12,7 @@ namespace SalesManagementSystem.Models
     {
         [Key]
         public int Id { get; set; }
-        public int BillType { get; set; } // 1-Sale 2-Purchase 3-Return sale 4-Return Purchase 5-Credit sales 6-Credit Purchase
+        public int BillType { get; set; } // 1-Sale 2-Purchase 3-Return sale 4-Return Purchase 5-Credit sales 6-Credit Purchase 7-Credit Return Sale 8-Credit Return Purchase
         public decimal Discount { get; set; } = 0;
         public int DiscountType { get; set; }
         public decimal Fee { get; set; } = 0;
