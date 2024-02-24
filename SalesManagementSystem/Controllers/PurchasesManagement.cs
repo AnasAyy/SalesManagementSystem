@@ -412,7 +412,7 @@ namespace SalesManagementSystem.Controllers
 
                 var bill = new Bill()
                 {
-                    BillType = form.radioButton3.Checked ? 3 : 4,
+                    BillType = form.radioButton3.Checked ? 2 : 4,
                     Fee = feee,
                     FeeType = Convert.ToInt32(form.comboBox3.SelectedValue.ToString()),
                     Price = sum,
