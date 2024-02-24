@@ -25,12 +25,12 @@ namespace SalesManagementSystem.Controllers
                 SqlCommand comm = new SqlCommand();
                 comm.Connection = conn;
                 comm.CommandText = "SELECT Id AS 'الرقم', " +
-                    "CASE WHEN BillType = 3 THEN N'مشتريات' ELSE N'مرتجع' END AS 'نوع المشتريات'," +
+                    "CASE WHEN BillType = 2 THEN N'مشتريات' ELSE N'مرتجع' END AS 'نوع المشتريات'," +
                     "TotalPrice AS 'مبلغ المشتريات', " +
                     "TotalLocalPrice AS 'اجمالي الملغ بالعملة المحلية', " +
                     "Note AS 'تفاصيل' " +
                     "FROM Bills " +
-                    "WHERE BillType IN(3,4)";
+                    "WHERE BillType IN(2,4)";
 
                 SqlDataReader reader = comm.ExecuteReader();
                 if (reader.HasRows)
@@ -71,12 +71,12 @@ namespace SalesManagementSystem.Controllers
                     SqlCommand comm = new SqlCommand();
                     comm.Connection = conn;
                     comm.CommandText = "SELECT Id AS 'الرقم', " +
-                        "CASE WHEN BillType = 3 THEN N'مشتريات' ELSE N'مرتجع' END AS 'نوع المشتريات'," +
+                        "CASE WHEN BillType = 2 THEN N'مشتريات' ELSE N'مرتجع' END AS 'نوع المشتريات'," +
                         "TotalPrice AS 'مبلغ المشتريات', " +
                         "TotalLocalPrice AS 'اجمالي الملغ بالعملة المحلية', " +
                         "Note AS 'تفاصيل' " +
                         "FROM Bills " +
-                        "WHERE BillType IN(3,4) AND Id = @Id";
+                        "WHERE BillType IN(2,4) AND Id = @Id";
 
                     comm.Parameters.AddWithValue("@Id", Convert.ToInt32(form.textBox7.Text));
 
@@ -124,32 +124,32 @@ namespace SalesManagementSystem.Controllers
                 if (form.radioButton1.Checked == true)
                 {
                     comm.CommandText = "SELECT Id AS 'الرقم', " +
-                        "CASE WHEN BillType = 3 THEN N'مشتريات' ELSE N'مرتجع' END AS 'نوع المشتريات'," +
+                        "CASE WHEN BillType = 2 THEN N'مشتريات' ELSE N'مرتجع' END AS 'نوع المشتريات'," +
                         "TotalPrice AS 'مبلغ المشتريات', " +
                         "TotalLocalPrice AS 'اجمالي الملغ بالعملة المحلية', " +
                         "Note AS 'تفاصيل' " +
                         "FROM Bills " +
-                        "WHERE BillType IN(3,4) AND  BillType = 3 ";
+                        "WHERE BillType IN(2,4) AND  BillType = 2 ";
                 }
                 if (form.radioButton2.Checked == true)
                 {
                     comm.CommandText = "SELECT Id AS 'الرقم', " +
-                        "CASE WHEN BillType = 3 THEN N'مشتريات' ELSE N'مرتجع' END AS 'نوع المشتريات'," +
+                        "CASE WHEN BillType = 2 THEN N'مشتريات' ELSE N'مرتجع' END AS 'نوع المشتريات'," +
                         "TotalPrice AS 'مبلغ المشتريات', " +
                         "TotalLocalPrice AS 'اجمالي الملغ بالعملة المحلية', " +
                         "Note AS 'تفاصيل' " +
                         "FROM Bills " +
-                        "WHERE BillType IN(3,4) AND  BillType = 4 ";
+                        "WHERE BillType IN(2,4) AND  BillType = 4 ";
                 }
                 if (form.radioButton3.Checked == true)
                 {
                     comm.CommandText = "SELECT Id AS 'الرقم', " +
-                        "CASE WHEN BillType = 3 THEN N'مشتريات' ELSE N'مرتجع' END AS 'نوع المشتريات'," +
+                        "CASE WHEN BillType = 2 THEN N'مشتريات' ELSE N'مرتجع' END AS 'نوع المشتريات'," +
                         "TotalPrice AS 'مبلغ المشتريات', " +
                         "TotalLocalPrice AS 'اجمالي الملغ بالعملة المحلية', " +
                         "Note AS 'تفاصيل' " +
                         "FROM Bills " +
-                        "WHERE BillType IN(3,4)";
+                        "WHERE BillType IN(2,4)";
                 }
 
                 SqlDataReader reader = comm.ExecuteReader();
