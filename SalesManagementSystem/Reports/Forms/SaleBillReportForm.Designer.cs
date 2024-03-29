@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.saleBillReport1 = new SalesManagementSystem.Reports.Designs.SaleBillReport();
+            this.billTest1 = new SalesManagementSystem.Reports.Designs.BillTest();
             this.SuspendLayout();
             // 
             // crystalReportViewer1
@@ -45,7 +45,7 @@
             // 
             // SaleBillReportForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1182, 749);
             this.Controls.Add(this.crystalReportViewer1);
@@ -66,6 +66,6 @@
         #endregion
 
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
-        private Designs.SaleBillReport saleBillReport1;
+        private Designs.BillTest billTest1;
     }
 }

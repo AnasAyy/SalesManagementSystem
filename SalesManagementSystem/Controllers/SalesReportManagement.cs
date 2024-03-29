@@ -46,48 +46,64 @@ namespace SalesManagementSystem.Controllers
                     if (form.radioButton1.Checked)
                     {
                         int billId = Convert.ToInt32(form.textBox2.Text);
-                        var bill = db.Bills.FirstOrDefault(x => x.Id == billId && (x.BillType == 1 || x.BillType == 3));
+                        var bill = db.Bills.FirstOrDefault(x => x.Id == billId && (x.BillType == 1 || x.BillType == 3 || x.BillType == 5));
                         if (bill != null)
                         {
                             var billItems = db.BillItems.Where(x => x.BillId == bill.Id).ToList();
+
                             if (billItems.Any())
                             {
-                                fromDate = " - "; toDate = " - ";
-                                if (bill.BillType == 1)
+                                fromDate = " - ";
+                                toDate = " - ";
+
+                                if (bill.BillType == 1 || bill.BillType == 5)
                                 {
                                     name = "فاتورة مبيعات رقم " + bill.Id;
-                                    for (int i = 0; i < billItems.Count(); i++)
+
+                                    foreach (var billItem in billItems)
                                     {
-                                        numberOfSoldItems += billItems[i].Quantity;
-                                        var itemId = billItems[i].ItemId;
+                                        numberOfSoldItems += billItem.Quantity;
+
+                                        var itemId = billItem.ItemId;
                                         var item = db.Items.FirstOrDefault(x => x.Id == itemId);
+
                                         if (item == null)
                                         {
+                                            // Handle the case where the associated item is null
+                                            MessageBox.Show("توجد عنصر بالفاتورة لا يوجد له بيانات");
                                             return;
                                         }
-                                        totalPurchasePrice += item.BuyPrice * billItems[i].Quantity;
-                                        totalSalePrice += billItems[i].TotalPrice;
+
+                                        totalPurchasePrice += item.BuyPrice * billItem.Quantity;
+                                        totalSalePrice += billItem.TotalPrice;
                                     }
+
                                     totalProfit = totalSalePrice - totalPurchasePrice;
                                 }
                                 else
                                 {
                                     name = "فاتورة مرتجع رقم " + bill.Id;
-                                    for (int i = 0; i < billItems.Count(); i++)
+
+                                    foreach (var billItem in billItems)
                                     {
-                                        numberOfReturnItems += billItems[i].Quantity;
-                                        int itemId = billItems[i].Id;
+                                        numberOfReturnItems += billItem.Quantity;
+
+                                        var itemId = billItem.ItemId;
                                         var item = db.Items.FirstOrDefault(x => x.Id == itemId);
+
                                         if (item == null)
                                         {
+                                            // Handle the case where the associated item is null
+                                            MessageBox.Show("توجد عنصر بالفاتورة لا يوجد له بيانات");
                                             return;
                                         }
-                                        totalPurchasePrice += item.BuyPrice * billItems[i].Quantity;
-                                        totalSalePrice += billItems[i].TotalPrice;
-                                    }
-                                    totalLose = totalPurchasePrice - totalSalePrice;
-                                }
 
+                                        totalReturnPurchasePrice += item.BuyPrice * billItem.Quantity;
+                                        totalReturnSalePrice += billItem.TotalPrice;
+                                    }
+
+                                    totalLose = totalReturnPurchasePrice - totalReturnSalePrice;
+                                }
                             }
                             else
                             {
@@ -103,126 +119,151 @@ namespace SalesManagementSystem.Controllers
                     }
                     else if (form.radioButton2.Checked)
                     {
-                        if (form.comboBox1.Text == "كل العناصر")
+                        int? categoryId = null;
+                        if (form.comboBox1.Text != "كل العناصر")
                         {
-                            MessageBox.Show("يرجى تحديد فئة");
+                            categoryId = Convert.ToInt32(form.comboBox1.SelectedValue);
+                        }
+
+                        DateTime fromDateValue = form.dateTimePicker1.Value.Date;
+                        DateTime toDateValue = form.dateTimePicker2.Value.Date.AddDays(1);
+
+                        var saleBillDetails = from items in db.Items
+                                              join billItems in db.BillItems on items.Id equals billItems.ItemId
+                                              join bills in db.Bills on billItems.BillId equals bills.Id
+                                              where (categoryId == null || items.CategoryId == categoryId)
+                                                  && bills.CreatedAt >= fromDateValue && bills.CreatedAt < toDateValue
+                                                  && (bills.BillType == 1 || bills.BillType == 5)
+                                              select new GetSalesByCategoryIdResponseDto
+                                              {
+                                                  Id = items.Id,
+                                                  Quantity = billItems.Quantity,
+                                                  TotalPrice = billItems.TotalPrice
+                                              };
+
+                        var saleResult = saleBillDetails.ToList();
+
+                        var returnBillDetails = from items in db.Items
+                                                join billItems in db.BillItems on items.Id equals billItems.ItemId
+                                                join bills in db.Bills on billItems.BillId equals bills.Id
+                                                where (categoryId == null || items.CategoryId == categoryId)
+                                                    && bills.CreatedAt >= fromDateValue && bills.CreatedAt < toDateValue
+                                                    && bills.BillType == 3
+                                                select new GetSalesByCategoryIdResponseDto
+                                                {
+                                                    Id = items.Id,
+                                                    Quantity = billItems.Quantity,
+                                                    TotalPrice = billItems.TotalPrice
+                                                };
+
+                        var returnResult = returnBillDetails.ToList();
+
+                        if (saleResult.Count <= 0 && returnResult.Count <= 0)
+                        {
+                            MessageBox.Show("لا يوجد مبيعات لهذه الفئة");
                             return;
                         }
-                        var categoryId = Convert.ToInt32(form.comboBox1.SelectedValue);
-                        using (IDbConnection sqlconn = new SqlConnection(db.Database.Connection.ConnectionString))
+
+                        if (form.comboBox1.Text == "كل العناصر")
                         {
-                            if (sqlconn.State == ConnectionState.Closed)
-                            {
-                                sqlconn.Open();
-                            }
-                            string saleBillDetails = "SELECT i.Id , bi.Quantity , bi.TotalPrice " +
-                                "FROM Items AS i JOIN BillItems AS bi ON i.Id = bi.ItemId JOIN Bills AS b ON bi.BillId = b.Id " +
-                                "WHERE i.CategoryId = " + categoryId + " AND b.CreatedAt BETWEEN '" + form.dateTimePicker1.Value.Date.ToString("yyyy-MM-dd") + "' AND '"+ form.dateTimePicker2.Value.Date.ToString("yyyy-MM-dd") +"' " +
-                                "AND b.BillType = 1";
-                            
-                            List<GetSalesByCategoryIdResponseDto> saleResult = sqlconn.Query<GetSalesByCategoryIdResponseDto>(saleBillDetails, commandType: CommandType.Text).ToList();
+                            name = " حركة المبيعات لكل الفئات";
+                        }
+                        else
+                        {
+                            name = " حركة المبيعات لفئة " + form.comboBox1.Text;
+                        }
 
-                            string returnBillDetails = "SELECT i.Id , bi.Quantity , bi.TotalPrice " +
-                                "FROM Items AS i JOIN BillItems AS bi ON i.Id = bi.ItemId JOIN Bills AS b ON bi.BillId = b.Id " +
-                                "WHERE i.CategoryId = " + categoryId + " AND b.CreatedAt BETWEEN '" + form.dateTimePicker1.Value.Date.ToString("yyyy-MM-dd") + "' AND '" + form.dateTimePicker2.Value.Date.ToString("yyyy-MM-dd") + "' " +
-                                "AND b.BillType = 3";
-                            List<GetSalesByCategoryIdResponseDto> returnResult = sqlconn.Query<GetSalesByCategoryIdResponseDto>(returnBillDetails, commandType: CommandType.Text).ToList();
-
-                            if (saleResult.Count <= 0 && returnResult.Count <= 0)
+                        foreach (var saleItem in saleResult)
+                        {
+                            numberOfSoldItems += saleItem.Quantity;
+                            var item = db.Items.FirstOrDefault(x => x.Id == saleItem.Id);
+                            if (item == null)
                             {
-                                MessageBox.Show("لا يوجد مبيعات لهذه الفئة");
                                 return;
                             }
-
-                            name = " حركة المبيعات لفئة " + form.comboBox1.Text;
-                            for (int i = 0; i < saleResult.Count; i++)
-                            {
-                                numberOfSoldItems += saleResult[i].Quantity;
-                                int itemId = saleResult[i].Id;
-                                var item = db.Items.FirstOrDefault(x => x.Id == itemId);
-                                if (item == null)
-                                {
-                                    return;
-                                }
-                                totalPurchasePrice += item.BuyPrice * saleResult[i].Quantity;
-                                totalSalePrice += saleResult[i].TotalPrice;
-                            }
-                            totalProfit = totalSalePrice - totalPurchasePrice;
-
-                            for (int i = 0; i < returnResult.Count; i++)
-                            {
-                                numberOfReturnItems += returnResult[i].Quantity;
-                                int itemId = returnResult[i].Id;
-                                var item = db.Items.FirstOrDefault(x => x.Id == itemId);
-                                if (item == null)
-                                {
-                                    return;
-                                }
-                                totalReturnPurchasePrice += item.BuyPrice * returnResult[i].Quantity;
-                                totalReturnSalePrice += returnResult[i].TotalPrice;
-                            }
-                            totalLose = totalReturnPurchasePrice - totalReturnSalePrice;
-
+                            totalPurchasePrice += item.BuyPrice * saleItem.Quantity;
+                            totalSalePrice += saleItem.TotalPrice;
                         }
+                        totalProfit = totalSalePrice - totalPurchasePrice;
+
+                        foreach (var returnItem in returnResult)
+                        {
+                            numberOfReturnItems += returnItem.Quantity;
+                            var item = db.Items.FirstOrDefault(x => x.Id == returnItem.Id);
+                            if (item == null)
+                            {
+                                return;
+                            }
+                            totalReturnPurchasePrice += item.BuyPrice * returnItem.Quantity;
+                            totalReturnSalePrice += returnItem.TotalPrice;
+                        }
+                        totalLose = totalReturnPurchasePrice - totalReturnSalePrice;
 
                     }
                     else
                     {
                         int itemId = 0;
+
                         if (form.radioButton4.Checked)
                         {
-                            var getItem = db.Items.FirstOrDefault(x => x.Name == form.comboBox1.Text);
+                            var getItem = db.Items.FirstOrDefault(x => x.Name == form.comboBox2.Text);
+
                             if (getItem == null)
                             {
                                 MessageBox.Show("خطأ في جلب الصنف");
                                 return;
                             }
+
                             itemId = getItem.Id;
                         }
                         else
                         {
-                            if(form.textBox1.Text.Length <= 0)
+                            if (form.textBox1.Text.Length <= 0)
                             {
                                 MessageBox.Show("يرجى تعبة خانة الباركود");
                                 return;
                             }
+
                             var getItem = db.Items.FirstOrDefault(x => x.Barcode == form.textBox1.Text);
+
                             if (getItem == null)
                             {
                                 MessageBox.Show("خطأ في جلب الصنف");
                                 return;
                             }
+
                             itemId = getItem.Id;
                         }
+
                         using (IDbConnection sqlconn = new SqlConnection(db.Database.Connection.ConnectionString))
                         {
                             if (sqlconn.State == ConnectionState.Closed)
                             {
                                 sqlconn.Open();
                             }
-                            string saleBillDetails = "SELECT i.Id , bi.Quantity , bi.TotalPrice " +
+
+                            string saleBillDetails = "SELECT i.Id, bi.Quantity, bi.TotalPrice " +
                                 "FROM Items AS i JOIN BillItems AS bi ON i.Id = bi.ItemId JOIN Bills AS b ON bi.BillId = b.Id " +
                                 "WHERE i.Id = " + itemId + " AND b.CreatedAt BETWEEN '" + form.dateTimePicker1.Value.Date.ToString("yyyy-MM-dd") + "' AND '" + form.dateTimePicker2.Value.Date.ToString("yyyy-MM-dd") + "' " +
-                                "AND b.BillType = 1";
+                                "AND (b.BillType = 1 OR b.BillType = 5)";
+
                             List<GetSalesByCategoryIdResponseDto> saleResult = sqlconn.Query<GetSalesByCategoryIdResponseDto>(saleBillDetails, commandType: CommandType.Text).ToList();
 
-                            string returnBillDetails = "SELECT i.Id , bi.Quantity , bi.TotalPrice " +
+                            string returnBillDetails = "SELECT i.Id, bi.Quantity, bi.TotalPrice " +
                                 "FROM Items AS i JOIN BillItems AS bi ON i.Id = bi.ItemId JOIN Bills AS b ON bi.BillId = b.Id " +
                                 "WHERE i.Id = " + itemId + " AND b.CreatedAt BETWEEN '" + form.dateTimePicker1.Value.Date.ToString("yyyy-MM-dd") + "' AND '" + form.dateTimePicker2.Value.Date.ToString("yyyy-MM-dd") + "' " +
                                 "AND b.BillType = 3";
-                            List<GetSalesByCategoryIdResponseDto> returnResult = sqlconn.Query<GetSalesByCategoryIdResponseDto>(returnBillDetails, commandType: CommandType.Text).ToList();
 
-                            //string test = "SELECT i.Id , bi.Quantity , bi.TotalPrice " +
-                            //    "FROM Items AS i JOIN BillItems AS bi ON i.Id = bi.ItemId JOIN Bills AS b ON bi.BillId = b.Id " +
-                            //    "WHERE i.Id = " + itemId + " AND b.CreatedAt BETWEEN '" + form.dateTimePicker1.Value.Date.ToString("yyyy-MM-dd") + "' AND '" + form.dateTimePicker2.Value.Date.ToString("yyyy-MM-dd") + "' " +
-                            //    "AND b.BillType = 3";
+                            List<GetSalesByCategoryIdResponseDto> returnResult = sqlconn.Query<GetSalesByCategoryIdResponseDto>(returnBillDetails, commandType: CommandType.Text).ToList();
 
                             if (saleResult.Count <= 0 && returnResult.Count <= 0)
                             {
                                 MessageBox.Show("لا يوجد مبيعات لهذه الفئة");
                                 return;
                             }
+
                             var item = db.Items.FirstOrDefault(x => x.Id == itemId);
+
                             if (item == null)
                             {
                                 return;
@@ -230,24 +271,23 @@ namespace SalesManagementSystem.Controllers
 
                             name = " حركة المبيعات لصنف " + item.Name;
 
-                            
-                            for (int i = 0; i < saleResult.Count; i++)
+                            foreach (var sale in saleResult)
                             {
-                                numberOfSoldItems += saleResult[i].Quantity;
-                                totalPurchasePrice += item.BuyPrice * saleResult[i].Quantity;
-                                totalSalePrice += saleResult[i].TotalPrice;
+                                numberOfSoldItems += sale.Quantity;
+                                totalPurchasePrice += item.BuyPrice * sale.Quantity;
+                                totalSalePrice += sale.TotalPrice;
                             }
+
                             totalProfit = totalSalePrice - totalPurchasePrice;
 
-                            
-                            for (int i = 0; i < returnResult.Count; i++)
+                            foreach (var returnItem in returnResult)
                             {
-                                numberOfReturnItems += returnResult[i].Quantity;
-                                totalReturnPurchasePrice += item.BuyPrice * returnResult[i].Quantity;
-                                totalReturnSalePrice += returnResult[i].TotalPrice;
+                                numberOfReturnItems += returnItem.Quantity;
+                                totalReturnPurchasePrice += item.BuyPrice * returnItem.Quantity;
+                                totalReturnSalePrice += returnItem.TotalPrice;
                             }
-                            totalLose = totalReturnPurchasePrice - totalReturnSalePrice;
 
+                            totalLose = totalReturnPurchasePrice - totalReturnSalePrice;
                         }
                     }
                     form.salesReport1.SetParameterValue("Name", name.ToString());

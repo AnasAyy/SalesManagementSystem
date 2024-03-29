@@ -186,5 +186,10 @@ namespace SalesManagementSystem.Forms
                 }
             }
         }
+
+        private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            NewSalesManagment.CalculateBill(this);
+        }
     }
 }

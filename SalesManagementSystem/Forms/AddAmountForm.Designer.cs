@@ -111,7 +111,6 @@ namespace SalesManagementSystem.Forms
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "إضافة الكمية";
-            this.TopMost = true;
             this.ResumeLayout(false);
             this.PerformLayout();
 

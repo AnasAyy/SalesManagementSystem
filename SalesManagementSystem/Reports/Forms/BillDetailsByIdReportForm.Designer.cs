@@ -45,7 +45,7 @@
             // 
             // BillDetailsByIdReportForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1182, 749);
             this.Controls.Add(this.crystalReportViewer1);
@@ -57,7 +57,6 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "تقرير تفاصيل الفاتورة";
-            this.TopMost = true;
             this.Load += new System.EventHandler(this.GetBillDetailsById_Load);
             this.ResumeLayout(false);
 

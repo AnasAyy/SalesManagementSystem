@@ -34,6 +34,7 @@ namespace SalesManagementSystem.Forms
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.button1 = new System.Windows.Forms.Button();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
@@ -79,6 +80,7 @@ namespace SalesManagementSystem.Forms
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.radioButton4);
             this.groupBox3.Controls.Add(this.radioButton3);
             this.groupBox3.Controls.Add(this.button1);
             this.groupBox3.Controls.Add(this.radioButton2);
@@ -86,17 +88,28 @@ namespace SalesManagementSystem.Forms
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox3.Location = new System.Drawing.Point(3, 32);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(441, 66);
+            this.groupBox3.Size = new System.Drawing.Size(508, 66);
             this.groupBox3.TabIndex = 8;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "نوع الفاتورة";
+            // 
+            // radioButton4
+            // 
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.radioButton4.Location = new System.Drawing.Point(161, 25);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(56, 33);
+            this.radioButton4.TabIndex = 10;
+            this.radioButton4.Text = "اجل";
+            this.radioButton4.UseVisualStyleBackColor = true;
             // 
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
             this.radioButton3.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.radioButton3.Checked = true;
-            this.radioButton3.Location = new System.Drawing.Point(327, 25);
+            this.radioButton3.Location = new System.Drawing.Point(392, 25);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(62, 33);
             this.radioButton3.TabIndex = 9;
@@ -121,7 +134,7 @@ namespace SalesManagementSystem.Forms
             // 
             this.radioButton2.AutoSize = true;
             this.radioButton2.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.radioButton2.Location = new System.Drawing.Point(158, 25);
+            this.radioButton2.Location = new System.Drawing.Point(223, 25);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(70, 33);
             this.radioButton2.TabIndex = 1;
@@ -132,7 +145,7 @@ namespace SalesManagementSystem.Forms
             // 
             this.radioButton1.AutoSize = true;
             this.radioButton1.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.radioButton1.Location = new System.Drawing.Point(243, 25);
+            this.radioButton1.Location = new System.Drawing.Point(308, 25);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(78, 33);
             this.radioButton1.TabIndex = 0;
@@ -215,7 +228,6 @@ namespace SalesManagementSystem.Forms
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ادارة المبيعات";
-            this.TopMost = true;
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -239,5 +251,6 @@ namespace SalesManagementSystem.Forms
         public RadioButton radioButton1;
         public RadioButton radioButton3;
         public Button button2;
+        public RadioButton radioButton4;
     }
 }

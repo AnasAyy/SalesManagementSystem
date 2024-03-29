@@ -532,11 +532,11 @@ namespace SalesManagementSystem.Forms
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 32);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(1176, 284);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
             this.dataGridView1.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dataGridView1_RowsAdded);
             this.dataGridView1.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dataGridView1_RowsRemoved);
             // 
@@ -545,35 +545,30 @@ namespace SalesManagementSystem.Forms
             this.ItemId.HeaderText = "الرقم";
             this.ItemId.MinimumWidth = 6;
             this.ItemId.Name = "ItemId";
-            this.ItemId.ReadOnly = true;
             // 
             // ItemName
             // 
             this.ItemName.HeaderText = "اسم المنتج";
             this.ItemName.MinimumWidth = 6;
             this.ItemName.Name = "ItemName";
-            this.ItemName.ReadOnly = true;
             // 
             // SellPrice
             // 
             this.SellPrice.HeaderText = "سعر الوحدة";
             this.SellPrice.MinimumWidth = 6;
             this.SellPrice.Name = "SellPrice";
-            this.SellPrice.ReadOnly = true;
             // 
             // ItemAmount
             // 
             this.ItemAmount.HeaderText = "الكمية";
             this.ItemAmount.MinimumWidth = 6;
             this.ItemAmount.Name = "ItemAmount";
-            this.ItemAmount.ReadOnly = true;
             // 
             // TotalSellPrice
             // 
             this.TotalSellPrice.HeaderText = "الاجمالي";
             this.TotalSellPrice.MinimumWidth = 6;
             this.TotalSellPrice.Name = "TotalSellPrice";
-            this.TotalSellPrice.ReadOnly = true;
             // 
             // textBox8
             // 
@@ -613,7 +608,6 @@ namespace SalesManagementSystem.Forms
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "اضافة عملية مبيعات";
-            this.TopMost = true;
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox5.ResumeLayout(false);

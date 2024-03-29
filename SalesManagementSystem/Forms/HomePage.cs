@@ -44,7 +44,7 @@ namespace SalesManagementSystem
 
         private void ادارةالمستخدمينToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CustomerManagmentForm.getCustomerManagmentForm.Show();
+            CustomerManagmentForm.getCustomerManagmentForm.ShowDialog();
         }
 
         private void تسجيلالدخولToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -69,13 +69,13 @@ namespace SalesManagementSystem
 
         private void ادارةالتجارToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SupplierManagmentForm.getSupplierManagmentForm.Show();
+            SupplierManagmentForm.getSupplierManagmentForm.ShowDialog();
         }
 
 
         private void ادارةالمتغيراتToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            PublicListManagmentForm.getChangesManagmentForm.Show();
+            PublicListManagmentForm.getChangesManagmentForm.ShowDialog();
         }
 
         private void HomePage_Load(object sender, EventArgs e)
@@ -92,12 +92,12 @@ namespace SalesManagementSystem
 
         private void اضافةفاتورةToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            NewSaleForm.getNewSaleForm.Show();
+            NewSaleForm.getNewSaleForm.ShowDialog();
         }
 
         private void ارجاعفاتورةToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SalesManagmentForm.getSalesManagmentForm.Show();
+            SalesManagmentForm.getSalesManagmentForm.ShowDialog();
         }
 
         private void إدارةالاصنافToolStripMenuItem_Click_1(object sender, EventArgs e)
@@ -162,7 +162,7 @@ namespace SalesManagementSystem
 
         private void تقريرالعملاءToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CustmoerReport.GetCustmoerReport.Show();
+            CustmoerReport.GetCustmoerReport.ShowDialog();
         }
 
         private void تقريرالمخازنToolStripMenuItem_Click(object sender, EventArgs e)
@@ -177,7 +177,7 @@ namespace SalesManagementSystem
 
         private void تقريرالمبيعاتToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SaleManagementReportForm.GetSaleManagementReportForm.Show();
+            SaleManagementReportForm.GetSaleManagementReportForm.ShowDialog();
         }
     }
 }

@@ -90,7 +90,7 @@ namespace SalesManagementSystem.Controllers
                     var comboBoxItems = new List<Category>();
                     comboBoxItems.Add(new Category { Id = 0, Name = "كل العناصر" });
 
-                    if(result.Count > 0)
+                    if (result.Count > 0)
                     {
                         comboBoxItems.AddRange(result);
                         form.comboBox1.BindingContext = new BindingContext();
@@ -211,10 +211,10 @@ namespace SalesManagementSystem.Controllers
         {
             foreach (DataGridViewRow row in dataGridView.Rows)
             {
-                    if (row.Cells[0].Value != null && row.Cells[0].Value.ToString().Equals(item))
-                    {
-                        return true;
-                    }
+                if (row.Cells[0].Value != null && row.Cells[0].Value.ToString().Equals(item))
+                {
+                    return true;
+                }
             }
             return false;
         }
@@ -232,7 +232,7 @@ namespace SalesManagementSystem.Controllers
                     MessageBox.Show("لايوجد بيانات");
                     return;
                 }
-                if(ItemExistsInDataGridView(form.dataGridView1 , result.Id.ToString()))
+                if (ItemExistsInDataGridView(form.dataGridView1, result.Id.ToString()))
                 {
                     MessageBox.Show("لايمكن اضافة الصنف مرتين في الفاتورة");
                 }
@@ -254,7 +254,8 @@ namespace SalesManagementSystem.Controllers
             if (form.radioButton3.Checked)
             {
                 MakeSale(form);
-            }else if (form.radioButton4.Checked)
+            }
+            else if (form.radioButton4.Checked)
             {
                 ReturnSale(form);
             }
@@ -267,12 +268,17 @@ namespace SalesManagementSystem.Controllers
 
         public static void CalculateBill(NewSaleForm form)
         {
-            decimal price = 0;
-            foreach (DataGridViewRow r in form.dataGridView1.Rows)
+            if (form.dataGridView1.Rows.Count > 0)
             {
-                price += Convert.ToDecimal(r.Cells["TotalSellPrice"].Value);
+                decimal price = 0;
+                foreach (DataGridViewRow r in form.dataGridView1.Rows)
+                {
+                    r.Cells["TotalSellPrice"].Value = Convert.ToDecimal(r.Cells["ItemAmount"].Value) * Convert.ToDecimal(r.Cells["SellPrice"].Value);
+                    price += Convert.ToDecimal(r.Cells["TotalSellPrice"].Value);
+                }
+                form.textBox4.Text = (price + (Convert.ToDecimal(form.textBox2.Text) - Convert.ToDecimal(form.textBox3.Text))).ToString();
             }
-            form.textBox4.Text = (price + (Convert.ToDecimal(form.textBox2.Text) - Convert.ToDecimal(form.textBox3.Text))).ToString();
+
         }
 
 
@@ -430,7 +436,7 @@ namespace SalesManagementSystem.Controllers
             }
         }
 
-        
+
         public static void ReturnSale(NewSaleForm form)
         {
             #region Check if Data Exist
@@ -562,9 +568,9 @@ namespace SalesManagementSystem.Controllers
                 #endregion
 
                 #region Check account is choosen
-                if(form.radioButton1.Checked)
+                if (form.radioButton1.Checked)
                 {
-                    if(form.comboBox5.Text == "اختر حساب")
+                    if (form.comboBox5.Text == "اختر حساب")
                     {
                         MessageBox.Show("يرجى اختيار نوع الحساب");
                         return;
@@ -648,12 +654,39 @@ namespace SalesManagementSystem.Controllers
                 }
                 SaleBillReportForm.GetSaleBillReportForm.billNumber = bill.Id;
                 SaleBillReportForm.GetSaleBillReportForm.clientName = form.textBox7.Text;
-                SaleBillReportForm.GetSaleBillReportForm.Show();
+                SaleBillReportForm.GetSaleBillReportForm.ShowDialog();
                 ClearForm(form);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        public static void AddTotalPrice(NewSaleForm form)
+        {
+            if(form.dataGridView1.Rows.Count > 0)
+            {
+                try
+                {
+                    int rowIndex = form.dataGridView1.SelectedRows[0].Index;
+                    // Get the sale price and number of items from the selected row
+                    decimal salePrice = Convert.ToDecimal(form.dataGridView1.Rows[rowIndex].Cells["SellPrice"].Value);
+                    decimal numberOfItems = Convert.ToDecimal(form.dataGridView1.Rows[rowIndex].Cells["ItemAmount"].Value);
+
+                    // Calculate the total amount
+                    decimal totalAmount = salePrice * numberOfItems;
+
+                    // Update the "Total Amount" cell
+                    form.dataGridView1.Rows[rowIndex].Cells["TotalSellPrice"].Value = totalAmount;
+
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+
             }
         }
 

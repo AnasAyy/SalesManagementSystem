@@ -17,7 +17,7 @@ namespace SalesManagementSystem.Controllers
             var db = new DataBaseContext();
             try
             {
-                return db.Bills.Any(x=>x.Id == billId && x.BillType == 1 || x.BillType == 3);
+                return db.Bills.Any(x=>x.Id == billId && x.BillType == 1 || x.BillType == 3 || x.BillType == 5);
             }
             catch(Exception ex)
             {
@@ -36,7 +36,7 @@ namespace SalesManagementSystem.Controllers
             else
             {
                 BillDetailsByIdReportForm.GetBillDetailsByIdReportForm.billNumber = billNumber;
-                BillDetailsByIdReportForm.GetBillDetailsByIdReportForm.Show();
+                BillDetailsByIdReportForm.GetBillDetailsByIdReportForm.ShowDialog();
             }
         }
         public static void GetAllSaleBills(SalesManagmentForm form)
@@ -108,7 +108,7 @@ namespace SalesManagementSystem.Controllers
             var db = new DataBaseContext();
             try
             {
-                if (!form.radioButton1.Checked && !form.radioButton2.Checked && !form.radioButton3.Checked)
+                if (!form.radioButton1.Checked && !form.radioButton2.Checked && !form.radioButton3.Checked && !form.radioButton4.Checked)
                 {
                     MessageBox.Show("يرجى تحديد نوع الفاتورة");
                     return;
@@ -129,18 +129,26 @@ namespace SalesManagementSystem.Controllers
                     if (form.radioButton1.Checked)
                     {
                         da = new SqlDataAdapter("select Id as \"رقم الفاتورة\", " +
-                        "CASE BillType WHEN 1 THEN N'بيع' else N'مرتجع' END as \"نوع الفاتورة\", " +
+                        "CASE BillType WHEN 1 THEN N'بيع' WHEN 3 THEN N'مرتجع' else N'مبيعات اجل' END as \"نوع الفاتورة\", " +
                         "TotalPrice as \"المبلغ\", " +
                         "TotalLocalPrice as \"المبلغ بالعملة المحلية\", " +
                         "Note as \"ملاحظات\" from Bills where BillType = 1 ", conn);
                     }
-                    else
+                    else if(form.radioButton2.Checked)
                     {
                         da = new SqlDataAdapter("select Id as \"رقم الفاتورة\", " +
-                        "CASE BillType WHEN 1 THEN N'بيع' else N'مرتجع' END as \"نوع الفاتورة\", " +
+                        "CASE BillType WHEN 1 THEN N'بيع' WHEN 3 THEN N'مرتجع' else N'مبيعات اجل' END as \"نوع الفاتورة\", " +
                         "TotalPrice as \"المبلغ\", " +
                         "TotalLocalPrice as \"المبلغ بالعملة المحلية\", " +
                         "Note as \"ملاحظات\" from Bills where BillType = 3 ", conn);
+                    }
+                    else
+                    {
+                        da = new SqlDataAdapter("select Id as \"رقم الفاتورة\", " +
+                        "CASE BillType WHEN 1 THEN N'بيع' WHEN 3 THEN N'مرتجع' else N'مبيعات اجل' END as \"نوع الفاتورة\", " +
+                        "TotalPrice as \"المبلغ\", " +
+                        "TotalLocalPrice as \"المبلغ بالعملة المحلية\", " +
+                        "Note as \"ملاحظات\" from Bills where BillType = 5 ", conn);
                     }
 
                     da.Fill(dt);

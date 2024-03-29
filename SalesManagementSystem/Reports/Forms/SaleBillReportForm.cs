@@ -50,22 +50,22 @@ namespace SalesManagementSystem.Reports.Forms
                             sqlconn.Open();
                         }
                         string billDetails = "SELECT bill.Id , " +
-                            "CASE WHEN bill.BillType = 1 THEN N'مبيعات' WHEN bill.BillType = 2 THEN N'مرتجع مبيعات' WHEN bill.BillType = 3 THEN N'مشتريات' WHEN bill.BillType = 4 THEN N'مرتجع مشتريات' END AS BillType " +
+                            "CASE WHEN bill.BillType = 1 THEN N'مبيعات' WHEN bill.BillType = 2 THEN N'مشتريات' WHEN bill.BillType = 3 THEN N'مرتجع مبيعات' WHEN bill.BillType = 4 THEN N'مرتجع مشتريات' WHEN bill.BillType = 5 THEN N'مبيعات اجل' WHEN bill.BillType = 6 THEN N'مشتريات اجل' WHEN bill.BillType = 7 THEN N'اجل مرتجع مشتريات' WHEN bill.BillType = 5 THEN N'اجل مرتجع مبيعات' END AS BillType " +
                             ", discount.Name as DiscountType , bill.Discount , fee.Name as FeeType , bill.Fee , bill.Price, bill.TotalPrice, bill.TotalLocalPrice, bill.CreatedAt as Date , bill.ClientId , bill.SupplierId FROM Bills AS bill, PublicLists AS fee, PublicLists AS discount WHERE bill.Id = " + billNumber + " AND bill.DiscountType = discount.Id AND bill.FeeType = fee.Id";
                         List<GetBillDetailsByBillIdResponseDto> list2 = sqlconn.Query<GetBillDetailsByBillIdResponseDto>(billDetails, commandType: CommandType.Text).ToList();
 
                         string billItems = "SELECT i.Name as ItemName , bi.Quantity as Quantity , bi.TotalPrice as TotalPrice FROM BillItems bi, Items i WHERE bi.BillId = " + billNumber + " AND bi.ItemId = i.Id AND bi.Quantity != 0";
                         List<SaleBillResponseDto> list = sqlconn.Query<SaleBillResponseDto>(billItems, commandType: CommandType.Text).ToList();
-                        saleBillReport1.SetDataSource(list);
+                        billTest1.SetDataSource(list);
 
-                        saleBillReport1.SetParameterValue("BillNumber", list2.FirstOrDefault().Id.ToString());
-                        saleBillReport1.SetParameterValue("Discount", list2.FirstOrDefault().Discount.ToString());
-                        saleBillReport1.SetParameterValue("Fee", list2.FirstOrDefault().Fee.ToString());
-                        saleBillReport1.SetParameterValue("TotalPrice", list2.FirstOrDefault().TotalPrice.ToString());
-                        saleBillReport1.SetParameterValue("TotalLocalPrice", list2.FirstOrDefault().TotalLocalPrice.ToString());
-                        saleBillReport1.SetParameterValue("ClientName", clientName);
+                        billTest1.SetParameterValue("BillNumber", list2.FirstOrDefault().Id.ToString());
+                        billTest1.SetParameterValue("Discount", list2.FirstOrDefault().Discount.ToString());
+                        billTest1.SetParameterValue("Fee", list2.FirstOrDefault().Fee.ToString());
+                        billTest1.SetParameterValue("TotalPrice", list2.FirstOrDefault().TotalPrice.ToString());
+                        billTest1.SetParameterValue("TotalLocalPrice", list2.FirstOrDefault().TotalLocalPrice.ToString());
+                        billTest1.SetParameterValue("ClientName", clientName);
 
-                        crystalReportViewer1.ReportSource = saleBillReport1;
+                        crystalReportViewer1.ReportSource = billTest1;
                         crystalReportViewer1.Refresh();
                     }
 

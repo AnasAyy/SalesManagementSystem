@@ -300,7 +300,6 @@ namespace SalesManagementSystem.Forms
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "إدارة العملاء";
-            this.TopMost = true;
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CustomerManagmentForm_KeyPress);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);

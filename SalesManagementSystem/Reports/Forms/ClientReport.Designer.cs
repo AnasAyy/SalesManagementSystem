@@ -39,27 +39,29 @@
             this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
             this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.crystalReportViewer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.Size = new System.Drawing.Size(1084, 486);
+            this.crystalReportViewer1.Size = new System.Drawing.Size(1443, 588);
             this.crystalReportViewer1.TabIndex = 0;
+            this.crystalReportViewer1.ToolPanelWidth = 267;
             // 
             // ClientReport
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1084, 486);
+            this.ClientSize = new System.Drawing.Size(1443, 588);
             this.Controls.Add(this.crystalReportViewer1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(1100, 525);
+            this.MaximumSize = new System.Drawing.Size(1461, 635);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(1100, 525);
+            this.MinimumSize = new System.Drawing.Size(1461, 635);
             this.Name = "ClientReport";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "تقرير العملاء";
-            this.TopMost = true;
             this.Load += new System.EventHandler(this.ClientReport_Load);
             this.ResumeLayout(false);
 

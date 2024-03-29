@@ -186,7 +186,7 @@ namespace SalesManagementSystem.Forms
             // تعديلToolStripMenuItem1
             // 
             this.تعديلToolStripMenuItem1.Name = "تعديلToolStripMenuItem1";
-            this.تعديلToolStripMenuItem1.Size = new System.Drawing.Size(210, 24);
+            this.تعديلToolStripMenuItem1.Size = new System.Drawing.Size(115, 24);
             this.تعديلToolStripMenuItem1.Text = "تعديل";
             this.تعديلToolStripMenuItem1.Click += new System.EventHandler(this.تعديلToolStripMenuItem1_Click);
             // 
@@ -292,7 +292,6 @@ namespace SalesManagementSystem.Forms
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "إدارة الموردين";
-            this.TopMost = true;
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.contextMenuStrip1.ResumeLayout(false);

@@ -319,7 +319,6 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "تقارير المبيعات";
-            this.TopMost = true;
             this.Load += new System.EventHandler(this.SaleManagementReportForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

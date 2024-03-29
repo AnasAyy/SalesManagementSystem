@@ -25,6 +25,5 @@ namespace SalesManagementSystem.Models
 
         public int? CategoryId { get; set; }
 
-
     }
 }

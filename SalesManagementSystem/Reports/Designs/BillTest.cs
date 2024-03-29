@@ -16,14 +16,14 @@ namespace SalesManagementSystem.Reports.Designs {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class SaleBillReport : ReportClass {
+    public class BillTest : ReportClass {
         
-        public SaleBillReport() {
+        public BillTest() {
         }
         
         public override string ResourceName {
             get {
-                return "SaleBillReport.rpt";
+                return "BillTest.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace SalesManagementSystem.Reports.Designs {
         
         public override string FullResourceName {
             get {
-                return "SalesManagementSystem.Reports.Designs.SaleBillReport.rpt";
+                return "SalesManagementSystem.Reports.Designs.BillTest.rpt";
             }
             set {
                 // Do nothing
@@ -138,9 +138,9 @@ namespace SalesManagementSystem.Reports.Designs {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedSaleBillReport : Component, ICachedReport {
+    public class CachedBillTest : Component, ICachedReport {
         
-        public CachedSaleBillReport() {
+        public CachedBillTest() {
         }
         
         [Browsable(false)]
@@ -177,7 +177,7 @@ namespace SalesManagementSystem.Reports.Designs {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            SaleBillReport rpt = new SaleBillReport();
+            BillTest rpt = new BillTest();
             rpt.Site = this.Site;
             return rpt;
         }
