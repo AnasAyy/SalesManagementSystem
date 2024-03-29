@@ -69,7 +69,7 @@ namespace SalesManagementSystem.Reports.Forms
                                                 "FROM Bills b " +
                                                 "JOIN BillItems bi ON b.Id = bi.BillId " +
                                                 "JOIN Items i ON i.Id = bi.ItemId " +
-                                                "WHERE b.BillType = 3 " +
+                                                "WHERE b.BillType = 2 " +
                                                 "AND CONVERT(DATE, b.CreatedAt) >= '" + startDate.ToString("yyyy-MM-dd") + "' " +
                                                 "AND CONVERT(DATE, b.CreatedAt) <= '" + endDate.ToString("yyyy-MM-dd") + "'";
 
@@ -82,7 +82,7 @@ namespace SalesManagementSystem.Reports.Forms
                                           "FROM Bills b " +
                                           "JOIN BillItems bi ON b.Id = bi.BillId " +
                                           "JOIN Items i ON i.Id = bi.ItemId " +
-                                          "WHERE b.BillType = 3 " +
+                                          "WHERE b.BillType = 2 " +
                                           "AND CONVERT(DATE, b.CreatedAt) >= '" + startDate.ToString("yyyy-MM-dd") + "' " +
                                           "AND CONVERT(DATE, b.CreatedAt) <= '" + endDate.ToString("yyyy-MM-dd") + "'";
 
