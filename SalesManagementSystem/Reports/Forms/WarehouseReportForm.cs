@@ -106,7 +106,7 @@ namespace SalesManagementSystem.Reports.Forms
                         warehouseReport1.SetDataSource(list);
 
 
-                        string SumQuery = "SELECT SUM(i.BuyPrice * i.Quantity) as Total " +
+                        string SumQuery = "SELECT SUM(i.BuyPrice * i.Quantity) as Total, SUM(i.Quantity) as Quantity  " +
                                          "FROM Items i JOIN Categories c ON i.CategoryId = c.Id";
 
                         if (comboBox1.SelectedIndex != 0)
@@ -117,6 +117,7 @@ namespace SalesManagementSystem.Reports.Forms
                         List<WarehouseReportDto> list2 = sqlconn.Query<WarehouseReportDto>(SumQuery, commandType: CommandType.Text).ToList();
 
                         warehouseReport1.SetParameterValue("Total", list2.FirstOrDefault()?.Total.ToString());
+                        warehouseReport1.SetParameterValue("Quantity", list2.FirstOrDefault()?.Quantity.ToString());
                         warehouseReport1.SetParameterValue("Date", DateTime.Now.ToString("yyyy/MM/dd"));
 
                         crystalReportViewer1.ReportSource = warehouseReport1;
