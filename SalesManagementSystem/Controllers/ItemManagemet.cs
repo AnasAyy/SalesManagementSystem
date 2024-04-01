@@ -55,6 +55,8 @@ namespace SalesManagementSystem.Controllers
             form.radioButton1.Visible = false;
             form.radioButton2.Visible = false;
             form.comboBox2.Enabled = false;
+            form.label8.Visible = false;
+            form.textBox6.Visible = false;
         }
 
         public static void FilldataGridView(ItemForm form)
@@ -74,6 +76,7 @@ namespace SalesManagementSystem.Controllers
                                                       "i.Barcode AS 'باركود', " +
                                                       "i.Quantity AS 'الكمية في المخزن', " +
                                                       "i.BuyPrice AS 'سعر الشراء', " +
+                                                      "i.SellPrice AS 'سعر البيع', " +
                                                       "i.LessQuantity AS 'اقل كمية', " +
                                                       "CASE WHEN i.IsActive = 1 THEN N'مفعل' ELSE N'غير مفعل' END AS 'الحالة', " +
                                                       "i.Quantity * i.BuyPrice AS 'اجمالي سعر الشراء' " +
@@ -186,6 +189,8 @@ namespace SalesManagementSystem.Controllers
         public static void Edit(ItemForm form)
         {
             form.label2.Visible = true;
+            form.label8.Visible = true;
+            form.label8.Enabled = true;
             form.label2.Enabled = true;
             form.label6.Visible = true;
             form.label6.Enabled = true;
@@ -193,6 +198,8 @@ namespace SalesManagementSystem.Controllers
             form.textBox1.Enabled = true;
             form.textBox4.Enabled = true;
             form.textBox2.Enabled = true;
+            form.textBox6.Visible = true;
+            form.textBox6.Enabled = true;
             form.radioButton1.Visible = true;
             form.radioButton2.Visible = true;
             form.radioButton1.Enabled = true;
@@ -218,12 +225,13 @@ namespace SalesManagementSystem.Controllers
                     form.id = Convert.ToInt32(selectedRow.Cells[0].Value.ToString());
                     form.textBox1.Text = selectedRow.Cells[1].Value.ToString();
                     form.textBox4.Text = selectedRow.Cells[3].Value.ToString();
-                    form.textBox2.Text = selectedRow.Cells[6].Value.ToString();
-                    if (selectedRow.Cells[7].Value.ToString() == "مفعل")
+                    form.textBox2.Text = selectedRow.Cells[7].Value.ToString();
+                    form.textBox6.Text = selectedRow.Cells[6].Value.ToString();
+                    if (selectedRow.Cells[8].Value.ToString() == "مفعل")
                     {
                         form.radioButton1.Checked = true;
                     }
-                    if (selectedRow.Cells[7].Value.ToString() == "غير مفعل")
+                    if (selectedRow.Cells[8].Value.ToString() == "غير مفعل")
                     {
                         form.radioButton2.Checked = true;
 
@@ -266,11 +274,15 @@ namespace SalesManagementSystem.Controllers
                         conn.Open();
                     }
                     SqlCommand comm = new SqlCommand("SELECT i.Id AS 'الرقم', " +
-                                                      "i.Name AS 'الاسم', " +
+                                                      "i.Name AS 'الاسم'," +
                                                       "c.Name AS 'الفئة', " +
                                                       "i.Barcode AS 'باركود', " +
+                                                      "i.Quantity AS 'الكمية في المخزن', " +
+                                                      "i.BuyPrice AS 'سعر الشراء', " +
+                                                      "i.SellPrice AS 'سعر البيع', " +
                                                       "i.LessQuantity AS 'اقل كمية', " +
-                                                      "CASE WHEN i.IsActive = 1 THEN N'مفعل' ELSE N'غير مفعل' END AS 'الحالة' " +
+                                                      "CASE WHEN i.IsActive = 1 THEN N'مفعل' ELSE N'غير مفعل' END AS 'الحالة', " +
+                                                      "i.Quantity * i.BuyPrice AS 'اجمالي سعر الشراء' " +
                                                       "FROM Items i join Categories c on i.CategoryId = c.Id " +
                                                       "WHERE i.Name LIKE '%' + @searchText + '%' OR i.Barcode LIKE '%' + @searchText + '%'  ", conn);
                     comm.Parameters.AddWithValue("@searchText", form.textBox3.Text);
@@ -357,6 +369,7 @@ namespace SalesManagementSystem.Controllers
                         item.LessQuantity = Convert.ToInt32(form.textBox2.Text.Trim());
                         item.CategoryId = Convert.ToInt32(form.comboBox2.SelectedValue);
                         item.Barcode = form.textBox4.Text.Trim();
+                        item.SellPrice=Convert.ToDecimal(form.textBox6.Text.Trim());
 
                         if (form.radioButton1.Checked)
                         {

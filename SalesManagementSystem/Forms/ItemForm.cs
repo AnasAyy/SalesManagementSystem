@@ -1,5 +1,6 @@
 ﻿using SalesManagementSystem.Controllers;
 using System;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace SalesManagementSystem.Forms
@@ -114,6 +115,24 @@ namespace SalesManagementSystem.Forms
         private void تعديلToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ItemManagemet.Update(this);
+        }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox6_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+
+            if (e.KeyChar == '.' && ((TextBox)sender).Text.Contains('.'))
+            {
+                e.Handled = true;
+            }
         }
     }
 }
