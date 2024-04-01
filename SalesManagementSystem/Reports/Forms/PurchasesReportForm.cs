@@ -49,7 +49,7 @@ namespace SalesManagementSystem.Reports.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+             
             using (var db = new DataBaseContext())
             {
                 try
@@ -65,7 +65,7 @@ namespace SalesManagementSystem.Reports.Forms
                         DateTime startDate = dateTimePicker1.Value.Date;
                         DateTime endDate = dateTimePicker2.Value.Date;
 
-                        string purchasesQuery = "SELECT i.Name, bi.Quantity, bi.TotalPrice/bi.Quantity AS 'Price' , bi.TotalPrice, CONVERT(DATE, b.CreatedAt) AS CreatedDate " +
+                        string purchasesQuery = "SELECT i.Name, bi.Quantity, bi.TotalPrice/bi.Quantity AS 'Price' , bi.TotalPrice, i.Barcode, CONVERT(DATE, b.CreatedAt) AS CreatedDate " +
                                                 "FROM Bills b " +
                                                 "JOIN BillItems bi ON b.Id = bi.BillId " +
                                                 "JOIN Items i ON i.Id = bi.ItemId " +

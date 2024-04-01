@@ -14,5 +14,7 @@ namespace SalesManagementSystem.Data.Dtos
         public decimal TotalPrice { get; set; }
         public DateTime CreatedDate { get; set; }
         public decimal Total { get; set; }
+        public string Barcode { get; set; }
+
     }
 }

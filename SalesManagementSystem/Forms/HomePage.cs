@@ -157,7 +157,7 @@ namespace SalesManagementSystem
 
         private void تقريرالمشترياتToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            PurchasesReportForm.GetPurchasesReportForm.Show();
+            PurchasesReportForm.GetPurchasesReportForm.ShowDialog();
         }
 
         private void تقريرالعملاءToolStripMenuItem_Click(object sender, EventArgs e)
