@@ -87,7 +87,7 @@ namespace SalesManagementSystem
         private void إدارةالاصنافToolStripMenuItem1_Click(object sender, EventArgs e)
         {
 
-            ItemForm.GetCategoryForm.Show();
+            ItemForm.GetCategoryForm.ShowDialog();
         }
 
         private void اضافةفاتورةToolStripMenuItem_Click(object sender, EventArgs e)
@@ -102,7 +102,7 @@ namespace SalesManagementSystem
 
         private void إدارةالاصنافToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            CategoryForm.GetCategoryForm.Show();
+            CategoryForm.GetCategoryForm.ShowDialog();
         }
 
         private void ادارةالنظامToolStripMenuItem_Click(object sender, EventArgs e)
@@ -112,12 +112,12 @@ namespace SalesManagementSystem
 
         private void ادارةالمصروفاتToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FinancialBondForm.GetFinancialBondForm.Show();
+            FinancialBondForm.GetFinancialBondForm.ShowDialog();
         }
 
         private void التقاريرToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AccountForm.GetaccountForm.Show();
+            AccountForm.GetaccountForm.ShowDialog();
         }
 
         private void ادارةالمشترياتToolStripMenuItem_Click_1(object sender, EventArgs e)
@@ -127,12 +127,12 @@ namespace SalesManagementSystem
 
         private void عمليةشراءجديدةToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            PurchasesForm.GetPurchasesForm.Show();
+            PurchasesForm.GetPurchasesForm.ShowDialog();
         }
 
         private void ادارةالمشToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            PurchasesManagementForm.GetPurchasesManagementForm.Show();
+            PurchasesManagementForm.GetPurchasesManagementForm.ShowDialog();
         }
 
         private void تسجيلالدخولToolStripMenuItem1_Click_1(object sender, EventArgs e)
@@ -152,7 +152,7 @@ namespace SalesManagementSystem
 
         private void التقاريرToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            AccountForm.GetaccountForm.Show();
+            AccountForm.GetaccountForm.ShowDialog();
         }
 
         private void تقريرالمشترياتToolStripMenuItem_Click(object sender, EventArgs e)
@@ -167,12 +167,12 @@ namespace SalesManagementSystem
 
         private void تقريرالمخازنToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            WarehouseReportForm.GetWarehouseReportForm.Show();
+            WarehouseReportForm.GetWarehouseReportForm.ShowDialog();
         }
 
         private void تقريرالمشترياتToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            ExpencesReportForm.GetExpencesReportForm.Show();
+            ExpencesReportForm.GetExpencesReportForm.ShowDialog();
         }
 
         private void تقريرالمبيعاتToolStripMenuItem_Click(object sender, EventArgs e)

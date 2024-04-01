@@ -574,7 +574,6 @@ namespace SalesManagementSystem.Forms
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "إدارة السندات";
-            this.TopMost = true;
             this.Load += new System.EventHandler(this.FinancialBondForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

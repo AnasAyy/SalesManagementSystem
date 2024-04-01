@@ -421,7 +421,6 @@ namespace SalesManagementSystem.Forms
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ادارة الاصناف";
-            this.TopMost = true;
             this.Load += new System.EventHandler(this.ItemForm_Load_1);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

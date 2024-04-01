@@ -133,7 +133,6 @@ namespace SalesManagementSystem.Forms
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "التحويل بين الحسابات";
-            this.TopMost = true;
             this.Load += new System.EventHandler(this.ExchangeForm_Load_1);
             this.ResumeLayout(false);
             this.PerformLayout();
