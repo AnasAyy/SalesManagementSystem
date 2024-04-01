@@ -86,6 +86,9 @@ namespace SalesManagementSystem.Reports.Forms
                             sqlconn.Open();
                         }
 
+                        DateTime startDate = startdate.Value.Date;
+                        DateTime endDate = dateTimePicker2.Value.Date;
+
                         string itemQuery = "Select f.Id, " +
                                             "f.Title, " +
                                             "p.Name as 'ExpenseType', " +
@@ -98,7 +101,9 @@ namespace SalesManagementSystem.Reports.Forms
                                             "Accounts a ON f.AccountId = a.Id " +
                                             "JOIN PublicLists p ON " +
                                             "f.ExpenseType = p.Id " +
-                                            "Where p.Code = 'Expense'";
+                                            "Where p.Code = 'Expense' " +
+                                            " AND CONVERT(DATE, f.CreatedAt) >= '" + startDate.ToString("yyyy-MM-dd") + "' " +
+                                            " AND CONVERT(DATE, f.CreatedAt) <= '" + endDate.ToString("yyyy-MM-dd") + "' ";
 
                         if (comboBox1.SelectedIndex != 0)
                         {
@@ -111,9 +116,11 @@ namespace SalesManagementSystem.Reports.Forms
                         expencesReport1.SetDataSource(list);
 
 
-                        string SumQuery = "Select SUM(f.TotalPrice) as Total  from FinancialBonds f JOIN Accounts a ON f.AccountId = a.Id JOIN PublicLists p ON f.ExpenseType = p.Id Where p.Code = 'Expense'";
+                        string SumQuery = "Select SUM(f.TotalPrice) as Total  from FinancialBonds f JOIN Accounts a ON f.AccountId = a.Id JOIN PublicLists p ON f.ExpenseType = p.Id Where p.Code = 'Expense' " +
+                            " AND CONVERT(DATE, f.CreatedAt) >= '" + startDate.ToString("yyyy-MM-dd") + "' " +     
+                            " AND CONVERT(DATE, f.CreatedAt) <= '" + endDate.ToString("yyyy-MM-dd") + "'";
 
-
+                        
                         if (comboBox1.SelectedIndex != 0)
                         {
                             SumQuery += " And p.Id = '" + comboBox1.SelectedValue + "'";
